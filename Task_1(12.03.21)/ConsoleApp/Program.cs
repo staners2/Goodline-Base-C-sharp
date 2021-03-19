@@ -8,7 +8,13 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            do
+            using (f f = new f(1, "name"))
+            {
+                Console.WriteLine(f.Name);
+            }
+            
+            Console.ReadKey();
+            /*do
             {
                 int iNumberPick;
                 Console.Clear();
@@ -35,7 +41,7 @@ namespace ConsoleApp
                         Console.WriteLine("Ошибка! Неверный пункт меню!");
                         break;
                 }
-            } while (true);
+            } while (true);*/
         }
     }
 }
