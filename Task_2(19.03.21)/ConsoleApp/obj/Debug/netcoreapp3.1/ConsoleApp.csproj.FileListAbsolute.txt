@@ -11,3 +11,16 @@ D:\Visual Studio Project\Goodline\Task_2(19.03.21)\ConsoleApp\ConsoleApp\obj\Deb
 D:\Visual Studio Project\Goodline\Task_2(19.03.21)\ConsoleApp\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.dll
 D:\Visual Studio Project\Goodline\Task_2(19.03.21)\ConsoleApp\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.pdb
 D:\Visual Studio Project\Goodline\Task_2(19.03.21)\ConsoleApp\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.genruntimeconfig.cache
+D:\Visual Studio Project\Goodline\Task_2(19.03.21)\ConsoleApp\bin\Debug\netcoreapp3.1\ConsoleApp.exe
+D:\Visual Studio Project\Goodline\Task_2(19.03.21)\ConsoleApp\bin\Debug\netcoreapp3.1\ConsoleApp.deps.json
+D:\Visual Studio Project\Goodline\Task_2(19.03.21)\ConsoleApp\bin\Debug\netcoreapp3.1\ConsoleApp.runtimeconfig.json
+D:\Visual Studio Project\Goodline\Task_2(19.03.21)\ConsoleApp\bin\Debug\netcoreapp3.1\ConsoleApp.runtimeconfig.dev.json
+D:\Visual Studio Project\Goodline\Task_2(19.03.21)\ConsoleApp\bin\Debug\netcoreapp3.1\ConsoleApp.dll
+D:\Visual Studio Project\Goodline\Task_2(19.03.21)\ConsoleApp\bin\Debug\netcoreapp3.1\ConsoleApp.pdb
+D:\Visual Studio Project\Goodline\Task_2(19.03.21)\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.csprojAssemblyReference.cache
+D:\Visual Studio Project\Goodline\Task_2(19.03.21)\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.AssemblyInfoInputs.cache
+D:\Visual Studio Project\Goodline\Task_2(19.03.21)\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.AssemblyInfo.cs
+D:\Visual Studio Project\Goodline\Task_2(19.03.21)\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.csproj.CoreCompileInputs.cache
+D:\Visual Studio Project\Goodline\Task_2(19.03.21)\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.dll
+D:\Visual Studio Project\Goodline\Task_2(19.03.21)\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.pdb
+D:\Visual Studio Project\Goodline\Task_2(19.03.21)\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.genruntimeconfig.cache

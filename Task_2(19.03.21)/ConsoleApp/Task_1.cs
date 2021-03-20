@@ -12,14 +12,8 @@ namespace ConsoleApp
     {
         public static void Start()
         {
-            Random rn = new Random();
-            int[] arrayInts = new int[20];
-            for (int i = 0; i < arrayInts.Length; i++)
-            {
-                arrayInts[i] = rn.Next(0,100);
-                Console.Write($"{arrayInts[i]} ");
-            }
-
+            int[] arrayInts = new int[] { 1, 1, 1, 1, 2, 2, 2, 3, 4, 4, 5, 5, 6, 7, 8, 8, 8, 10};
+            
             int count = 0;
             for (int i = 1; i < arrayInts.Length-1; i++)
             {
