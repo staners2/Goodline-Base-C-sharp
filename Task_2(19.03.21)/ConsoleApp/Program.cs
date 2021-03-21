@@ -13,7 +13,8 @@ namespace ConsoleApp
                 Console.Clear();
                 Console.WriteLine("1. Задача 1 (Найти количество различных чисел в массиве)\n" +
                                   "2. Задача 2 (Вывести, симметрична ли матрица относительно главной диагонали?)\n" +
-                                  "3. Выход");
+                                  "3. Задача 3 (Вывести цифры по спирали)\n" +
+                                  "4. Выход");
                 if (!int.TryParse(Console.ReadLine(), out iNumberPick))
                 {
                     continue;
@@ -30,6 +31,9 @@ namespace ConsoleApp
                         Task_2.Start();
                         break;
                     case 3:
+                        Task_3.Start();
+                        break;
+                    case 4:
                         Environment.Exit(0);
                         break;
                     default:
