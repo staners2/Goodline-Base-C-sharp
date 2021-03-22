@@ -19,10 +19,10 @@ namespace ConsoleApp
 
             /*int[] arrayInts = new int[] { 1, 1, 1, 1, 2, 2, 2, 3, 4, 4, 5, 5, 6, 7, 8, 8, 8, 10 };
 
-            int count = 0;
-            for (int i = 1; i < arrayInts.Length - 1; i++)
+            int count = arrayInts[0] != arrayInts[1] ? 1 : 0;
+            for (int i = 0; i < arrayInts.Length - 1; i++)
             {
-                if (arrayInts[i - 1] != arrayInts[i] && arrayInts[i] != arrayInts[i + 1])
+                if (arrayInts[i] != arrayInts[i+1])
                 {
                     count++;
                 }
@@ -47,10 +47,10 @@ namespace ConsoleApp
             }
             Array.Sort(arrayInts);
 
-            int count = 0;
-            for (int i = 1; i < arrayInts.Length - 1; i++)
+            int count = arrayInts[0] != arrayInts[1] ? 1 : 0;
+            for (int i = 0; i < arrayInts.Length - 1; i++)
             {
-                if (arrayInts[i - 1] != arrayInts[i] && arrayInts[i] != arrayInts[i + 1])
+                if (arrayInts[i] != arrayInts[i+1])
                 {
                     count++;
                 }
