@@ -9,12 +9,15 @@ namespace ConsoleApp
 
         public static void Start()
         {
-            Console.WriteLine("Введите размерность матрицы");
+
+            #region TODO
+
+            /*Console.WriteLine("Введите размерность матрицы");
             int sizeMatrix;
             while (!int.TryParse(Console.ReadLine(), out sizeMatrix))
             {
             }
-
+            
             var f = new int[sizeMatrix * 2 + 1, sizeMatrix * 2 + 1];
 
             for (int i = 0; i < sizeMatrix * 2 + 1; i++)
@@ -27,7 +30,10 @@ namespace ConsoleApp
                 Console.WriteLine();
             }
 
-            Console.ReadKey();
+            Console.ReadKey();*/
+
+            #endregion
+
         }
     }
 }
