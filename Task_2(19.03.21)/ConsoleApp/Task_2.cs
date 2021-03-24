@@ -16,7 +16,7 @@ namespace ConsoleApp
 
             int sizeMatrix;
             Console.WriteLine("Введите размерность матрицы: ");
-            while (!int.TryParse(Console.ReadLine(), out sizeMatrix))
+            while (!int.TryParse(Console.ReadLine(), out sizeMatrix) && sizeMatrix >= 2)
             {}
 
             int[,] Matrix = new int[sizeMatrix, sizeMatrix];

@@ -14,7 +14,6 @@ namespace ConsoleApp
         {
 
             #region FirstSolutuin | Already have elements array
-
             // O(n) - Линейная сложность
 
             /*int[] arrayInts = new int[] { 1, 1, 1, 1, 2, 2, 2, 3, 4, 4, 5, 5, 6, 7, 8, 8, 8, 10 };
@@ -36,9 +35,19 @@ namespace ConsoleApp
             #endregion
 
             #region SecondSolution | Input elements array
+            // O(n) - Линейная сложность
 
             Console.WriteLine("Введите размерность массива: ");
-            int arraySize = int.Parse(Console.ReadLine());
+            int arraySize;
+            while (true)
+            {
+                int.TryParse(Console.ReadLine(), out arraySize);
+                if (arraySize >= 2)
+                {
+                    break;
+                }
+            }
+
             int[] arrayInts = new int[arraySize];
             for (int i = 0; i < arraySize; i++)
             {
@@ -47,7 +56,8 @@ namespace ConsoleApp
             }
             Array.Sort(arrayInts);
 
-            int count = arrayInts[0] != arrayInts[1] ? 1 : 0;
+            int count = 1; // Одно число точно будет уникальным
+
             for (int i = 0; i < arrayInts.Length - 1; i++)
             {
                 if (arrayInts[i] != arrayInts[i+1])
