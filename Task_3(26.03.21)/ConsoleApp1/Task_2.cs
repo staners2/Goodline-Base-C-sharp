@@ -63,6 +63,10 @@ namespace ConsoleApp1
                         {
                             AddElement(dictionaryFormats, shortName, fullName);
                         }
+                        else
+                        {
+                            Console.WriteLine("Ошибка! Поля не могут быть пустыми!");
+                        }
                     }
                         Console.WriteLine("Press to key...");
                         Console.ReadKey();

@@ -17,14 +17,14 @@ namespace ConsoleApp1
             do
             {
                 result = int.TryParse(Console.ReadLine(), out AllTime);
-            } while (!result);
+            } while (!result || AllTime <= 0);
 
             int CountClient;
             Console.WriteLine("Введите кол-во заказчиков: ");
             do
             {
                 result = int.TryParse(Console.ReadLine(), out CountClient);
-            } while (!result);
+            } while (!result || CountClient <= 0);
 
             Console.WriteLine("Введите время требуемое на обслуживание клиентов:");
             Queue<int> NeededTimeQueue = new Queue<int>();
@@ -43,7 +43,7 @@ namespace ConsoleApp1
                     break;
                 }
             }
-            while (AllTime >= 0);
+            while (AllTime > 0);
 
             switch (NeededTimeQueue.Count)
             {
