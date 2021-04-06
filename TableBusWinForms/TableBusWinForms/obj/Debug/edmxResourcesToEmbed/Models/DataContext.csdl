@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TableBusModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CityName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Routes" Relationship="Self.FK_Route_City" FromRole="City" ToRole="Route" />
+    <NavigationProperty Name="Routes1" Relationship="Self.FK_Route_City1" FromRole="City" ToRole="Route" />
+    <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Route">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameRoute" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CityStart" Type="Int32" Nullable="false" />
+    <Property Name="CityEnd" Type="Int32" Nullable="false" />
+    <Property Name="Distance" Type="Double" Nullable="false" />
+    <Property Name="TravelTime" Type="Time" Nullable="false" Precision="7" />
+    <NavigationProperty Name="City" Relationship="Self.FK_Route_City" FromRole="Route" ToRole="City" />
+    <NavigationProperty Name="City1" Relationship="Self.FK_Route_City1" FromRole="Route" ToRole="City" />
+    <NavigationProperty Name="Tables" Relationship="Self.FK_Table_Route" FromRole="Route" ToRole="Table" />
+    <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RouteId" Type="Int32" Nullable="false" />
+    <Property Name="DateTimeStart" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateTimeEnd" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CurrentCountPassenger" Type="Int32" Nullable="false" />
+    <Property Name="MaxCountPassenger" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Route" Relationship="Self.FK_Table_Route" FromRole="Table" ToRole="Route" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Table_User" FromRole="Table" ToRole="User" />
+    <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Money" Type="Int32" Nullable="false" />
+    <Property Name="IsAdmin" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Tables" Relationship="Self.FK_Table_User" FromRole="User" ToRole="Table" />
+  </EntityType>
+  <Association Name="FK_Route_City">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="Route" Type="Self.Route" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Route">
+        <PropertyRef Name="CityStart" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Route_City1">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="Route" Type="Self.Route" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Route">
+        <PropertyRef Name="CityEnd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Route">
+    <End Role="Route" Type="Self.Route" Multiplicity="1" />
+    <End Role="Table" Type="Self.Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Route">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Table">
+        <PropertyRef Name="RouteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Table" Type="Self.Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Table">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DataContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cities" EntityType="Self.City" />
+    <EntitySet Name="Routes" EntityType="Self.Route" />
+    <EntitySet Name="Tables" EntityType="Self.Table" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK_Route_City" Association="Self.FK_Route_City">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Route" EntitySet="Routes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Route_City1" Association="Self.FK_Route_City1">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Route" EntitySet="Routes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Route" Association="Self.FK_Table_Route">
+      <End Role="Route" EntitySet="Routes" />
+      <End Role="Table" EntitySet="Tables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_User" Association="Self.FK_Table_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Table" EntitySet="Tables" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
