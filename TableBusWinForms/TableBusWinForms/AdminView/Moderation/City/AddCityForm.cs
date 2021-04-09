@@ -22,7 +22,7 @@ namespace TableBusWinForms.AdminView.Moderation.City
             if (textBox1.Text != string.Empty)
             {
                 string NameCity = textBox1.Text;
-                if (!ModerationController.CheckHaveCity(NameCity))
+                if (!ModerationController.IsHaveCity(NameCity))
                 {
                     switch (ModerationController.AddCity(NameCity))
                     {

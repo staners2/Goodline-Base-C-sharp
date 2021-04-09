@@ -30,13 +30,13 @@ namespace TableBusWinForms.AdminView.Moderation.Route
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.IdRoute = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameRoute = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CityStart = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CityEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Distance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TravelTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,20 +60,10 @@ namespace TableBusWinForms.AdminView.Moderation.Route
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(531, 263);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(12, 281);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(531, 73);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Добавить";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // IdRoute
             // 
@@ -121,6 +111,17 @@ namespace TableBusWinForms.AdminView.Moderation.Route
             this.TravelTime.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.TravelTime.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(12, 281);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(531, 73);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Добавить";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ViewModerationRouteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -132,6 +133,7 @@ namespace TableBusWinForms.AdminView.Moderation.Route
             this.Name = "ViewModerationRouteForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Модерация маршрута";
+            this.Load += new System.EventHandler(this.ViewModerationRouteForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

@@ -19,3 +19,7 @@ D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\Ta
 D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.AdminView.Moderation.City.AddCityForm.resources
 D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.AdminView.Moderation.City.ChangeCityForm.resources
 D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.AdminView.Moderation.City.ViewModerationCityForm.resources
+D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.AdminView.Moderation.Route.AddRouteForm.resources
+D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.AdminView.Moderation.Route.ViewModerationRouteForm.resources
+D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.AdminView.Moderation.Route.ChangeRouteForm.resources
+D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.AdminView.Moderation.TableRecords.ViewModerationTableRecordsForm.resources

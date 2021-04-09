@@ -1,26 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="Хранилище TableBusModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="City">
+<Schema Namespace="TableBusModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="TableBusModelStoreContainer">
+    <EntitySet Name="Cities" EntityType="TableBusModel.Store.Cities" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Routes" EntityType="TableBusModel.Store.Routes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tables" EntityType="TableBusModel.Store.Tables" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="TableBusModel.Store.Users" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Route_City" Association="TableBusModel.Store.FK_Route_City">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Route" EntitySet="Routes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Route_City1" Association="TableBusModel.Store.FK_Route_City1">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Route" EntitySet="Routes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Route" Association="TableBusModel.Store.FK_Table_Route">
+      <End Role="Route" EntitySet="Routes" />
+      <End Role="Table" EntitySet="Tables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_User" Association="TableBusModel.Store.FK_Table_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Table" EntitySet="Tables" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Cities">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="CityName" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="CityName" Type="nvarchar" Nullable="false" MaxLength="200" />
     <Property Name="IsDelete" Type="bit" Nullable="false" />
   </EntityType>
-  <EntityType Name="Route">
+  <EntityType Name="Routes">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="NameRoute" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="NameRoute" Type="nvarchar" Nullable="false" MaxLength="250" />
     <Property Name="CityStart" Type="int" Nullable="false" />
     <Property Name="CityEnd" Type="int" Nullable="false" />
     <Property Name="Distance" Type="float" Nullable="false" />
-    <Property Name="TravelTime" Type="time" Precision="7" Nullable="false" />
+    <Property Name="TravelTime" Type="time" Nullable="false" Precision="7" />
     <Property Name="IsDelete" Type="bit" Nullable="false" />
   </EntityType>
-  <EntityType Name="Table">
+  <EntityType Name="Tables">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -34,18 +56,18 @@
     <Property Name="UserId" Type="int" Nullable="false" />
     <Property Name="IsDelete" Type="bit" Nullable="false" />
   </EntityType>
-  <EntityType Name="User">
+  <EntityType Name="Users">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Login" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" Nullable="false" MaxLength="200" />
     <Property Name="Money" Type="int" Nullable="false" />
     <Property Name="IsAdmin" Type="bit" Nullable="false" />
   </EntityType>
   <Association Name="FK_Route_City">
-    <End Role="City" Type="Self.City" Multiplicity="1" />
-    <End Role="Route" Type="Self.Route" Multiplicity="*" />
+    <End Role="City" Type="TableBusModel.Store.Cities" Multiplicity="1" />
+    <End Role="Route" Type="TableBusModel.Store.Routes" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="City">
         <PropertyRef Name="Id" />
@@ -56,8 +78,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Route_City1">
-    <End Role="City" Type="Self.City" Multiplicity="1" />
-    <End Role="Route" Type="Self.Route" Multiplicity="*" />
+    <End Role="City" Type="TableBusModel.Store.Cities" Multiplicity="1" />
+    <End Role="Route" Type="TableBusModel.Store.Routes" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="City">
         <PropertyRef Name="Id" />
@@ -68,8 +90,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Table_Route">
-    <End Role="Route" Type="Self.Route" Multiplicity="1" />
-    <End Role="Table" Type="Self.Table" Multiplicity="*" />
+    <End Role="Route" Type="TableBusModel.Store.Routes" Multiplicity="1" />
+    <End Role="Table" Type="TableBusModel.Store.Tables" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Route">
         <PropertyRef Name="Id" />
@@ -80,8 +102,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Table_User">
-    <End Role="User" Type="Self.User" Multiplicity="1" />
-    <End Role="Table" Type="Self.Table" Multiplicity="*" />
+    <End Role="User" Type="TableBusModel.Store.Users" Multiplicity="1" />
+    <End Role="Table" Type="TableBusModel.Store.Tables" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="User">
         <PropertyRef Name="Id" />
@@ -91,26 +113,4 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="Хранилище TableBusModelContainer">
-    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Route" EntityType="Self.Route" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_Route_City" Association="Self.FK_Route_City">
-      <End Role="City" EntitySet="City" />
-      <End Role="Route" EntitySet="Route" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Route_City1" Association="Self.FK_Route_City1">
-      <End Role="City" EntitySet="City" />
-      <End Role="Route" EntitySet="Route" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Table_Route" Association="Self.FK_Table_Route">
-      <End Role="Route" EntitySet="Route" />
-      <End Role="Table" EntitySet="Table" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Table_User" Association="Self.FK_Table_User">
-      <End Role="User" EntitySet="User" />
-      <End Role="Table" EntitySet="Table" />
-    </AssociationSet>
-  </EntityContainer>
 </Schema>

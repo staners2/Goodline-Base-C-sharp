@@ -83,11 +83,35 @@
     <Compile Include="AdminView\Moderation\Route\AddRouteForm.Designer.cs">
       <DependentUpon>AddRouteForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminView\Moderation\Route\ChangeRouteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminView\Moderation\Route\ChangeRouteForm.Designer.cs">
+      <DependentUpon>ChangeRouteForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminView\Moderation\Route\ViewModerationRouteForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdminView\Moderation\Route\ViewModerationRouteForm.Designer.cs">
       <DependentUpon>ViewModerationRouteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminView\Moderation\TableRecords\AddTableRecordsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminView\Moderation\TableRecords\AddTableRecordsForm.Designer.cs">
+      <DependentUpon>AddTableRecordsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminView\Moderation\TableRecords\ChangeTableRecordsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminView\Moderation\TableRecords\ChangeTableRecordsForm.Designer.cs">
+      <DependentUpon>ChangeTableRecordsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminView\Moderation\TableRecords\ViewModerationTableRecordsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminView\Moderation\TableRecords\ViewModerationTableRecordsForm.Designer.cs">
+      <DependentUpon>ViewModerationTableRecordsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminView\ViewTableForm.cs">
       <SubType>Form</SubType>
@@ -119,6 +143,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RecordFlight.cs">
+      <DependentUpon>DataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Route.cs">
       <DependentUpon>DataContext.tt</DependentUpon>
@@ -155,8 +182,17 @@
     <EmbeddedResource Include="AdminView\Moderation\Route\AddRouteForm.resx">
       <DependentUpon>AddRouteForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminView\Moderation\Route\ChangeRouteForm.resx">
+      <DependentUpon>ChangeRouteForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminView\Moderation\Route\ViewModerationRouteForm.resx">
       <DependentUpon>ViewModerationRouteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminView\Moderation\TableRecords\AddTableRecordsForm.resx">
+      <DependentUpon>AddTableRecordsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminView\Moderation\TableRecords\ViewModerationTableRecordsForm.resx">
+      <DependentUpon>ViewModerationTableRecordsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminView\ViewTableForm.resx">
       <DependentUpon>ViewTableForm.cs</DependentUpon>
@@ -203,15 +239,14 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="AdminView\Moderation\TableRecords\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Models\DataContext.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DataContext.edmx</DependentUpon>
       <LastGenOutput>DataContext.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\DataContext.edmx.sql" />
     <Content Include="Models\DataContext.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DataContext.edmx</DependentUpon>

@@ -21,7 +21,13 @@ namespace TableBusWinForms.AdminView.Moderation.Route
         {
             if (e.RowIndex >= 0)
             {
-
+                int IdRoute = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["IdRoute"].Value);
+                ChangeRouteForm Form = new ChangeRouteForm(IdRoute);
+                Form.Closed += (s, ev) =>
+                {
+                    UpdateGrid();
+                };
+                Form.ShowDialog();
             }
         }
 
@@ -30,15 +36,27 @@ namespace TableBusWinForms.AdminView.Moderation.Route
             AddRouteForm Form = new AddRouteForm();
             Form.Closed += (s, ev) =>
             {
-                Update();
+                UpdateGrid();
             };
             Form.ShowDialog();
 
         }
 
-        private void Update()
+        private void UpdateGrid()
         {
+            dataGridView1.Rows.Clear();
+            var Routes = ModerationController.GetRoutes();
+            foreach (var elem in Routes)
+            {
+                dataGridView1.Rows.Add(
+                    $"{elem.Id}", $"{elem.NameRoute}", $"{elem.City.CityName}",
+                    $"{elem.City1.CityName}", $"{elem.Distance}", $"{elem.TravelTime}");
+            }
+        }
 
+        private void ViewModerationRouteForm_Load(object sender, EventArgs e)
+        {
+            UpdateGrid();
         }
     }
 }

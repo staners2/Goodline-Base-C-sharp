@@ -29,5 +29,6 @@ namespace TableBusWinForms.Models
         public virtual DbSet<Route> Routes { get; set; }
         public virtual DbSet<Table> Tables { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<RecordFlight> RecordFlights { get; set; }
     }
 }

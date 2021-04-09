@@ -14,6 +14,12 @@ namespace TableBusWinForms.Models
     
     public partial class Table
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Table()
+        {
+            this.RecordFlights = new HashSet<RecordFlight>();
+        }
+    
         public int Id { get; set; }
         public int RouteId { get; set; }
         public System.DateTime DateTimeStart { get; set; }
@@ -21,10 +27,10 @@ namespace TableBusWinForms.Models
         public int CurrentCountPassenger { get; set; }
         public int MaxCountPassenger { get; set; }
         public int Price { get; set; }
-        public int UserId { get; set; }
         public bool IsDelete { get; set; }
     
         public virtual Route Route { get; set; }
-        public virtual User User { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RecordFlight> RecordFlights { get; set; }
     }
 }

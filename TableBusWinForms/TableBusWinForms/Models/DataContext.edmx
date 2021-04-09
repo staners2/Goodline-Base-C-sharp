@@ -4,121 +4,145 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Хранилище TableBusModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="City">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CityName" Type="nvarchar" MaxLength="200" Nullable="false" />
-          <Property Name="IsDelete" Type="bit" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Route">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="NameRoute" Type="nvarchar" MaxLength="250" Nullable="false" />
-          <Property Name="CityStart" Type="int" Nullable="false" />
-          <Property Name="CityEnd" Type="int" Nullable="false" />
-          <Property Name="Distance" Type="float" Nullable="false" />
-          <Property Name="TravelTime" Type="time" Precision="7" Nullable="false" />
-          <Property Name="IsDelete" Type="bit" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Table">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="RouteId" Type="int" Nullable="false" />
-          <Property Name="DateTimeStart" Type="datetime" Nullable="false" />
-          <Property Name="DateTimeEnd" Type="datetime" Nullable="false" />
-          <Property Name="CurrentCountPassenger" Type="int" Nullable="false" />
-          <Property Name="MaxCountPassenger" Type="int" Nullable="false" />
-          <Property Name="Price" Type="int" Nullable="false" />
-          <Property Name="UserId" Type="int" Nullable="false" />
-          <Property Name="IsDelete" Type="bit" Nullable="false" />
-        </EntityType>
-        <EntityType Name="User">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Login" Type="nvarchar" MaxLength="200" Nullable="false" />
-          <Property Name="Money" Type="int" Nullable="false" />
-          <Property Name="IsAdmin" Type="bit" Nullable="false" />
-        </EntityType>
-        <Association Name="FK_Route_City">
-          <End Role="City" Type="Self.City" Multiplicity="1" />
-          <End Role="Route" Type="Self.Route" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="City">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Route">
-              <PropertyRef Name="CityStart" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Route_City1">
-          <End Role="City" Type="Self.City" Multiplicity="1" />
-          <End Role="Route" Type="Self.Route" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="City">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Route">
-              <PropertyRef Name="CityEnd" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Table_Route">
-          <End Role="Route" Type="Self.Route" Multiplicity="1" />
-          <End Role="Table" Type="Self.Table" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Route">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Table">
-              <PropertyRef Name="RouteId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Table_User">
-          <End Role="User" Type="Self.User" Multiplicity="1" />
-          <End Role="Table" Type="Self.Table" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Table">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="Хранилище TableBusModelContainer">
-          <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Route" EntityType="Self.Route" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Route_City" Association="Self.FK_Route_City">
-            <End Role="City" EntitySet="City" />
-            <End Role="Route" EntitySet="Route" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Route_City1" Association="Self.FK_Route_City1">
-            <End Role="City" EntitySet="City" />
-            <End Role="Route" EntitySet="Route" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Table_Route" Association="Self.FK_Table_Route">
-            <End Role="Route" EntitySet="Route" />
-            <End Role="Table" EntitySet="Table" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Table_User" Association="Self.FK_Table_User">
-            <End Role="User" EntitySet="User" />
-            <End Role="Table" EntitySet="Table" />
-          </AssociationSet>
-        </EntityContainer>
-      </Schema></edmx:StorageModels>
+    <Schema Namespace="TableBusModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="TableBusModelStoreContainer">
+    <EntitySet Name="Cities" EntityType="TableBusModel.Store.Cities" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Routes" EntityType="TableBusModel.Store.Routes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tables" EntityType="TableBusModel.Store.Tables" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="TableBusModel.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RecordFlights" EntityType="TableBusModel.Store.RecordFlights" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Route_City" Association="TableBusModel.Store.FK_Route_City">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Route" EntitySet="Routes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Route_City1" Association="TableBusModel.Store.FK_Route_City1">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Route" EntitySet="Routes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Route" Association="TableBusModel.Store.FK_Table_Route">
+      <End Role="Route" EntitySet="Routes" />
+      <End Role="Table" EntitySet="Tables" />
+    </AssociationSet>
+    <AssociationSet Name="TableRecordFlight" Association="TableBusModel.Store.TableRecordFlight">
+      <End Role="Table" EntitySet="Tables" />
+      <End Role="RecordFlight" EntitySet="RecordFlights" />
+    </AssociationSet>
+    <AssociationSet Name="UserRecordFlight" Association="TableBusModel.Store.UserRecordFlight">
+      <End Role="User" EntitySet="Users" />
+      <End Role="RecordFlight" EntitySet="RecordFlights" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Cities">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CityName" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="IsDelete" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Routes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameRoute" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="CityStart" Type="int" Nullable="false" />
+    <Property Name="CityEnd" Type="int" Nullable="false" />
+    <Property Name="Distance" Type="float" Nullable="false" />
+    <Property Name="TravelTime" Type="time" Nullable="false" Precision="7" />
+    <Property Name="IsDelete" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tables">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RouteId" Type="int" Nullable="false" />
+    <Property Name="DateTimeStart" Type="datetime" Nullable="false" />
+    <Property Name="DateTimeEnd" Type="datetime" Nullable="false" />
+    <Property Name="CurrentCountPassenger" Type="int" Nullable="false" />
+    <Property Name="MaxCountPassenger" Type="int" Nullable="false" />
+    <Property Name="Price" Type="int" Nullable="false" />
+    <Property Name="IsDelete" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="Money" Type="int" Nullable="false" />
+    <Property Name="IsAdmin" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RecordFlights">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TableId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Route_City">
+    <End Role="City" Type="TableBusModel.Store.Cities" Multiplicity="1" />
+    <End Role="Route" Type="TableBusModel.Store.Routes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Route">
+        <PropertyRef Name="CityStart" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Route_City1">
+    <End Role="City" Type="TableBusModel.Store.Cities" Multiplicity="1" />
+    <End Role="Route" Type="TableBusModel.Store.Routes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Route">
+        <PropertyRef Name="CityEnd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Route">
+    <End Role="Route" Type="TableBusModel.Store.Routes" Multiplicity="1" />
+    <End Role="Table" Type="TableBusModel.Store.Tables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Route">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Table">
+        <PropertyRef Name="RouteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TableRecordFlight">
+    <End Role="Table" Type="TableBusModel.Store.Tables" Multiplicity="1" />
+    <End Role="RecordFlight" Type="TableBusModel.Store.RecordFlights" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RecordFlight">
+        <PropertyRef Name="TableId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserRecordFlight">
+    <End Role="User" Type="TableBusModel.Store.Users" Multiplicity="1" />
+    <End Role="RecordFlight" Type="TableBusModel.Store.RecordFlights" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RecordFlight">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TableBusModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -158,10 +182,9 @@
           <Property Name="CurrentCountPassenger" Type="Int32" Nullable="false" />
           <Property Name="MaxCountPassenger" Type="Int32" Nullable="false" />
           <Property Name="Price" Type="Int32" Nullable="false" />
-          <Property Name="UserId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Route" Relationship="Self.FK_Table_Route" FromRole="Table" ToRole="Route" />
-          <NavigationProperty Name="User" Relationship="Self.FK_Table_User" FromRole="Table" ToRole="User" />
           <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="RecordFlights" Relationship="TableBusModel.TableRecordFlight" FromRole="Table" ToRole="RecordFlight" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -171,7 +194,7 @@
           <Property Name="Login" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Money" Type="Int32" Nullable="false" />
           <Property Name="IsAdmin" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Tables" Relationship="Self.FK_Table_User" FromRole="User" ToRole="Table" />
+          <NavigationProperty Name="RecordFlights" Relationship="TableBusModel.UserRecordFlight" FromRole="User" ToRole="RecordFlight" />
         </EntityType>
         <Association Name="FK_Route_City">
           <End Role="City" Type="Self.City" Multiplicity="1" />
@@ -209,18 +232,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Table_User">
-          <End Role="User" Type="Self.User" Multiplicity="1" />
-          <End Role="Table" Type="Self.Table" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Table">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="DataContext" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Cities" EntityType="Self.City" />
           <EntitySet Name="Routes" EntityType="Self.Route" />
@@ -238,67 +249,113 @@
             <End Role="Route" EntitySet="Routes" />
             <End Role="Table" EntitySet="Tables" />
           </AssociationSet>
-          <AssociationSet Name="FK_Table_User" Association="Self.FK_Table_User">
-            <End Role="User" EntitySet="Users" />
+          <EntitySet Name="RecordFlights" EntityType="TableBusModel.RecordFlight" />
+          <AssociationSet Name="TableRecordFlight" Association="TableBusModel.TableRecordFlight">
             <End Role="Table" EntitySet="Tables" />
+            <End Role="RecordFlight" EntitySet="RecordFlights" />
+          </AssociationSet>
+          <AssociationSet Name="UserRecordFlight" Association="TableBusModel.UserRecordFlight">
+            <End Role="User" EntitySet="Users" />
+            <End Role="RecordFlight" EntitySet="RecordFlights" />
           </AssociationSet>
         </EntityContainer>
+        <EntityType Name="RecordFlight">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Table" Relationship="TableBusModel.TableRecordFlight" FromRole="RecordFlight" ToRole="Table" />
+          <Property Name="TableId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="TableBusModel.UserRecordFlight" FromRole="RecordFlight" ToRole="User" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="TableRecordFlight">
+          <End Type="TableBusModel.Table" Role="Table" Multiplicity="1" />
+          <End Type="TableBusModel.RecordFlight" Role="RecordFlight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Table">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RecordFlight">
+              <PropertyRef Name="TableId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserRecordFlight">
+          <End Type="TableBusModel.User" Role="User" Multiplicity="1" />
+          <End Type="TableBusModel.RecordFlight" Role="RecordFlight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RecordFlight">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище TableBusModelContainer" CdmEntityContainer="DataContext">
-          <EntitySetMapping Name="Cities">
-            <EntityTypeMapping TypeName="TableBusModel.City">
-              <MappingFragment StoreEntitySet="City">
-                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="CityName" ColumnName="CityName" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Routes">
-            <EntityTypeMapping TypeName="TableBusModel.Route">
-              <MappingFragment StoreEntitySet="Route">
-                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="NameRoute" ColumnName="NameRoute" />
-                <ScalarProperty Name="CityStart" ColumnName="CityStart" />
-                <ScalarProperty Name="CityEnd" ColumnName="CityEnd" />
-                <ScalarProperty Name="Distance" ColumnName="Distance" />
-                <ScalarProperty Name="TravelTime" ColumnName="TravelTime" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Tables">
-            <EntityTypeMapping TypeName="TableBusModel.Table">
-              <MappingFragment StoreEntitySet="Table">
-                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="RouteId" ColumnName="RouteId" />
-                <ScalarProperty Name="DateTimeStart" ColumnName="DateTimeStart" />
-                <ScalarProperty Name="DateTimeEnd" ColumnName="DateTimeEnd" />
-                <ScalarProperty Name="CurrentCountPassenger" ColumnName="CurrentCountPassenger" />
-                <ScalarProperty Name="MaxCountPassenger" ColumnName="MaxCountPassenger" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="TableBusModel.User">
-              <MappingFragment StoreEntitySet="User">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Login" ColumnName="Login" />
-                <ScalarProperty Name="Money" ColumnName="Money" />
-                <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-        </EntityContainerMapping>
-      </Mapping>
-    </edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TableBusModelStoreContainer" CdmEntityContainer="DataContext">
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="IsTypeOf(TableBusModel.City)">
+        <MappingFragment StoreEntitySet="Cities">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Routes">
+      <EntityTypeMapping TypeName="IsTypeOf(TableBusModel.Route)">
+        <MappingFragment StoreEntitySet="Routes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NameRoute" ColumnName="NameRoute" />
+          <ScalarProperty Name="CityStart" ColumnName="CityStart" />
+          <ScalarProperty Name="CityEnd" ColumnName="CityEnd" />
+          <ScalarProperty Name="Distance" ColumnName="Distance" />
+          <ScalarProperty Name="TravelTime" ColumnName="TravelTime" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tables">
+      <EntityTypeMapping TypeName="IsTypeOf(TableBusModel.Table)">
+        <MappingFragment StoreEntitySet="Tables">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RouteId" ColumnName="RouteId" />
+          <ScalarProperty Name="DateTimeStart" ColumnName="DateTimeStart" />
+          <ScalarProperty Name="DateTimeEnd" ColumnName="DateTimeEnd" />
+          <ScalarProperty Name="CurrentCountPassenger" ColumnName="CurrentCountPassenger" />
+          <ScalarProperty Name="MaxCountPassenger" ColumnName="MaxCountPassenger" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(TableBusModel.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Money" ColumnName="Money" />
+          <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecordFlights">
+      <EntityTypeMapping TypeName="IsTypeOf(TableBusModel.RecordFlight)">
+        <MappingFragment StoreEntitySet="RecordFlights">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TableId" ColumnName="TableId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
@@ -312,7 +369,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
       </DesignerInfoPropertySet>
     </Options>

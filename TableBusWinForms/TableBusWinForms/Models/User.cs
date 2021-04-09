@@ -17,7 +17,7 @@ namespace TableBusWinForms.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
         {
-            this.Tables = new HashSet<Table>();
+            this.RecordFlights = new HashSet<RecordFlight>();
         }
     
         public int Id { get; set; }
@@ -26,6 +26,6 @@ namespace TableBusWinForms.Models
         public bool IsAdmin { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Table> Tables { get; set; }
+        public virtual ICollection<RecordFlight> RecordFlights { get; set; }
     }
 }

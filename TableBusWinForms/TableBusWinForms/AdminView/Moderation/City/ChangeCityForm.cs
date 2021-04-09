@@ -30,15 +30,23 @@ namespace TableBusWinForms.AdminView.Moderation.City
         {
             if (textBox1.Text != string.Empty)
             {
-                switch (ModerationController.ChangeCity(IdCity, textBox1.Text))
+                if (!ModerationController.IsHaveCity(textBox1.Text, IdCity))
                 {
-                    case true:
-                        this.Close();
-                        break;
-                    default:
-                        MessageBox.Show($"Произошла какая-то ошибка при изменении", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        break;
+                    switch (ModerationController.ChangeCity(IdCity, textBox1.Text))
+                    {
+                        case true:
+                            this.Close();
+                            break;
+                        default:
+                            MessageBox.Show($"Произошла какая-то ошибка при изменении", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                    }
                 }
+                else
+                {
+                    MessageBox.Show($"Город с таким названием уже существует", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
             }
         }
 
