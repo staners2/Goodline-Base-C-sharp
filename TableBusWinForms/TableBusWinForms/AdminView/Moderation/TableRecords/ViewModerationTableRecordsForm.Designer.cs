@@ -68,6 +68,7 @@ namespace TableBusWinForms.AdminView.Moderation.TableRecords
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(956, 426);
             this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // IdRecordTable
             // 
@@ -132,6 +133,7 @@ namespace TableBusWinForms.AdminView.Moderation.TableRecords
             this.button1.TabIndex = 14;
             this.button1.Text = "Добавить";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ViewModerationTableRecordsForm
             // 

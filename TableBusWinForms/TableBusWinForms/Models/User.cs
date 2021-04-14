@@ -24,6 +24,7 @@ namespace TableBusWinForms.Models
         public string Login { get; set; }
         public int Money { get; set; }
         public bool IsAdmin { get; set; }
+        public bool IsDelete { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RecordFlight> RecordFlights { get; set; }

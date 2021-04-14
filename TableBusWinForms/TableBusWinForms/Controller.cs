@@ -50,21 +50,24 @@ namespace TableBusWinForms
         #endregion
 
         #region Взаимодействие с расписанием
-        public static List<Table> GetTableRecords(DateTime dateTime)
+        public static List<Table> GetTableRecords(DateTime dateTime, string CityStart, string CityEnd)
         {
             using (DataContext db = new DataContext())
             {
-                List<Table> TableRecords = db.Tables.Where(x => x.DateTimeStart == dateTime && x.IsDelete == false).ToList();
+                var selectDate = dateTime.Date;
+                List<Table> TableRecords = db.Tables.Include(x => x.Route.City).Include(x => x.Route.City1)
+                    .Where(x => DbFunctions.TruncateTime(x.DateTimeStart) == selectDate && x.IsDelete == false && 
+                                x.Route.City.CityName == CityStart && x.Route.City1.CityName == CityEnd
+                                && x.Route.City.IsDelete == false && x.Route.City1.IsDelete == false).ToList();
                 return TableRecords;
             }
         }
 
-        public static Table GetTableRecord(int IdRecord)
+        public static Table GetTable(int IdTable)
         {
             using (DataContext db = new DataContext())
             {
-                Table TableRecord = db.Tables.Where(x => x.Id == IdRecord).FirstOrDefault();
-                return TableRecord;
+                return db.Tables.Where(x => x.Id == IdTable).Include(x => x.Route).Include(x => x.Route.City).Include(x => x.Route.City1).FirstOrDefault();
             }
         }
 
@@ -84,6 +87,14 @@ namespace TableBusWinForms
             }
         }
 
+        public static List<City> GetCities()
+        {
+            using (DataContext db = new DataContext())
+            {
+                List<Models.City> cities = db.Cities.Where(x => x.IsDelete == false).ToList();
+                return cities;
+            }
+        }
         #endregion
     }
 }

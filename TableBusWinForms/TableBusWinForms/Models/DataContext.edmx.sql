@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/07/2021 15:31:14
+-- Date Created: 04/13/2021 06:00:27
 -- Generated from EDMX file: D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\Models\DataContext.edmx
 -- --------------------------------------------------
 
@@ -26,8 +26,11 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_Table_Route]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Tables] DROP CONSTRAINT [FK_Table_Route];
 GO
-IF OBJECT_ID(N'[dbo].[FK_Table_User]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Tables] DROP CONSTRAINT [FK_Table_User];
+IF OBJECT_ID(N'[dbo].[FK_TableRecordFlight]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RecordFlights] DROP CONSTRAINT [FK_TableRecordFlight];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UserRecordFlight]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RecordFlights] DROP CONSTRAINT [FK_UserRecordFlight];
 GO
 
 -- --------------------------------------------------
@@ -45,6 +48,9 @@ IF OBJECT_ID(N'[dbo].[Tables]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[Users]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Users];
+GO
+IF OBJECT_ID(N'[dbo].[RecordFlights]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[RecordFlights];
 GO
 
 -- --------------------------------------------------
@@ -89,7 +95,8 @@ CREATE TABLE [dbo].[Users] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Login] nvarchar(200)  NOT NULL,
     [Money] int  NOT NULL,
-    [IsAdmin] bit  NOT NULL
+    [IsAdmin] bit  NOT NULL,
+    [IsDelete] bit  NOT NULL
 );
 GO
 

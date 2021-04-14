@@ -136,6 +136,14 @@ namespace TableBusWinForms.AdminView.Moderation
             }
         }
 
+        public static Models.Route GetRoute(string NameRoute)
+        {
+            using (DataContext db = new DataContext())
+            {
+                return db.Routes.Where(x => x.NameRoute == NameRoute).Include(x => x.City).Include(x => x.City1).FirstOrDefault();
+            }
+        }
+
         public static int GetCityId(string CityName)
         {
             using (DataContext db = new DataContext())
@@ -180,10 +188,17 @@ namespace TableBusWinForms.AdminView.Moderation
         {
             using (DataContext db = new DataContext())
             {
-                var Route = new Models.Route{NameRoute = NameRoute, CityStart = CityStartId, CityEnd = CityEndId, 
-                    Distance = Distance, TravelTime = TravelTime};
                 try
                 {
+                    var Route = new Models.Route
+                    {
+                        NameRoute = NameRoute,
+                        CityStart = CityStartId,
+                        CityEnd = CityEndId,
+                        Distance = Distance,
+                        TravelTime = TravelTime
+                    };
+
                     db.Routes.Add(Route);
                     db.SaveChanges();
                     return true;
@@ -210,16 +225,16 @@ namespace TableBusWinForms.AdminView.Moderation
         {
             using (DataContext db = new DataContext())
             {
-                var Route = db.Routes.Find(IdRoute);
-
-                Route.NameRoute = NameRoute;
-                Route.CityStart = CityStartId;
-                Route.CityEnd = CityEndId;
-                Route.Distance = Distance;
-                Route.TravelTime = TravelTime;
-                
                 try
                 {
+                    var Route = db.Routes.Find(IdRoute);
+
+                    Route.NameRoute = NameRoute;
+                    Route.CityStart = CityStartId;
+                    Route.CityEnd = CityEndId;
+                    Route.Distance = Distance;
+                    Route.TravelTime = TravelTime;
+
                     db.SaveChanges();
                     return true;
                 }
@@ -234,10 +249,9 @@ namespace TableBusWinForms.AdminView.Moderation
         {
             using (DataContext db = new DataContext())
             {
-                var Route = db.Routes.Find(IdRoute);
-
                 try
                 {
+                    var Route = db.Routes.Find(IdRoute);
                     db.Routes.Remove(Route);
                     db.SaveChanges();
                     return true;
@@ -261,6 +275,84 @@ namespace TableBusWinForms.AdminView.Moderation
 
             }
         }
+
+        public static Table GetTable(int IdTable)
+        {
+            using (DataContext db = new DataContext())
+            {
+                return db.Tables.Where(x => x.Id == IdTable).Include(x => x.Route).Include(x => x.Route.City).Include(x => x.Route.City1).FirstOrDefault();
+            }
+        }
+
+        public static bool AddTableRecord(int RouteId, DateTime dateTimeStart, DateTime dateTimeEnd, 
+            int iMaxCountPassenger, int iPrice)
+        {
+            using (DataContext db = new DataContext())
+            {
+                
+                try
+                {
+                    Table table = new Table
+                    {
+                        RouteId = RouteId,
+                        DateTimeStart = dateTimeStart,
+                        DateTimeEnd = dateTimeEnd,
+                        CurrentCountPassenger = 0,
+                        MaxCountPassenger = iMaxCountPassenger,
+                        Price = iPrice
+                    };
+                    db.Tables.Add(table);
+                    db.SaveChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
+
+        public static bool ChangeTableRecord(int IdTableRecord, int RouteId, DateTime dateTimeStart, DateTime dateTimeEnd,
+            int iMaxCountPassenger, int iPrice)
+        {
+            using (DataContext db = new DataContext())
+            {
+                try
+                {
+                    var table = db.Tables.Where(x => x.Id == IdTableRecord).FirstOrDefault();
+                    table.RouteId = RouteId;
+                    table.MaxCountPassenger = iMaxCountPassenger;
+                    table.DateTimeStart = dateTimeStart;
+                    table.DateTimeEnd = dateTimeEnd;
+                    table.Price = iPrice;
+                    db.SaveChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
+
+        public static bool RemoveTableRecord(int IdTableRecord)
+        {
+            using (DataContext db = new DataContext())
+            {
+                try
+                {
+                    Table table = db.Tables.Where(x => x.Id == IdTableRecord).FirstOrDefault();
+                    db.Tables.Remove(table);
+                    db.SaveChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
+
 
         #endregion
     }

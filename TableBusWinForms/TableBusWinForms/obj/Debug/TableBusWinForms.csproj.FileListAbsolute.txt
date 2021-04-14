@@ -1,7 +1,6 @@
 D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\bin\Debug\TableBusWinForms.exe.config
 D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\bin\Debug\TableBusWinForms.exe
 D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\bin\Debug\TableBusWinForms.pdb
-D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.csprojAssemblyReference.cache
 D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.Properties.Resources.resources
 D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.csproj.GenerateResource.cache
 D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.csproj.CoreCompileInputs.cache
@@ -23,3 +22,7 @@ D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\Ta
 D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.AdminView.Moderation.Route.ViewModerationRouteForm.resources
 D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.AdminView.Moderation.Route.ChangeRouteForm.resources
 D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.AdminView.Moderation.TableRecords.ViewModerationTableRecordsForm.resources
+D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.AdminView.Moderation.TableRecords.AddTableRecordsForm.resources
+D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.csprojAssemblyReference.cache
+D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.AdminView.Moderation.TableRecords.ChangeTableRecordsForm.resources
+D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.AdminView.BuyerTicketForm.resources

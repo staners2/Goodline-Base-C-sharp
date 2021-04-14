@@ -36,10 +36,9 @@
     <Property Name="CurrentCountPassenger" Type="Int32" Nullable="false" />
     <Property Name="MaxCountPassenger" Type="Int32" Nullable="false" />
     <Property Name="Price" Type="Int32" Nullable="false" />
-    <Property Name="UserId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Route" Relationship="Self.FK_Table_Route" FromRole="Table" ToRole="Route" />
-    <NavigationProperty Name="User" Relationship="Self.FK_Table_User" FromRole="Table" ToRole="User" />
     <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="RecordFlights" Relationship="TableBusModel.TableRecordFlight" FromRole="Table" ToRole="RecordFlight" />
   </EntityType>
   <EntityType Name="User">
     <Key>
@@ -49,7 +48,8 @@
     <Property Name="Login" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Money" Type="Int32" Nullable="false" />
     <Property Name="IsAdmin" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="Tables" Relationship="Self.FK_Table_User" FromRole="User" ToRole="Table" />
+    <NavigationProperty Name="RecordFlights" Relationship="TableBusModel.UserRecordFlight" FromRole="User" ToRole="RecordFlight" />
+    <Property Name="IsDelete" Type="Boolean" Nullable="false" />
   </EntityType>
   <Association Name="FK_Route_City">
     <End Role="City" Type="Self.City" Multiplicity="1" />
@@ -87,18 +87,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Table_User">
-    <End Role="User" Type="Self.User" Multiplicity="1" />
-    <End Role="Table" Type="Self.Table" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="User">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Table">
-        <PropertyRef Name="UserId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="DataContext" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Cities" EntityType="Self.City" />
     <EntitySet Name="Routes" EntityType="Self.Route" />
@@ -116,9 +104,89 @@
       <End Role="Route" EntitySet="Routes" />
       <End Role="Table" EntitySet="Tables" />
     </AssociationSet>
-    <AssociationSet Name="FK_Table_User" Association="Self.FK_Table_User">
-      <End Role="User" EntitySet="Users" />
+    <EntitySet Name="RecordFlights" EntityType="TableBusModel.RecordFlight" />
+    <AssociationSet Name="TableRecordFlight" Association="TableBusModel.TableRecordFlight">
       <End Role="Table" EntitySet="Tables" />
+      <End Role="RecordFlight" EntitySet="RecordFlights" />
     </AssociationSet>
+    <AssociationSet Name="UserRecordFlight" Association="TableBusModel.UserRecordFlight">
+      <End Role="User" EntitySet="Users" />
+      <End Role="RecordFlight" EntitySet="RecordFlights" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(TableBusModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(TableBusModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
   </EntityContainer>
+  <EntityType Name="RecordFlight">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Table" Relationship="TableBusModel.TableRecordFlight" FromRole="RecordFlight" ToRole="Table" />
+    <Property Name="TableId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="TableBusModel.UserRecordFlight" FromRole="RecordFlight" ToRole="User" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="TableRecordFlight">
+    <End Type="TableBusModel.Table" Role="Table" Multiplicity="1" />
+    <End Type="TableBusModel.RecordFlight" Role="RecordFlight" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RecordFlight">
+        <PropertyRef Name="TableId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserRecordFlight">
+    <End Type="TableBusModel.User" Role="User" Multiplicity="1" />
+    <End Type="TableBusModel.RecordFlight" Role="RecordFlight" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RecordFlight">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
 </Schema>
