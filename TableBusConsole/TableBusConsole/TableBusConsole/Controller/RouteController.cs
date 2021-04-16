@@ -142,7 +142,7 @@ namespace TableBusConsole.Controller
 
         private static void ChangeRoute()
         {
-            Console.WriteLine("Введите название ID город: ");
+            Console.WriteLine("Введите ID маршрута: ");
             int iIdRoute;
             do
             {
@@ -241,7 +241,7 @@ namespace TableBusConsole.Controller
             if (route != null)
             {
                 DataContext.Routes.Remove(route);
-                Console.WriteLine("Город удален из списка");
+                Console.WriteLine("Маршрут удален из списка");
             }
             else
             {

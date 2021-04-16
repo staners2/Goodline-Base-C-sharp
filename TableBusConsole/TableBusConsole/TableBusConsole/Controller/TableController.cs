@@ -69,16 +69,18 @@ namespace TableBusConsole
         public static void ShowTables()
         {
             {
-                Console.WriteLine("===============================================" +
+                Console.WriteLine("============================================" +
                                   " РАСПИСАНИЕ " +
-                                  "===============================================");
+                                  "============================================");
+                Console.WriteLine(" ID | Город(откуда) | Город(куда) | Свободных мест | PRICE |    Дата(начало)   |    Дата(конец)    |");
                 foreach (var table in DataContext.Tables)
                 {
-                    Console.WriteLine($"ID: {table.Id,3} | Город(откуда): {table.Route.pCityStart.CityName,10} | Город(куда): {table.Route.pCityEnd.CityName,10} | Кол-во свободных мест: {table.MaxCountPassenger - table.CurrentCountPassenger,2} |" +
-                                      $" Стоимость: {table.Price,3}\nДата(начало): {table.DateTimeStart,11} | Дата(конец): {table.DateTimeEnd,11}");
+                    Console.WriteLine($"{table.Id,4}|{table.Route.pCityStart.CityName,15}|{table.Route.pCityEnd.CityName,13}|{table.MaxCountPassenger - table.CurrentCountPassenger,16}|" +
+                                      $"{table.Price,7}|{table.DateTimeStart,19}|{table.DateTimeEnd,19}|");
                     Console.WriteLine();
                 }
-                Console.WriteLine("==========================================================================================================");
+
+                Console.WriteLine("====================================================================================================");
             }
         }
 
@@ -86,7 +88,7 @@ namespace TableBusConsole
         {
             RouteController.ShowRoutes();
             CityController.ShowCities();
-            Console.WriteLine("Введите ID маршрута: ");
+            Console.WriteLine("Введите ID записи в расписании: ");
             int iIdRoute;
             do
             {
@@ -151,7 +153,7 @@ namespace TableBusConsole
 
         private static void ChangeTable()
         {
-            Console.WriteLine("Введите ID маршрута: ");
+            Console.WriteLine("Введите ID записи в расписании: ");
             int iIdTable;
             do
             {
@@ -163,7 +165,7 @@ namespace TableBusConsole
             {
                 RouteController.ShowRoutes();
                 CityController.ShowCities();
-                Console.WriteLine("Введите ID маршрута: ");
+                Console.WriteLine("Введите ID маршрута: "); 
                 int iIdRoute;
                 do
                 {
@@ -189,7 +191,7 @@ namespace TableBusConsole
 
                 if (dateTimeStart < DateTime.Now)
                 {
-                    Console.WriteLine("Дата выезда не может быть прошедшым");
+                    Console.WriteLine("Дата выезда не может быть прошедшим");
                     return;
                 }
 
@@ -237,7 +239,7 @@ namespace TableBusConsole
 
         private static void RemoveTable()
         {
-            Console.WriteLine("Введите ID маршрута: ");
+            Console.WriteLine("Введите ID записи в расписании: ");
             int iIdTable;
             do
             {
@@ -258,17 +260,18 @@ namespace TableBusConsole
 
         public static void ShowTables(List<Table> Tables)
         {
-            Console.WriteLine("===============================================" +
+            Console.WriteLine("============================================" +
                               " РАСПИСАНИЕ " +
-                              "===============================================");
+                              "============================================");
+            Console.WriteLine(" ID | Город(откуда) | Город(куда) | Свободных мест | PRICE |    Дата(начало)   |    Дата(конец)    |");
             foreach (var table in Tables)
             {
-                Console.WriteLine($"ID: {table.Id,3} | Город(откуда): {table.Route.pCityStart.CityName,10} | Город(куда): {table.Route.pCityEnd.CityName,10} | Кол-во свободных мест: {table.MaxCountPassenger - table.CurrentCountPassenger,2} |" +
-                                  $" Стоимость: {table.Price,3}\nДата(начало): {table.DateTimeStart,11} | Дата(конец): {table.DateTimeEnd,11}");
+                Console.WriteLine($"{table.Id,4}|{table.Route.pCityStart.CityName,15}|{table.Route.pCityEnd.CityName,13}|{table.MaxCountPassenger - table.CurrentCountPassenger,16}|" +
+                                  $"{table.Price,7}|{table.DateTimeStart,19}|{table.DateTimeEnd,19}|");
                 Console.WriteLine();
             }
 
-            Console.WriteLine("==========================================================================================================");
+            Console.WriteLine("====================================================================================================");
         }
     }
 }

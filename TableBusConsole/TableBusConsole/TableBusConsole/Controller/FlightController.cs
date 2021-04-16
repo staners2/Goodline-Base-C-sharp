@@ -10,7 +10,7 @@ namespace TableBusConsole
     {
         public static void RecordFlight()
         {
-            var Records = DataContext.Tables.Where(x => x.DateTimeStart < DateTime.Now && x.CurrentCountPassenger < x.MaxCountPassenger).ToList();
+            var Records = DataContext.Tables.Where(x => x.DateTimeStart > DateTime.Now && x.CurrentCountPassenger < x.MaxCountPassenger).ToList();
             TableController.ShowTables(Records);
             Console.WriteLine($"\n ЗАПИСАТЬСЯ НА РЕЙС\n");
             Console.WriteLine("Введите ID рейса, на который хотите записаться: ");
@@ -21,7 +21,7 @@ namespace TableBusConsole
 
             } while (!int.TryParse(Console.ReadLine(), out iNumberPick));
 
-            Table table = DataContext.Tables.Find(x => x.Id == iNumberPick && x.DateTimeStart < DateTime.Now);
+            Table table = DataContext.Tables.Find(x => x.Id == iNumberPick && x.DateTimeStart > DateTime.Now && x.CurrentCountPassenger < x.MaxCountPassenger);
             if (table != null)
             {
                 if (AccountController.User.Money >= table.Price)

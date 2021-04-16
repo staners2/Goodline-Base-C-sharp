@@ -20,5 +20,11 @@ namespace TableBusConsole.Models
         {
             return $"ID: {Id,4} | Name: {CityName,12}";
         }
+
+        // Конструктор без параметров
+        public City()
+        {
+
+        }
     }
 }

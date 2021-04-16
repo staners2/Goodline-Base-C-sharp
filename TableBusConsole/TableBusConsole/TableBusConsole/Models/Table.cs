@@ -29,6 +29,12 @@ namespace TableBusConsole.Models
             this.Route = DataContext.Routes.Find(x => x.Id == IdRoute);
         }
 
+        // Конструктор без параметров
+        public Table()
+        {
+
+        }
+
         public override string ToString()
         {
             return $"ID: {Id,5} | Время(отъезда): {DateTimeStart,11} | Время(прибытия): {DateTimeEnd,11} | Кол-во пассажиров: {CurrentCountPassenger,2} |" +

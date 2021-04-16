@@ -24,6 +24,12 @@ namespace TableBusConsole.Models
             $"Расстояние: {Distance,7}km | Время в пути: {TravelTime,11}";
         }
 
+        // Конструктор без параметров
+        public Route()
+        {
+
+        }
+
         public Route(string NameRoute, int CityStart, int CityEnd, double Distance,
             TimeSpan TravelTime)
         {

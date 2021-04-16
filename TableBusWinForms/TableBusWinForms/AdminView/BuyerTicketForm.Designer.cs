@@ -55,7 +55,7 @@ namespace TableBusWinForms.AdminView
             // numericUpDown2
             // 
             this.numericUpDown2.Enabled = false;
-            this.numericUpDown2.Location = new System.Drawing.Point(442, 111);
+            this.numericUpDown2.Location = new System.Drawing.Point(442, 101);
             this.numericUpDown2.Maximum = new decimal(new int[] {
             200,
             0,
@@ -122,7 +122,7 @@ namespace TableBusWinForms.AdminView
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(335, 109);
+            this.label8.Location = new System.Drawing.Point(335, 99);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(101, 22);
             this.label8.TabIndex = 72;
@@ -180,7 +180,7 @@ namespace TableBusWinForms.AdminView
             // 
             this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(167, 43);
+            this.textBox1.Location = new System.Drawing.Point(167, 49);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(135, 26);
             this.textBox1.TabIndex = 66;
@@ -192,7 +192,7 @@ namespace TableBusWinForms.AdminView
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(566, 51);
             this.button1.TabIndex = 64;
-            this.button1.Text = "Купить";
+            this.button1.Text = "Приобрести";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker1
@@ -200,7 +200,7 @@ namespace TableBusWinForms.AdminView
             this.dateTimePicker1.CustomFormat = "HH:mm:ss";
             this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(167, 147);
+            this.dateTimePicker1.Location = new System.Drawing.Point(167, 140);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.ShowUpDown = true;
             this.dateTimePicker1.Size = new System.Drawing.Size(135, 20);
@@ -210,7 +210,7 @@ namespace TableBusWinForms.AdminView
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(55, 145);
+            this.label5.Location = new System.Drawing.Point(56, 140);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(106, 22);
             this.label5.TabIndex = 62;
@@ -240,7 +240,7 @@ namespace TableBusWinForms.AdminView
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(40, 43);
+            this.label2.Location = new System.Drawing.Point(40, 49);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(121, 22);
             this.label2.TabIndex = 59;
@@ -269,7 +269,7 @@ namespace TableBusWinForms.AdminView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(590, 231);
+            this.ClientSize = new System.Drawing.Size(584, 228);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.numericUpDown2);
             this.Controls.Add(this.numericUpDown1);

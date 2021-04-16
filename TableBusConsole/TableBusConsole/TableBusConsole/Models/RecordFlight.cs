@@ -23,6 +23,12 @@ namespace TableBusConsole.Models
             this.User = DataContext.Users.Find(x => x.Id == UserId);
         }
 
+        // Конструктор без параметров
+        public RecordFlight()
+        {
+
+        }
+
         public override string ToString()
         {
             return $"ID: {Id} | TableId: {TableId} | UserId: {UserId}";

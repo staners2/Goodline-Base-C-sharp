@@ -19,12 +19,35 @@ namespace TableBusConsole
                 string sInputLogin = Console.ReadLine();
                 if (DataContext.Users.Where(x => x.Login == sInputLogin).FirstOrDefault() != null)
                 {
-                    IsHaveAccount = true;
+                    IsHaveAccount = true; 
                     User = DataContext.Users.Where(x => x.Login == sInputLogin).FirstOrDefault();
                 }
             } while (!IsHaveAccount);
 
             MenuController.Start();
+        }
+
+        public static void GiveMoneyForAccount(int IdAccount)
+        {
+            Console.WriteLine("====== ПОПОЛНЕНИЕ БАЛАНСА =======");
+            int iMoney = 200;
+            Console.WriteLine("=> Проверка на робота <=");
+            string sCode = Convert.ToString(new Random().Next(10000, 99999));
+            Console.WriteLine($"Введите код: {sCode}");
+            string sInputCode = Console.ReadLine();
+            if (sCode == sInputCode)
+            {
+                User user = DataContext.Users.Where(x => x.Id == IdAccount).FirstOrDefault();
+                user.Money += iMoney;
+                Console.WriteLine($"Баланс пополнен на {iMoney}rub\nБаланс составляет: {user.Money}");
+                Console.ReadKey();
+            }
+            else
+            {
+                Console.WriteLine($"=> ПРОВЕРКА НА БОТА НЕ ПРОЙДЕНА <=");
+                Console.ReadKey();
+            }
+
         }
 
         public static void ShowUserInfo()

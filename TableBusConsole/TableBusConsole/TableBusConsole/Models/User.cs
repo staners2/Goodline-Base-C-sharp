@@ -11,6 +11,10 @@ namespace TableBusConsole.Models
         public int Money { get; set; }
         public bool IsAdmin { get; set; }
 
+        // Конструктор без параметров
+        public User()
+        {
 
+        }
     }
 }

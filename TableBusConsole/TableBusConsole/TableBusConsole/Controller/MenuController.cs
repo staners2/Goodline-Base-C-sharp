@@ -12,7 +12,8 @@ namespace TableBusConsole
             "1. Просмотр расписания",
             "2. Записаться на рейс",
             "3. Информация об аккаунте)",
-            "4. Выход"
+            "4. Пополнение баланса",
+            "5. Выход"
         };
 
         private static string[] MenuAdmin = new[]
@@ -23,7 +24,8 @@ namespace TableBusConsole
             "4. Модерация городов",
             "5. Модерация маршрутов",
             "6. Модерация расписания рейсов",
-            "7. Выход"
+            "7. Пополнение баланса",
+            "8. Выход"
         };
 
         private static void ShowMenuUser()
@@ -62,10 +64,10 @@ namespace TableBusConsole
                         Console.ReadKey();
                         break;
                     case 4:
-                        IsExit = true;
+                        AccountController.GiveMoneyForAccount(AccountController.User.Id);
                         break;
-                    default:
-                        Console.WriteLine("Ошибка! Неверный пункт меню!");
+                    case 5:
+                        IsExit = true;
                         break;
                 }
             } while (!IsExit);
@@ -116,10 +118,10 @@ namespace TableBusConsole
                         TableController.ShowMenu();
                         break;
                     case 7:
-                        IsExit = true;
+                        AccountController.GiveMoneyForAccount(AccountController.User.Id);
                         break;
-                    default:
-                        Console.WriteLine("Ошибка! Неверный пункт меню!");
+                    case 8:
+                        IsExit = true;
                         break;
                 }
             } while (!IsExit);
