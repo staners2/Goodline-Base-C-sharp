@@ -21,7 +21,6 @@ namespace TableBusConsole.Controller
             bool IsExit = false;
             do
             {
-                int iNumberPick;
                 Console.Clear();
                 Console.WriteLine("====================");
                 foreach (var elem in Menu)
@@ -30,35 +29,33 @@ namespace TableBusConsole.Controller
                 }
                 Console.WriteLine("====================");
 
-                if (!int.TryParse(Console.ReadLine(), out iNumberPick))
+                switch (Console.ReadKey().Key)
                 {
-                    continue;
-                }
-
-                Console.Clear();
-
-                switch (iNumberPick)
-                {
-                    case 1:
+                    case ConsoleKey.D1:
+                    case ConsoleKey.NumPad1:
+                        Console.Clear();
                         ShowCities();
                         AddCity();
                         Console.ReadKey();
                         break;
-                    case 2:
+                    case ConsoleKey.D2:
+                    case ConsoleKey.NumPad2:
+                        Console.Clear();
                         ShowCities();
                         ChangeCity();
                         Console.ReadKey();
                         break;
-                    case 3:
+                    case ConsoleKey.D3:
+                    case ConsoleKey.NumPad3:
+                        Console.Clear();
                         ShowCities();
                         RemoveCity();
                         Console.ReadKey();
                         break;
-                    case 4:
+                    case ConsoleKey.D4:
+                    case ConsoleKey.NumPad4:
+                        Console.Clear();
                         IsExit = true;
-                        break;
-                    default:
-                        Console.WriteLine("Ошибка! Неверный пункт меню!");
                         break;
                 }
             } while (!IsExit);

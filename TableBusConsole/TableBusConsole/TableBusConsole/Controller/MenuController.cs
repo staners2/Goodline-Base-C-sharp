@@ -33,7 +33,6 @@ namespace TableBusConsole
             bool IsExit = false;
             do
             {
-                int iNumberPick;
                 Console.Clear();
                 Console.WriteLine("====================");
                 foreach (var elem in MenuUser)
@@ -42,31 +41,34 @@ namespace TableBusConsole
                 }
                 Console.WriteLine("====================");
 
-                if (!int.TryParse(Console.ReadLine(), out iNumberPick))
+                switch (Console.ReadKey().Key)
                 {
-                    continue;
-                }
-
-                Console.Clear();
-
-                switch (iNumberPick)
-                {
-                    case 1:
+                    case ConsoleKey.D1:
+                    case ConsoleKey.NumPad1:
+                        Console.Clear();
                         TableController.ShowTables(DataContext.Tables);
                         Console.ReadKey();
                         break;
-                    case 2:
+                    case ConsoleKey.D2:
+                    case ConsoleKey.NumPad2:
+                        Console.Clear();
                         FlightController.RecordFlight();
                         Console.ReadKey();
                         break;
-                    case 3:
+                    case ConsoleKey.D3:
+                    case ConsoleKey.NumPad3:
+                        Console.Clear();
                         AccountController.ShowUserInfo();
                         Console.ReadKey();
                         break;
-                    case 4:
+                    case ConsoleKey.D4:
+                    case ConsoleKey.NumPad4:
+                        Console.Clear();
                         AccountController.GiveMoneyForAccount(AccountController.User.Id);
                         break;
-                    case 5:
+                    case ConsoleKey.D5:
+                    case ConsoleKey.NumPad5:
+                        Console.Clear();
                         IsExit = true;
                         break;
                 }
@@ -78,7 +80,6 @@ namespace TableBusConsole
             bool IsExit = false;
             do
             {
-                int iNumberPick;
                 Console.Clear();
                 Console.WriteLine("====================");
                 foreach (var elem in MenuAdmin)
@@ -87,40 +88,49 @@ namespace TableBusConsole
                 }
                 Console.WriteLine("====================");
 
-                if (!int.TryParse(Console.ReadLine(), out iNumberPick))
+                switch (Console.ReadKey().Key)
                 {
-                    continue;
-                }
-
-                Console.Clear();
-
-                switch (iNumberPick)
-                {
-                    case 1:
+                    case ConsoleKey.D1:
+                    case ConsoleKey.NumPad1:
+                        Console.Clear();
                         TableController.ShowTables(DataContext.Tables);
                         Console.ReadKey();
                         break;
-                    case 2:
+                    case ConsoleKey.D2:
+                    case ConsoleKey.NumPad2:
+                        Console.Clear();
                         FlightController.RecordFlight();
                         Console.ReadKey();
                         break;
-                    case 3:
+                    case ConsoleKey.D3:
+                    case ConsoleKey.NumPad3:
+                        Console.Clear();
                         AccountController.ShowUserInfo();
                         Console.ReadKey();
                         break;
-                    case 4:
+                    case ConsoleKey.D4:
+                    case ConsoleKey.NumPad4:
+                        Console.Clear();
                         CityController.ShowMenu();
                         break;
-                    case 5:
+                    case ConsoleKey.D5:
+                    case ConsoleKey.NumPad5:
+                        Console.Clear();
                         RouteController.ShowMenu();
                         break;
-                    case 6:
+                    case ConsoleKey.D6:
+                    case ConsoleKey.NumPad6:
+                        Console.Clear();
                         TableController.ShowMenu();
                         break;
-                    case 7:
+                    case ConsoleKey.D7:
+                    case ConsoleKey.NumPad7:
+                        Console.Clear();
                         AccountController.GiveMoneyForAccount(AccountController.User.Id);
                         break;
-                    case 8:
+                    case ConsoleKey.D8:
+                    case ConsoleKey.NumPad8:
+                        Console.Clear();
                         IsExit = true;
                         break;
                 }

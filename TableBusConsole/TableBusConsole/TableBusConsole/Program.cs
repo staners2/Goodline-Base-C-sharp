@@ -16,7 +16,6 @@ namespace TableBusConsole
             bool IsExit = false;
             do
             {
-                int iNumberPick;
                 Console.Clear();
                 Console.WriteLine("====================");
                 foreach (var elem in Menu)
@@ -25,23 +24,20 @@ namespace TableBusConsole
                 }
                 Console.WriteLine("====================");
 
-                if (!int.TryParse(Console.ReadLine(), out iNumberPick))
+                switch (Console.ReadKey().Key) //iNumberPick
                 {
-                    continue;
-                }
-
-                Console.Clear();
-
-                switch (iNumberPick)
-                {
-                    case 1:
+                    case ConsoleKey.D1:
+                    case ConsoleKey.NumPad1:
+                        Console.Clear();
                         AccountController.EnterAccount();
                         break;
-                    case 2:
+                    case ConsoleKey.D2:
+                    case ConsoleKey.NumPad2:
                         IsExit = true;
                         break;
                 }
             } while (!IsExit);
+            Console.Clear();
             Console.WriteLine("=> Вы покинули приложение <=");
             Console.ReadKey();
         }
