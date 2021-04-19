@@ -1,0 +1,8 @@
+D:\Visual Studio Project\Goodline\Task_5(16.04.21)\Library\bin\Debug\netcoreapp3.1\Library.deps.json
+D:\Visual Studio Project\Goodline\Task_5(16.04.21)\Library\bin\Debug\netcoreapp3.1\Library.dll
+D:\Visual Studio Project\Goodline\Task_5(16.04.21)\Library\bin\Debug\netcoreapp3.1\Library.pdb
+D:\Visual Studio Project\Goodline\Task_5(16.04.21)\Library\obj\Debug\netcoreapp3.1\Library.AssemblyInfoInputs.cache
+D:\Visual Studio Project\Goodline\Task_5(16.04.21)\Library\obj\Debug\netcoreapp3.1\Library.AssemblyInfo.cs
+D:\Visual Studio Project\Goodline\Task_5(16.04.21)\Library\obj\Debug\netcoreapp3.1\Library.csproj.CoreCompileInputs.cache
+D:\Visual Studio Project\Goodline\Task_5(16.04.21)\Library\obj\Debug\netcoreapp3.1\Library.dll
+D:\Visual Studio Project\Goodline\Task_5(16.04.21)\Library\obj\Debug\netcoreapp3.1\Library.pdb
