@@ -125,12 +125,12 @@ namespace Library
                     string[] Parse = sLine.Split(cDelimiter);
                     if (Id == Convert.ToInt32(Parse[0]))
                     {
-                        Route pRoute = new Route();
+                        Route pRoute = new Route(Convert.ToInt32(Parse[0]), Parse[1], Convert.ToInt32(Parse[2]), Convert.ToInt32(Parse[3]), TimeSpan.Parse(Parse[4]));
                         return pRoute;
                     }
                 }
             }
-            return new Route();
+            return null;
         }
 
         public static City GetCity(int Id)
@@ -148,7 +148,7 @@ namespace Library
                     }
                 }
             }
-            return new City();
+            return null;
         }
 
         public static bool AddCity(string NameCity)
@@ -254,7 +254,7 @@ namespace Library
         {
             try
             {
-                string ChangeString = pRoutes.Find(x => x.Id == Id).ToString();
+                string ChangeString = GetRoute(Id).ToString();
                 string tempFile = $"{PathFolder}\\TempRoute.txt";
                 using (var sr = new StreamReader(PathRouteFile))
                 using (var sw = new StreamWriter(tempFile))
@@ -275,14 +275,14 @@ namespace Library
                 File.Delete(PathRouteFile);
                 File.Move(tempFile, PathRouteFile);
 
-                Route pRoute = pRoutes.Find(x => x.Id == Id);
+                Route pRoute = GetRoute(Id);
                 pRoute.NameRoute = NameRoute;
                 pRoute.CityStart = CityStart;
                 pRoute.CityEnd = CityEnd;
                 pRoute.TravelTime = TravelTime;
 
-                pRoute.pCityStart = DataBase.pCities.Find(x => x.Id == CityStart);
-                pRoute.pCityEnd = DataBase.pCities.Find(x => x.Id == CityEnd);
+                pRoute.pCityStart = GetCity(CityStart);
+                pRoute.pCityEnd = GetCity(CityEnd);
                 return true;
             }
             catch
@@ -295,7 +295,7 @@ namespace Library
         {
             try
             {
-                string SearchString = pRoutes.Find(x => x.Id == Id).ToString();
+                string SearchString = GetRoute(Id).ToString();
                 string tempFile = $"{PathFolder}\\TempRoute.txt";
                 using (var sr = new StreamReader(PathRouteFile))
                 using (var sw = new StreamWriter(tempFile))
@@ -312,7 +312,7 @@ namespace Library
                 File.Delete(PathRouteFile);
                 File.Move(tempFile, PathRouteFile);
 
-                Route pRoute = pRoutes.Find(x => x.Id == Id);
+                Route pRoute = GetRoute(Id);
                 pRoutes.Remove(pRoute);
                 return true;
             }
@@ -321,5 +321,24 @@ namespace Library
                 return false;
             }
         }
+
+        public static bool CheckUniqueRouteName(string sName)
+        {
+            using (StreamReader pReader = new StreamReader(PathRouteFile))
+            {
+                string sLine;
+                while ((sLine = pReader.ReadLine()) != null)
+                {
+                    string[] Parse = sLine.Split(cDelimiter);
+                    if (sName == Parse[1])
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
+
     }
 }

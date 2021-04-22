@@ -59,6 +59,7 @@ namespace ConsoleApp1
                     case ConsoleKey.D4:
                     case ConsoleKey.NumPad4:
                         Console.Clear();
+                        ShowCities();
                         DeleteCity();
                         Console.ReadKey();
                         break;
@@ -116,7 +117,7 @@ namespace ConsoleApp1
             try
             {
                 int Id = Convert.ToInt32(Console.ReadLine());
-                if (DataBase.pCities.Find(x => x.Id == Id) == null)
+                if (DataBase.GetCity(Id) == null)
                 {
                     throw new Exception();
                 }
@@ -162,12 +163,12 @@ namespace ConsoleApp1
             try
             {
                 int Id = Convert.ToInt32(Console.ReadLine());
-                if (DataBase.pCities.Find(x => x.Id == Id) == null)
+                if (DataBase.GetCity(Id) == null)
                 {
                     throw new Exception();
                 }
 
-                Console.WriteLine($"Старое название: {DataBase.pCities.Find(x => x.Id == Id).CityName}");
+                Console.WriteLine($"Старое название: {DataBase.GetCity(Id).CityName}");
                 Console.WriteLine("Введите новое название города");
                 string sNewName = Console.ReadLine();
                 if (sNewName != string.Empty)
@@ -208,7 +209,7 @@ namespace ConsoleApp1
             {
                 Console.WriteLine("Введите название Маршрута");
                 sName = Console.ReadLine();
-                if (sName == string.Empty || DataBase.pRoutes.Find(x => x.NameRoute == sName) != null)
+                if (sName == string.Empty || DataBase.CheckUniqueRouteName(sName) != true)
                 {
                     throw new Exception("Название маршрутов должны быть уникальными");
                 }
@@ -220,8 +221,8 @@ namespace ConsoleApp1
                 Console.WriteLine("Введите ID города(куда)");
                 CityEnd = Convert.ToInt32(Console.ReadLine());
 
-                if (DataBase.pCities.Find(x => x.Id == CityStart) == null ||
-                    DataBase.pCities.Find(x => x.Id == CityEnd) == null || CityStart == CityEnd)
+                if (DataBase.GetCity(CityStart) == null ||
+                    DataBase.GetCity(CityEnd) == null || CityStart == CityEnd)
                 {
                     throw new Exception("ID городов отсутствуют или ID городов совпадают");
                 }
@@ -251,7 +252,7 @@ namespace ConsoleApp1
             {
                 Console.WriteLine("Введите ID записи, которую хотите изменить");
                 Id = Convert.ToInt32(Console.ReadLine());
-                if (DataBase.pRoutes.Find(x => x.Id == Id) == null)
+                if (DataBase.GetRoute(Id) == null)
                 {
                     throw new Exception("Записи с таким ID отсутствует");
                 }
@@ -271,8 +272,8 @@ namespace ConsoleApp1
                 Console.WriteLine("Введите ID города(куда)");
                 CityEnd = Convert.ToInt32(Console.ReadLine());
 
-                if (DataBase.pCities.Find(x => x.Id == CityStart) == null ||
-                    DataBase.pCities.Find(x => x.Id == CityEnd) == null || CityStart == CityEnd)
+                if (DataBase.GetCity(CityStart) == null ||
+                    DataBase.GetCity(CityEnd) == null || CityStart == CityEnd)
                 {
                     throw new Exception("ID городов отсутствуют или ID городов совпадают");
                 }
@@ -296,7 +297,7 @@ namespace ConsoleApp1
             try
             {
                 int Id = Convert.ToInt32(Console.ReadLine());
-                if (DataBase.pRoutes.Find(x => x.Id == Id) == null)
+                if (DataBase.GetRoute(Id) == null)
                 {
                     throw new Exception();
                 }
