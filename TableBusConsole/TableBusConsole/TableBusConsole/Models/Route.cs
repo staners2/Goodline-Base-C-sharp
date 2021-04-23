@@ -44,5 +44,18 @@ namespace TableBusConsole.Models
             this.pCityStart = DataContext.Cities.Where(x => x.Id == CityStart).First();
             this.pCityEnd = DataContext.Cities.Where(x => x.Id == CityEnd).First();
         }
+
+        public Route(int Id, string NameRoute, int CityStart, int CityEnd, double Distance,
+            TimeSpan TravelTime)
+        {
+            this.Id = Id;
+            this.NameRoute = NameRoute;
+            this.CityStart = CityStart;
+            this.CityEnd = CityEnd;
+            this.Distance = Distance;
+            this.TravelTime = TravelTime;
+            this.pCityStart = DataContext.Cities.Where(x => x.Id == CityStart).First();
+            this.pCityEnd = DataContext.Cities.Where(x => x.Id == CityEnd).First();
+        }
     }
 }

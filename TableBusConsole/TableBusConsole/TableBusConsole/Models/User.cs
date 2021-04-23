@@ -16,5 +16,13 @@ namespace TableBusConsole.Models
         {
 
         }
+
+        public User(int Id, string sLogin, int iMoney, bool IsAdmin)
+        {
+            this.Id = Id;
+            this.Login = sLogin;
+            this.Money = iMoney;
+            this.IsAdmin = IsAdmin;
+        }
     }
 }

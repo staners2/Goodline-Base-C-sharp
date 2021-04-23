@@ -12,7 +12,11 @@ namespace TableBusConsole
         };
         static void Main(string[] args)
         {
-            GenerateRecords.Generate();
+            if (!DataContext.CheckExistsDataBase())
+            {
+                DataContext.CreateDataBase();
+            }
+            DataContext.LoadData();
             bool IsExit = false;
             do
             {
@@ -38,6 +42,7 @@ namespace TableBusConsole
                 }
             } while (!IsExit);
             Console.Clear();
+            DataContext.SaveData();
             Console.WriteLine("=> Вы покинули приложение <=");
             Console.ReadKey();
         }

@@ -26,5 +26,10 @@ namespace TableBusConsole.Models
         {
 
         }
+        public City(int Id, string sName)
+        {
+            this.Id = Id;
+            this.CityName = sName;
+        }
     }
 }
