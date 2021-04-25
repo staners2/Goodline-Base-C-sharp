@@ -9,22 +9,22 @@ namespace TableBusConsole
     public static class AccountController
     {
         public static User User { get; set; }
+
         public static void EnterAccount()
         {
-            bool IsHaveAccount = false;
-            do
+            Console.Clear();
+            Console.WriteLine("Введите логин: ");
+            string sInputLogin = Console.ReadLine();
+            if (DataContext.Users.Where(x => x.Login == sInputLogin).FirstOrDefault() != null)
             {
-                Console.Clear();
-                Console.WriteLine("Введите логин: ");
-                string sInputLogin = Console.ReadLine();
-                if (DataContext.Users.Where(x => x.Login == sInputLogin).FirstOrDefault() != null)
-                {
-                    IsHaveAccount = true; 
-                    User = DataContext.Users.Where(x => x.Login == sInputLogin).FirstOrDefault();
-                }
-            } while (!IsHaveAccount);
-
-            MenuController.Start();
+                User = DataContext.Users.Where(x => x.Login == sInputLogin).FirstOrDefault();
+                MenuController.Start();
+            }
+            else
+            {
+                Console.WriteLine("Ошибка! Данного пользователя не существует");
+                Console.ReadKey();
+            }
         }
 
         public static void GiveMoneyForAccount(int IdAccount)
