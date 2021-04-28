@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 using System.Text;
 
 namespace TableBusConsole.Models
@@ -16,6 +17,15 @@ namespace TableBusConsole.Models
 
         public RecordFlight(int TableId, int UserId)
         {
+            switch (DataContext.RecordFlights.Count != 0)
+            {
+                case true:
+                    this.Id = DataContext.RecordFlights.Last().Id + 1;
+                    break;
+                case false:
+                    this.Id = 1;
+                    break;
+            }
             this.TableId = TableId;
             this.UserId = UserId;
 

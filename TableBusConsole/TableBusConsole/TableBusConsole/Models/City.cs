@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace TableBusConsole.Models
@@ -11,8 +12,15 @@ namespace TableBusConsole.Models
 
         public City(string CityName)
         {
-            int CurrentId = DataContext.Cities.Count + 1;
-            this.Id = CurrentId;
+            switch (DataContext.Cities.Count != 0)
+            {
+                case true:
+                    this.Id = DataContext.Cities.Last().Id + 1;
+                    break;
+                case false:
+                    this.Id = 1;
+                    break;
+            }
             this.CityName = CityName;
         }
 

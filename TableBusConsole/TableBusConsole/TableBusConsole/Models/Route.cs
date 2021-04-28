@@ -33,9 +33,15 @@ namespace TableBusConsole.Models
         public Route(string NameRoute, int CityStart, int CityEnd, double Distance,
             TimeSpan TravelTime)
         {
-
-            int CurrentId = DataContext.Routes.Count + 1;
-            this.Id = CurrentId;
+            switch (DataContext.Routes.Count != 0)
+            {
+                case true:
+                    this.Id = DataContext.Routes.Last().Id + 1;
+                    break;
+                case false:
+                    this.Id = 1;
+                    break;
+            }
             this.NameRoute = NameRoute;
             this.CityStart = CityStart;
             this.CityEnd = CityEnd;

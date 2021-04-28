@@ -37,11 +37,11 @@ namespace TableBusConsole
         public static void CreateDataBase()
         {
             Directory.CreateDirectory(PathFolder);
-            using (File.Create(PathCityFile));
-            using (File.Create(PathRouteFile));
-            using (File.Create(PathTableFile));
-            using (File.Create(PathRecordFlightFile));
-            using (File.Create(PathUserFile));
+            using (File.Create(PathCityFile))
+            using (File.Create(PathRouteFile))
+            using (File.Create(PathTableFile))
+            using (File.Create(PathRecordFlightFile))
+            using (File.Create(PathUserFile))
 
             GenerateRecords.Generate();
         }
@@ -82,8 +82,8 @@ namespace TableBusConsole
                 {
                     string[] Parse = sLine.Split(cDelimiter);
                     Table pTable = new Table(Convert.ToInt32(Parse[0]), DateTime.Parse(Parse[1]),
-                        DateTime.Parse(Parse[2]), Convert.ToInt32(Parse[3]),
-                        Convert.ToInt32(Parse[4]), Convert.ToInt32(Parse[5]));
+                        DateTime.Parse(Parse[2]),Convert.ToInt32(Parse[3]), Convert.ToInt32(Parse[4]),
+                        Convert.ToInt32(Parse[5]), Convert.ToInt32(Parse[6]));
                     Tables.Add(pTable);
                 }
             }
@@ -118,13 +118,13 @@ namespace TableBusConsole
         public static void SaveData()
         {
             Directory.CreateDirectory(PathFolder);
-            using (File.Create(PathCityFile)) ;
-            using (File.Create(PathRouteFile)) ;
-            using (File.Create(PathTableFile)) ;
-            using (File.Create(PathRecordFlightFile)) ;
-            using (File.Create(PathUserFile)) ;
+            using (File.Create(PathCityFile));
+            using (File.Create(PathRouteFile));
+            using (File.Create(PathTableFile));
+            using (File.Create(PathRecordFlightFile));
+            using (File.Create(PathUserFile));
 
-            // Сохранение инфрмации о городах
+                // Сохранение инфрмации о городах
             string tempCityFile = $"{PathFolder}\\TempCity.txt";
             using (var sw = new StreamWriter(tempCityFile))
             {
@@ -162,6 +162,7 @@ namespace TableBusConsole
                     sw.WriteLine($"{table.Id}{cDelimiter}" +
                                  $"{table.DateTimeStart}{cDelimiter}" +
                                  $"{table.DateTimeEnd}{cDelimiter}" +
+                                 $"{table.CurrentCountPassenger}{cDelimiter}" +
                                  $"{table.MaxCountPassenger}{cDelimiter}" +
                                  $"{table.Price}{cDelimiter}" +
                                  $"{table.Route.Id}");
