@@ -54,18 +54,6 @@ namespace TableBusConsole.Models
             this.Route = DataContext.Routes.Find(x => x.Id == IdRoute);
         }
 
-        public Table(int Id, DateTime DateTimeStart, DateTime DateTimeEnd,
-            int MaxCountPassenger, int Price, int IdRoute)
-        {
-            this.Id = Id;
-            this.DateTimeStart = DateTimeStart;
-            this.DateTimeEnd = DateTimeEnd;
-            this.CurrentCountPassenger = 0;
-            this.MaxCountPassenger = MaxCountPassenger;
-            this.Price = Price;
-            this.Route = DataContext.Routes.Find(x => x.Id == IdRoute);
-        }
-
         public override string ToString()
         {
             return $"ID: {Id,5} | Время(отъезда): {DateTimeStart,11} | Время(прибытия): {DateTimeEnd,11} | Кол-во пассажиров: {CurrentCountPassenger,2} |" +
