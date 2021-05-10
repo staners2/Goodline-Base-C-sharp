@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TableBusWinForms.Models;
+using LibraryController;
+using LibraryController.Models;
 
 namespace TableBusWinForms
 {
@@ -27,14 +28,13 @@ namespace TableBusWinForms
                 if (!Controller.CheckUserExists(textBox1.Text))
                 {
                     IdAccount = await Task.Factory.StartNew(() => Controller.RegistrationUser(textBox1.Text)).Result;
-                    IsAdmin = false;
                     this.Hide();
                 }
                 else
                 {
                     User User = Controller.GetUser(textBox1.Text);
                     IdAccount = User.Id;
-                    IsAdmin = User.IsAdmin == true ? true : false;
+                    IsAdmin = User.IsAdmin;
                 }
 
                 this.Hide();
@@ -42,7 +42,7 @@ namespace TableBusWinForms
                 {
                     case true:
                     {
-                        AdminView.ViewTableForm Form = new AdminView.ViewTableForm(IdAccount);
+                        AdminView.ViewTableForm Form = new AdminView.ViewTableForm(IdAccount, textBox1.Text);
                         Form.ShowDialog();
                         break;
                     }

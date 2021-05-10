@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LibraryController;
 
 namespace TableBusWinForms.AdminView.Moderation.City
 {
@@ -20,7 +21,7 @@ namespace TableBusWinForms.AdminView.Moderation.City
         public void UpdateGrid()
         {
             dataGridView1.Rows.Clear();
-            List<Models.City> cities = ModerationController.GetCities();
+            var cities = ModerationController.GetCities();
             foreach (var elem in cities)
             {
                 dataGridView1.Rows.Add($"{elem.Id}", $"{elem.CityName}");

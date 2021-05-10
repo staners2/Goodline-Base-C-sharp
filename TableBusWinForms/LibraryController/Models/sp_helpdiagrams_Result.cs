@@ -7,18 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TableBusWinForms.Models
+namespace LibraryController.Models
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class RecordFlight
+    public partial class sp_helpdiagrams_Result
     {
-        public int Id { get; set; }
-        public int TableId { get; set; }
-        public int UserId { get; set; }
-    
-        public virtual Table Table { get; set; }
-        public virtual User User { get; set; }
+        public string Database { get; set; }
+        public string Name { get; set; }
+        public int ID { get; set; }
+        public string Owner { get; set; }
+        public int OwnerID { get; set; }
     }
 }

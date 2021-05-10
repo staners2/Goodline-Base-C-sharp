@@ -7,26 +7,30 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TableBusWinForms.Models
+namespace LibraryController.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Route
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public User()
+        public Route()
         {
-            this.RecordFlights = new HashSet<RecordFlight>();
+            this.Tables = new HashSet<Table>();
         }
     
         public int Id { get; set; }
-        public string Login { get; set; }
-        public int Money { get; set; }
-        public bool IsAdmin { get; set; }
+        public string NameRoute { get; set; }
+        public int CityStart { get; set; }
+        public int CityEnd { get; set; }
+        public double Distance { get; set; }
+        public System.TimeSpan TravelTime { get; set; }
         public bool IsDelete { get; set; }
     
+        public virtual City City { get; set; }
+        public virtual City City1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RecordFlight> RecordFlights { get; set; }
+        public virtual ICollection<Table> Tables { get; set; }
     }
 }

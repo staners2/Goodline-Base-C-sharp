@@ -7,30 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TableBusWinForms.Models
+namespace LibraryController.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Table
+    public partial class City
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Table()
+        public City()
         {
-            this.RecordFlights = new HashSet<RecordFlight>();
+            this.Routes = new HashSet<Route>();
+            this.Routes1 = new HashSet<Route>();
         }
     
         public int Id { get; set; }
-        public int RouteId { get; set; }
-        public System.DateTime DateTimeStart { get; set; }
-        public System.DateTime DateTimeEnd { get; set; }
-        public int CurrentCountPassenger { get; set; }
-        public int MaxCountPassenger { get; set; }
-        public int Price { get; set; }
+        public string CityName { get; set; }
         public bool IsDelete { get; set; }
     
-        public virtual Route Route { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RecordFlight> RecordFlights { get; set; }
+        public virtual ICollection<Route> Routes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Route> Routes1 { get; set; }
     }
 }

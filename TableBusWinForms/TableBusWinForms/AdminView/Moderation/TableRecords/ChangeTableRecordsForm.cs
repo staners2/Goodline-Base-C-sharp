@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LibraryController;
 
 namespace TableBusWinForms.AdminView.Moderation.TableRecords
 {
@@ -60,24 +61,28 @@ namespace TableBusWinForms.AdminView.Moderation.TableRecords
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (dateTimePicker2.Value > DateTime.Now && comboBox1.Text != string.Empty)
+            try
             {
+                if (dateTimePicker2.Value > DateTime.Now)
+                    throw new Exception("Планировать на прошедшие дни невозможно.");
+                if (comboBox1.Text != string.Empty)
+                    throw new Exception("Выберете маршрут");
+
                 int RouteId = ModerationController.GetRoutes().Find(x => x.NameRoute == sCurrentNameRoute).Id;
                 bool result = ModerationController.ChangeTableRecord(IdTable, RouteId, dateTimePicker2.Value, dateTimePicker3.Value,
                     Convert.ToInt32(numericUpDown1.Value), Convert.ToInt32(numericUpDown2.Value));
                 switch (result)
                 {
                     case false:
-                        MessageBox.Show($"Произошла ошибка при изменении", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        break;
+                        throw new Exception("Произошла ошибка при изменении");
                     default:
                         this.Close();
                         break;
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show($"Планировать на прошедшие дни запрещено", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"{ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

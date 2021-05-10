@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LibraryController;
+using System;
 using System.Windows.Forms;
 
 namespace TableBusWinForms.AdminView.Moderation.TableRecords
@@ -36,7 +30,7 @@ namespace TableBusWinForms.AdminView.Moderation.TableRecords
 
         private void AddTableRecordsForm_Load(object sender, EventArgs e)
         {
-            List<Models.Route> Routes = ModerationController.GetRoutes();
+            var Routes = ModerationController.GetRoutes();
             foreach (var elem in Routes)
             {
                 comboBox1.Items.Add(elem.NameRoute);
@@ -47,24 +41,28 @@ namespace TableBusWinForms.AdminView.Moderation.TableRecords
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (dateTimePicker2.Value > DateTime.Now && comboBox1.Text != string.Empty)
+            try
             {
+                if (dateTimePicker2.Value > DateTime.Now)
+                    throw new Exception("Планировать на прошедшие дни невозможно.");
+                if (comboBox1.Text != string.Empty)
+                    throw new Exception("Выберете маршрут");
+
                 int RouteId = ModerationController.GetRoutes().Find(x => x.NameRoute == sCurrentNameRoute).Id;
                 bool result = ModerationController.AddTableRecord(RouteId, dateTimePicker2.Value, dateTimePicker3.Value,
                     Convert.ToInt32(numericUpDown1.Value), Convert.ToInt32(numericUpDown2.Value));
                 switch (result)
                 {
                     case false:
-                        MessageBox.Show($"Произошла ошибка при добавлении", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        break;
+                        throw new Exception("Произошла ошибка при добавлении");
                     default:
                         this.Close();
                         break;
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show($"Планировать на прошедшие дни запрещено", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"{ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LibraryController;
 
 namespace TableBusWinForms.AdminView.Moderation.Route
 {
@@ -44,34 +45,31 @@ namespace TableBusWinForms.AdminView.Moderation.Route
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text != string.Empty && comboBox1.Text != string.Empty && comboBox2.Text != string.Empty)
+            try
             {
+                if (textBox1.Text != string.Empty && comboBox1.Text != string.Empty && comboBox2.Text != string.Empty)
+                    throw new Exception("Заполните все поля");
                 if (comboBox1.Text != comboBox2.Text)
-                {
-                    if (ModerationController.IsHaveRoute(textBox1.Text, IdRoute))
-                    {
-                        MessageBox.Show($"Маршрут с таким названием уже существует", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
+                    throw new Exception("Город отбытия и город прибытия должны быть различными");
+                if (ModerationController.IsHaveRoute(textBox1.Text, IdRoute))
+                    throw new Exception("Маршрут с таким названием уже существует");
 
-                    int CityStartId = ModerationController.GetCityId(comboBox1.Text);
-                    int CityEndId = ModerationController.GetCityId(comboBox2.Text);
-                    bool Result = ModerationController.ChangeRoute(IdRoute, textBox1.Text, CityStartId, CityEndId,
-                        Convert.ToDouble(textBox4.Text), dateTimePicker1.Value.TimeOfDay);
-                    switch (Result)
-                    {
-                        case false:
-                            MessageBox.Show($"Произошла какая-то ошибка при изменении маршрута", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            break;
-                        default:
-                            this.Close();
-                            break;
-                    }
-                }
-                else
+                int CityStartId = ModerationController.GetCityId(comboBox1.Text);
+                int CityEndId = ModerationController.GetCityId(comboBox2.Text);
+                bool Result = ModerationController.ChangeRoute(IdRoute, textBox1.Text, CityStartId, CityEndId,
+                    Convert.ToDouble(textBox4.Text), dateTimePicker1.Value.TimeOfDay);
+                switch (Result)
                 {
-                    MessageBox.Show($"Город отбытия и город прибытия должны быть различными", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    case false:
+                        throw new Exception("Произошла какая-то ошибка при изменении маршрута");
+                    default:
+                        this.Close();
+                        break;
                 }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"{ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -96,7 +94,7 @@ namespace TableBusWinForms.AdminView.Moderation.Route
                 textBox4.Text = Math.Round(Distance, 2).ToString();
 
                 var TimeTravel = ModerationController.ConvertDistanceTimeTravel(Distance);
-                dateTimePicker1.Value = new DateTime(2000, 1, 1, TimeTravel.Hours, TimeTravel.Minutes, TimeTravel.Seconds);
+                dateTimePicker1.Value = TimeTravel;
             }
         }
     }

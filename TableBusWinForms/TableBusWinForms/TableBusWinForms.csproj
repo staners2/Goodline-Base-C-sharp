@@ -58,12 +58,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminView\BuyerTicketForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminView\BuyerTicketForm.Designer.cs">
-      <DependentUpon>BuyerTicketForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="AdminView\Moderation\City\AddCityForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,7 +76,6 @@
     <Compile Include="AdminView\Moderation\City\ViewModerationCityForm.Designer.cs">
       <DependentUpon>ViewModerationCityForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminView\Moderation\ModerationController.cs" />
     <Compile Include="AdminView\Moderation\Route\AddRouteForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,72 +112,32 @@
     <Compile Include="AdminView\Moderation\TableRecords\ViewModerationTableRecordsForm.Designer.cs">
       <DependentUpon>ViewModerationTableRecordsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminView\ViewTableForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminView\ViewTableForm.Designer.cs">
-      <DependentUpon>ViewTableForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controller.cs" />
     <Compile Include="AuthorizeForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AuthorizeForm.Designer.cs">
       <DependentUpon>AuthorizeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\City.cs">
-      <DependentUpon>DataContext.tt</DependentUpon>
+    <Compile Include="GeneralForm\BuyerTicketsForm.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Models\DataContext.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataContext.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DataContext.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DataContext.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataContext.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\RecordFlight.cs">
-      <DependentUpon>DataContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Route.cs">
-      <DependentUpon>DataContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>DataContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sp_helpdiagrams_Result.cs">
-      <DependentUpon>DataContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Table.cs">
-      <DependentUpon>DataContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\User.cs">
-      <DependentUpon>DataContext.tt</DependentUpon>
+    <Compile Include="GeneralForm\BuyerTicketsForm.Designer.cs">
+      <DependentUpon>BuyerTicketsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserView\ViewOrderedTicketsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserView\ViewOrderedTicketsForm.Designer.cs">
-      <DependentUpon>ViewOrderedTicketsForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserView\ViewTableForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserView\ViewTableForm.Designer.cs">
       <DependentUpon>ViewTableForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AdminView\BuyerTicketForm.resx">
-      <DependentUpon>BuyerTicketForm.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="AdminView\ViewTableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminView\ViewTableForm.designer.cs">
+      <DependentUpon>ViewTableForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminView\Moderation\City\AddCityForm.resx">
       <DependentUpon>AddCityForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -212,11 +165,11 @@
     <EmbeddedResource Include="AdminView\Moderation\TableRecords\ViewModerationTableRecordsForm.resx">
       <DependentUpon>ViewModerationTableRecordsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminView\ViewTableForm.resx">
-      <DependentUpon>ViewTableForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AuthorizeForm.resx">
       <DependentUpon>AuthorizeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneralForm\BuyerTicketsForm.resx">
+      <DependentUpon>BuyerTicketsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -226,20 +179,14 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UserView\ViewOrderedTicketsForm.resx">
-      <DependentUpon>ViewOrderedTicketsForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserView\ViewTableForm.resx">
       <DependentUpon>ViewTableForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="Models\DataContext.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DataContext.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Models\DataContext.edmx.diagram">
-      <DependentUpon>DataContext.edmx</DependentUpon>
-    </None>
+    <EmbeddedResource Include="AdminView\ViewTableForm.resx">
+      <DependentUpon>ViewTableForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -257,20 +204,16 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="Models\DataContext.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DataContext.edmx</DependentUpon>
-      <LastGenOutput>DataContext.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\DataContext.edmx.sql" />
-    <Content Include="Models\DataContext.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DataContext.edmx</DependentUpon>
-      <LastGenOutput>DataContext.cs</LastGenOutput>
-    </Content>
+    <ProjectReference Include="..\LibraryController\LibraryController.csproj">
+      <Project>{8f6b55fa-a261-4f6f-98a0-cc620c612898}</Project>
+      <Name>LibraryController</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star_active.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

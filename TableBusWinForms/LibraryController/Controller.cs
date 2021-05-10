@@ -1,12 +1,12 @@
-﻿using System;
+﻿using LibraryController.Models;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TableBusWinForms.Models;
-using System.Data.Entity;
 
-namespace TableBusWinForms
+namespace LibraryController
 {
     public static class Controller
     {
@@ -40,7 +40,7 @@ namespace TableBusWinForms
             int Id;
             using (DataContext db = new DataContext())
             {
-                User User = new User() {Login = Login};
+                User User = new User() { Login = Login };
                 db.Users.Add(User);
                 db.SaveChanges();
                 Id = User.Id;
@@ -56,9 +56,23 @@ namespace TableBusWinForms
             {
                 var selectDate = dateTime.Date;
                 List<Table> TableRecords = db.Tables.Include(x => x.Route.City).Include(x => x.Route.City1)
-                    .Where(x => DbFunctions.TruncateTime(x.DateTimeStart) == selectDate && x.IsDelete == false && 
-                                x.Route.City.CityName == CityStart && x.Route.City1.CityName == CityEnd
-                                && x.Route.City.IsDelete == false && x.Route.City1.IsDelete == false).ToList();
+                    .Where(x => DbFunctions.TruncateTime(x.DateTimeStart) == selectDate && x.IsDelete == false &&
+                                x.Route.City.CityName == CityStart && x.Route.City1.CityName == CityEnd)
+                    .ToList();
+                return TableRecords;
+            }
+        }
+
+        public static List<Table> GetTableRecords(DateTime dateTime)
+        {
+            using (DataContext db = new DataContext())
+            {
+                var selectDate = dateTime.Date;
+                List<Table> TableRecords = db.Tables
+                    .Include(x => x.Route.City)
+                    .Include(x => x.Route.City1)
+                    .Where(x => DbFunctions.TruncateTime(x.DateTimeStart) == selectDate && x.IsDelete == false)
+                    .ToList();
                 return TableRecords;
             }
         }
@@ -87,12 +101,51 @@ namespace TableBusWinForms
             }
         }
 
+        public static int GetAmountFreePlaces(int IdTable)
+        {
+            using (DataContext db = new DataContext())
+            {
+                var table = db.Tables.Find(IdTable);
+                return table.MaxCountPassenger - table.CurrentCountPassenger;
+            }
+        }
+
+        public static int GetMoneyForUser(int IdAccount)
+        {
+            using (DataContext db = new DataContext())
+            {
+                return db.Users.Find(IdAccount).Money;
+            }
+        }
+
         public static List<City> GetCities()
         {
             using (DataContext db = new DataContext())
             {
-                List<Models.City> cities = db.Cities.Where(x => x.IsDelete == false).ToList();
+                List<City> cities = db.Cities.Where(x => x.IsDelete == false).ToList();
                 return cities;
+            }
+        }
+
+        public static bool BuyTicketForUser(int IdAccount, int IdTable)
+        {
+            using (DataContext db = new DataContext())
+            {
+                try
+                {
+                    db.RecordFlights.Add(new RecordFlight { TableId = IdTable, UserId = IdAccount });
+                    var table = db.Tables.Find(IdTable);
+                    table.CurrentCountPassenger++;
+                    var user = db.Users.Find(IdAccount);
+                    user.Money = user.Money - table.Price;
+                    db.SaveChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+                
             }
         }
         #endregion

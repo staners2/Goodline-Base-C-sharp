@@ -2,26 +2,24 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TableBusWinForms.Models;
+using LibraryController.Models;
 
-namespace TableBusWinForms.AdminView.Moderation
+namespace LibraryController
 {
     public static class ModerationController
     {
         #region ModerationCity
 
-        public static List<Models.City> GetCities()
+        public static List<City> GetCities()
         {
             using (DataContext db = new DataContext())
             {
-                List<Models.City> cities = db.Cities.Where(x => x.IsDelete == false).ToList();
+                List<City> cities = db.Cities.Where(x => x.IsDelete == false).ToList();
                 return cities;
             }
         }
 
-        public static Models.City GetCity(int IdCity)
+        public static City GetCity(int IdCity)
         {
             using (DataContext db = new DataContext())
             {
@@ -33,7 +31,7 @@ namespace TableBusWinForms.AdminView.Moderation
         {
             using (DataContext db = new DataContext())
             {
-                Models.City city = new Models.City{CityName = CityName};
+                City city = new City { CityName = CityName };
                 try
                 {
                     db.Cities.Add(city);
@@ -51,7 +49,7 @@ namespace TableBusWinForms.AdminView.Moderation
         {
             using (DataContext db = new DataContext())
             {
-                Models.City city = db.Cities.Where(x => x.CityName == CityName && x.IsDelete == false).FirstOrDefault();
+                City city = db.Cities.Where(x => x.CityName == CityName && x.IsDelete == false).FirstOrDefault();
                 switch (city)
                 {
                     case null:
@@ -68,7 +66,7 @@ namespace TableBusWinForms.AdminView.Moderation
             {
                 try
                 {
-                    Models.City city = db.Cities.Where(x => x.Id == IdCity).FirstOrDefault();
+                    City city = db.Cities.Where(x => x.Id == IdCity).FirstOrDefault();
                     city.CityName = CityName;
                     db.SaveChanges();
                     return true;
@@ -77,7 +75,7 @@ namespace TableBusWinForms.AdminView.Moderation
                 {
                     return false;
                 }
-                
+
             }
         }
 
@@ -118,7 +116,7 @@ namespace TableBusWinForms.AdminView.Moderation
 
         #region ModerationRoute
 
-        public static List<Models.Route> GetRoutes()
+        public static List<Route> GetRoutes()
         {
             using (DataContext db = new DataContext())
             {
@@ -127,7 +125,7 @@ namespace TableBusWinForms.AdminView.Moderation
             }
         }
 
-        public static Models.Route GetRoute(int IdRoute)
+        public static Route GetRoute(int IdRoute)
         {
             using (DataContext db = new DataContext())
             {
@@ -136,7 +134,7 @@ namespace TableBusWinForms.AdminView.Moderation
             }
         }
 
-        public static Models.Route GetRoute(string NameRoute)
+        public static Route GetRoute(string NameRoute)
         {
             using (DataContext db = new DataContext())
             {
@@ -155,7 +153,7 @@ namespace TableBusWinForms.AdminView.Moderation
 
         public static bool IsHaveRoute(string NameRoute, int IdRoute)
         {
-            using (DataContext db =new DataContext())
+            using (DataContext db = new DataContext())
             {
                 var Route = db.Routes.Where(x => x.NameRoute == NameRoute && x.Id != IdRoute && x.IsDelete == false).FirstOrDefault();
                 switch (Route)
@@ -183,14 +181,14 @@ namespace TableBusWinForms.AdminView.Moderation
             }
         }
 
-        public static bool AddRoute(string NameRoute, int CityStartId, int CityEndId, 
+        public static bool AddRoute(string NameRoute, int CityStartId, int CityEndId,
             double Distance, TimeSpan TravelTime)
         {
             using (DataContext db = new DataContext())
             {
                 try
                 {
-                    var Route = new Models.Route
+                    var Route = new Route
                     {
                         NameRoute = NameRoute,
                         CityStart = CityStartId,
@@ -210,14 +208,15 @@ namespace TableBusWinForms.AdminView.Moderation
             }
         }
 
-        public static TimeSpan ConvertDistanceTimeTravel(double Distance)
+        public static DateTime ConvertDistanceTimeTravel(double Distance)
         {
             double AvgSpeed = 14;
             double distance = Distance * 1000;
             int second = (int)(distance / AvgSpeed);
             var time = TimeSpan.FromSeconds(second);
 
-            return time;
+            DateTime TimeTravel = new DateTime(2000, 1, 1, time.Hours, time.Minutes, time.Seconds);
+            return TimeTravel;
         }
 
         public static bool ChangeRoute(int IdRoute, string NameRoute, int CityStartId, int CityEndId,
@@ -284,12 +283,12 @@ namespace TableBusWinForms.AdminView.Moderation
             }
         }
 
-        public static bool AddTableRecord(int RouteId, DateTime dateTimeStart, DateTime dateTimeEnd, 
+        public static bool AddTableRecord(int RouteId, DateTime dateTimeStart, DateTime dateTimeEnd,
             int iMaxCountPassenger, int iPrice)
         {
             using (DataContext db = new DataContext())
             {
-                
+
                 try
                 {
                     Table table = new Table
@@ -352,8 +351,6 @@ namespace TableBusWinForms.AdminView.Moderation
                 }
             }
         }
-
-
         #endregion
     }
 }

@@ -1,18 +1,24 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
-using TableBusWinForms.AdminView.Moderation;
+using LibraryController;
+using LibraryController.Models;
 using TableBusWinForms.AdminView.Moderation.City;
 using TableBusWinForms.AdminView.Moderation.Route;
 using TableBusWinForms.AdminView.Moderation.TableRecords;
+using TableBusWinForms.GeneralForm;
+using TableBusWinForms.UserView;
 
 namespace TableBusWinForms.AdminView
 {
     public partial class ViewTableForm : Form
     {
-        public ViewTableForm(int IdAccount)
+        public ViewTableForm(int IdAccount, string Login)
         {
             InitializeComponent();
             this.IdAccount = IdAccount;
+            label2.Text = Login;
+            label4.Text = Controller.GetMoneyForUser(IdAccount).ToString();
         }
 
         private int IdAccount { get; set; }
@@ -49,34 +55,18 @@ namespace TableBusWinForms.AdminView
                 comboBox1.Items.Add(elem.CityName);
                 comboBox2.Items.Add(elem.CityName);
             }
-
-            //UpdateGrid();
-
-        }
-
-        private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            if (comboBox1.Text != string.Empty && comboBox2.Text != string.Empty &&
-                comboBox1.Text != comboBox2.Text)
-            {
-                UpdateGrid();
-            }
         }
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
-            if (comboBox1.Text != string.Empty && comboBox2.Text != string.Empty &&
-                comboBox1.Text != comboBox2.Text)
-            {
-                UpdateGrid();
-            }
+           UpdateGrid(Controller.GetTableRecords(monthCalendar1.SelectionRange.Start));
         }
 
-        private void UpdateGrid()
+        private void UpdateGrid(List<Table> pListTables)
         {
             dataGridView1.Rows.Clear();
-            var TableRecords = Controller.GetTableRecords(monthCalendar1.SelectionRange.Start, comboBox1.Text, comboBox2.Text);
-            foreach (var elem in TableRecords)
+            label4.Text = Controller.GetMoneyForUser(IdAccount).ToString();
+            foreach (var elem in pListTables)
             {
                 dataGridView1.Rows.Add($"{elem.Id}", $"{elem.Route.NameRoute}", $"{elem.Route.City.CityName}",
                     $"{elem.Route.City1.CityName}", $"{elem.DateTimeStart}", $"{elem.MaxCountPassenger - elem.CurrentCountPassenger}",
@@ -89,12 +79,27 @@ namespace TableBusWinForms.AdminView
             if (e.RowIndex >= 0)
             {
                 int IdTable = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["IdRecordTable"].Value);
-                BuyerTicketForm Form = new BuyerTicketForm(IdTable, IdAccount);
-                Form.Closed += (s, ev) =>
+                BuyerTicketsForm Form = new BuyerTicketsForm(IdTable, IdAccount);
+                Form.Closing += (s, ev) =>
                 {
-                    UpdateGrid();
+                    if (comboBox1.Text != string.Empty && comboBox2.Text != string.Empty)
+                    {
+                        button5_Click(null, null);
+                    }
+                    else
+                    {
+                        monthCalendar1_DateChanged(null, null);
+                    }
                 };
                 Form.ShowDialog();
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.Text != string.Empty && comboBox2.Text != string.Empty)
+            {
+                UpdateGrid(Controller.GetTableRecords(monthCalendar1.SelectionStart, comboBox1.Text, comboBox2.Text));
             }
         }
     }

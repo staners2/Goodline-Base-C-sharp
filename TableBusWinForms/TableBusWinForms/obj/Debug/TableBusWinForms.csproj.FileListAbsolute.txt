@@ -14,7 +14,6 @@ D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\Ta
 D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.UserView.ViewTableForm.resources
 D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.csproj.CopyComplete
 D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.AuthorizeForm.resources
-D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.UserView.ViewOrderedTicketsForm.resources
 D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.AdminView.Moderation.City.AddCityForm.resources
 D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.AdminView.Moderation.City.ChangeCityForm.resources
 D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.AdminView.Moderation.City.ViewModerationCityForm.resources
@@ -25,4 +24,7 @@ D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\Ta
 D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.AdminView.Moderation.TableRecords.AddTableRecordsForm.resources
 D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.csprojAssemblyReference.cache
 D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.AdminView.Moderation.TableRecords.ChangeTableRecordsForm.resources
-D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.AdminView.BuyerTicketForm.resources
+D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\bin\Debug\LibraryController.dll
+D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\bin\Debug\LibraryController.pdb
+D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\bin\Debug\LibraryController.dll.config
+D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.GeneralForm.BuyerTicketsForm.resources

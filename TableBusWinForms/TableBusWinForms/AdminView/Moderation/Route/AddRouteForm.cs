@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LibraryController;
 
 namespace TableBusWinForms.AdminView.Moderation.Route
 {
@@ -72,7 +73,7 @@ namespace TableBusWinForms.AdminView.Moderation.Route
                 textBox4.Text = Math.Round(Distance, 2).ToString();
 
                 var TimeTravel = ModerationController.ConvertDistanceTimeTravel(Distance);
-                dateTimePicker1.Value = new DateTime(2000, 1, 1, TimeTravel.Hours, TimeTravel.Minutes, TimeTravel.Seconds);
+                dateTimePicker1.Value = TimeTravel;
             }
         }
     }

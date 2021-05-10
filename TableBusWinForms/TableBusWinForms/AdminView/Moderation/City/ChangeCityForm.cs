@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LibraryController;
 
 namespace TableBusWinForms.AdminView.Moderation.City
 {
@@ -28,25 +29,25 @@ namespace TableBusWinForms.AdminView.Moderation.City
         // change
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text != string.Empty)
+            try
             {
+                if (textBox1.Text != string.Empty)
+                    throw new Exception("Заполните все поля");
                 if (!ModerationController.IsHaveCity(textBox1.Text, IdCity))
+                    throw new Exception("Город с таким названием уже существует");
+                switch (ModerationController.ChangeCity(IdCity, textBox1.Text))
                 {
-                    switch (ModerationController.ChangeCity(IdCity, textBox1.Text))
-                    {
-                        case true:
-                            this.Close();
-                            break;
-                        default:
-                            MessageBox.Show($"Произошла какая-то ошибка при изменении", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            break;
-                    }
+                    case true:
+                        this.Close();
+                        break;
+                    default:
+                        throw new Exception($"Произошла какая-то ошибка при изменении");
+                        break;
                 }
-                else
-                {
-                    MessageBox.Show($"Город с таким названием уже существует", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"{ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
