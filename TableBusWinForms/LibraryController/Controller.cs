@@ -10,11 +10,12 @@ namespace LibraryController
 {
     public static class Controller
     {
+        public const int PriceOneScore = 10;
+
         #region Форма регистрации/авторизации
         // Проверка на наличие аккаунта в базе данных
         public static bool CheckUserExists(string Login)
         {
-            bool Result;
             using (DataContext db = new DataContext())
             {
                 User User = db.Users.Where(x => x.Login == Login).FirstOrDefault();
@@ -146,6 +147,62 @@ namespace LibraryController
                     return false;
                 }
                 
+            }
+        }
+
+        public static bool ReturnTicket(int IdRecordFlights)
+        {
+            using (DataContext db = new DataContext())
+            {
+                try
+                {
+                    var pRecordFlight = db.RecordFlights.Find(IdRecordFlights);
+                    var pUser = db.Users.Find(pRecordFlight.UserId);
+                    var pTable = db.Tables.Find(pRecordFlight.TableId);
+                    pUser.Money += pTable.Price;
+                    pTable.CurrentCountPassenger--;
+                    db.RecordFlights.Remove(pRecordFlight);
+                    db.SaveChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
+
+        public static List<RecordFlight> GetFlightRecords(int IdAccount)
+        {
+            using (DataContext db = new DataContext())
+            {
+                var pList = db.RecordFlights
+                    .Where(x => x.UserId == IdAccount)
+                    .Include(x => x.Table)
+                    .Include(x => x.Table.Route)
+                    .Include(x => x.Table.Route.City)
+                    .Include(x => x.Table.Route.City1).ToList();
+
+                return pList;
+            }
+        }
+
+        public static bool GiveMoneyForAccount(int IdAccount, int Score)
+        {
+            int TotalMoney = PriceOneScore * Score;
+            using (DataContext db = new DataContext())
+            {
+                try
+                {
+                    User pUser = db.Users.Find(IdAccount);
+                    pUser.Money += TotalMoney;
+                    db.SaveChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
             }
         }
         #endregion

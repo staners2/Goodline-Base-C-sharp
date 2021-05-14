@@ -11,19 +11,19 @@ using LibraryController;
 
 namespace TableBusWinForms.GeneralForm
 {
-    public partial class BuyerTicketsForm : Form
+    public partial class PurchasedTicket : Form
     {
-        public BuyerTicketsForm(int IdTable, int IdAccount)
+        public PurchasedTicket(int IdTable, int IdRecordFlight)
         {
             InitializeComponent();
             this.IdTable = IdTable;
-            this.IdAccount = IdAccount;
+            this.IdRecordFlight = IdRecordFlight;
         }
 
         private int IdTable { get; set; }
-        private int IdAccount { get; set; }
+        private int IdRecordFlight { get; set; }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void PurchasedTicket_Load(object sender, EventArgs e)
         {
             var table = Controller.GetTable(IdTable);
             textBox1.Text = table.Route.NameRoute;
@@ -37,7 +37,6 @@ namespace TableBusWinForms.GeneralForm
             textBox9.Text = table.Price.ToString();
 
             label9.Text = table.DateTimeStart.ToString("d");
-            label11.Text = Controller.GetMoneyForUser(IdAccount).ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -45,16 +44,14 @@ namespace TableBusWinForms.GeneralForm
             var table = Controller.GetTable(IdTable);
             try
             {
-                if (Controller.GetMoneyForUser(IdAccount) < table.Price)
-                    throw new Exception("У вас недостаточно денег!");
-                if (!Controller.CheckFreeTableRecord(IdTable))
-                    throw new Exception("Все билеты на этот рейс распроданы!");
-                switch (Controller.BuyTicketForUser(IdAccount, IdTable))
+                if (table.DateTimeStart < DateTime.Now)
+                    throw new Exception("Отменить билет невозможно. Автобус уже в пути!");
+                switch (Controller.ReturnTicket(IdRecordFlight))
                 {
                     case false:
                         throw new Exception("Произошла какая-то ошибка!");
-                    case true:
-                        MessageBox.Show($"Билет приобретен!", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    default:
+                        MessageBox.Show($"Билет отменен! Деньги уже были отправлены", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                 }
             }

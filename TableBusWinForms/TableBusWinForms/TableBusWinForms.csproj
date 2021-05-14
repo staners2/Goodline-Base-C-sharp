@@ -124,18 +124,30 @@
     <Compile Include="GeneralForm\BuyerTicketsForm.Designer.cs">
       <DependentUpon>BuyerTicketsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GeneralForm\PurchasedTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneralForm\PurchasedTicket.Designer.cs">
+      <DependentUpon>PurchasedTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralForm\SnakeGameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneralForm\SnakeGameForm.Designer.cs">
+      <DependentUpon>SnakeGameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralForm\ViewPurchasedTicketsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneralForm\ViewPurchasedTicketsForm.Designer.cs">
+      <DependentUpon>ViewPurchasedTicketsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserView\ViewTableForm.cs">
+    <Compile Include="ViewTableForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserView\ViewTableForm.Designer.cs">
-      <DependentUpon>ViewTableForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminView\ViewTableForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminView\ViewTableForm.designer.cs">
+    <Compile Include="ViewTableForm.designer.cs">
       <DependentUpon>ViewTableForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AdminView\Moderation\City\AddCityForm.resx">
@@ -171,6 +183,15 @@
     <EmbeddedResource Include="GeneralForm\BuyerTicketsForm.resx">
       <DependentUpon>BuyerTicketsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GeneralForm\PurchasedTicket.resx">
+      <DependentUpon>PurchasedTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneralForm\SnakeGameForm.resx">
+      <DependentUpon>SnakeGameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneralForm\ViewPurchasedTicketsForm.resx">
+      <DependentUpon>ViewPurchasedTicketsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -181,10 +202,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UserView\ViewTableForm.resx">
-      <DependentUpon>ViewTableForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminView\ViewTableForm.resx">
+    <EmbeddedResource Include="ViewTableForm.resx">
       <DependentUpon>ViewTableForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

@@ -31,18 +31,17 @@ namespace TableBusWinForms.AdminView.Moderation.City
         {
             try
             {
-                if (textBox1.Text != string.Empty)
+                if (textBox1.Text == string.Empty)
                     throw new Exception("Заполните все поля");
-                if (!ModerationController.IsHaveCity(textBox1.Text, IdCity))
+                if (ModerationController.IsHaveCity(textBox1.Text, IdCity))
                     throw new Exception("Город с таким названием уже существует");
                 switch (ModerationController.ChangeCity(IdCity, textBox1.Text))
                 {
                     case true:
                         this.Close();
                         break;
-                    default:
+                    case false:
                         throw new Exception($"Произошла какая-то ошибка при изменении");
-                        break;
                 }
             }
             catch(Exception ex)

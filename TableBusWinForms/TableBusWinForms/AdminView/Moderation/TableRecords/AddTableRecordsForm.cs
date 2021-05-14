@@ -43,9 +43,9 @@ namespace TableBusWinForms.AdminView.Moderation.TableRecords
         {
             try
             {
-                if (dateTimePicker2.Value > DateTime.Now)
+                if (dateTimePicker2.Value < DateTime.Now)
                     throw new Exception("Планировать на прошедшие дни невозможно.");
-                if (comboBox1.Text != string.Empty)
+                if (comboBox1.Text == string.Empty)
                     throw new Exception("Выберете маршрут");
 
                 int RouteId = ModerationController.GetRoutes().Find(x => x.NameRoute == sCurrentNameRoute).Id;

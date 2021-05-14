@@ -108,6 +108,7 @@ namespace TableBusWinForms.AdminView
             this.button1.TabIndex = 9;
             this.button1.Text = "Просмотр заказанных билетов";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -269,7 +270,7 @@ namespace TableBusWinForms.AdminView
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(13, 466);
+            this.comboBox1.Location = new System.Drawing.Point(12, 465);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(163, 30);
             this.comboBox1.TabIndex = 15;
@@ -279,7 +280,7 @@ namespace TableBusWinForms.AdminView
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(12, 525);
+            this.comboBox2.Location = new System.Drawing.Point(11, 524);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(164, 30);
             this.comboBox2.TabIndex = 16;
@@ -288,7 +289,7 @@ namespace TableBusWinForms.AdminView
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(9, 441);
+            this.label5.Location = new System.Drawing.Point(8, 440);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 22);
             this.label5.TabIndex = 17;
@@ -298,7 +299,7 @@ namespace TableBusWinForms.AdminView
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(12, 499);
+            this.label6.Location = new System.Drawing.Point(11, 498);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(45, 22);
             this.label6.TabIndex = 18;
@@ -307,9 +308,9 @@ namespace TableBusWinForms.AdminView
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(13, 561);
+            this.button5.Location = new System.Drawing.Point(12, 559);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(164, 36);
+            this.button5.Size = new System.Drawing.Size(164, 53);
             this.button5.TabIndex = 19;
             this.button5.Text = "Поиск";
             this.button5.UseVisualStyleBackColor = true;
@@ -320,15 +321,16 @@ namespace TableBusWinForms.AdminView
             this.button6.Image = global::TableBusWinForms.Properties.Resources.star_active;
             this.button6.Location = new System.Drawing.Point(187, 559);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(1177, 43);
+            this.button6.Size = new System.Drawing.Size(1177, 53);
             this.button6.TabIndex = 20;
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // ViewTableForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1376, 603);
+            this.ClientSize = new System.Drawing.Size(1376, 609);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.label6);

@@ -20,39 +20,45 @@ namespace TableBusWinForms.AdminView.Moderation.Route
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text != string.Empty && comboBox1.Text != string.Empty && comboBox2.Text != string.Empty)
+            try
             {
-                if (comboBox1.Text != comboBox2.Text)
+                if (textBox1.Text != string.Empty && comboBox1.Text != string.Empty && comboBox2.Text != string.Empty)
                 {
-                    if (ModerationController.IsHaveRoute(textBox1.Text))
+                    if (comboBox1.Text != comboBox2.Text)
                     {
-                        MessageBox.Show($"Маршрут с таким названием уже существует", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
+                        if (ModerationController.IsHaveRoute(textBox1.Text))
+                        {
+                            throw new Exception("Маршрут с таким названием уже существует");
+                        }
 
-                    int CityStartId = ModerationController.GetCityId(comboBox1.Text);
-                    int CityEndId = ModerationController.GetCityId(comboBox2.Text);
-                    bool Result = ModerationController.AddRoute(textBox1.Text, CityStartId, CityEndId,
-                        Convert.ToDouble(textBox4.Text), dateTimePicker1.Value.TimeOfDay);
-                    switch (Result)
+                        int CityStartId = ModerationController.GetCityId(comboBox1.Text);
+                        int CityEndId = ModerationController.GetCityId(comboBox2.Text);
+                        bool Result = ModerationController.AddRoute(textBox1.Text, CityStartId, CityEndId,
+                            Convert.ToDouble(textBox4.Text), dateTimePicker1.Value.TimeOfDay);
+                        switch (Result)
+                        {
+                            case false:
+                                throw new Exception("Произошла какая-то ошибка при добавлении маршрута");
+                            default:
+                                this.Close();
+                                break;
+                        }
+                    }
+                    else
                     {
-                        case false:
-                            MessageBox.Show($"Произошла какая-то ошибка при добавлении маршрута", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            break;
-                        default:
-                            this.Close();
-                            break;
+                        throw new Exception("Город отбытия и город прибытия должны быть различными");
                     }
                 }
                 else
                 {
-                    MessageBox.Show($"Город отбытия и город прибытия должны быть различными", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    throw new Exception("Заполните все поля");
                 }
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show($"Заполните все поля", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"{ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
 
         private void AddRouteForm_Load(object sender, EventArgs e)

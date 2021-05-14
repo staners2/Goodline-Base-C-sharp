@@ -24,7 +24,7 @@ namespace LibraryController.Models
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            throw new UnintentionalCodeFirstException();
+            // throw new UnintentionalCodeFirstException();
         }
     
         public virtual DbSet<City> Cities { get; set; }

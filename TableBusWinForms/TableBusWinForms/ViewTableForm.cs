@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using LibraryController;
 using LibraryController.Models;
+using snake;
 using TableBusWinForms.AdminView.Moderation.City;
 using TableBusWinForms.AdminView.Moderation.Route;
 using TableBusWinForms.AdminView.Moderation.TableRecords;
 using TableBusWinForms.GeneralForm;
-using TableBusWinForms.UserView;
 
 namespace TableBusWinForms.AdminView
 {
@@ -78,6 +78,11 @@ namespace TableBusWinForms.AdminView
         {
             if (e.RowIndex >= 0)
             {
+                if (DateTime.Parse(dataGridView1.Rows[e.RowIndex].Cells["DateTimeStart"].Value.ToString()) < DateTime.Now)
+                {
+                    MessageBox.Show($"Приобрести билет невозможно. Автобус уже в пути!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 int IdTable = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["IdRecordTable"].Value);
                 BuyerTicketsForm Form = new BuyerTicketsForm(IdTable, IdAccount);
                 Form.Closing += (s, ev) =>
@@ -101,6 +106,33 @@ namespace TableBusWinForms.AdminView
             {
                 UpdateGrid(Controller.GetTableRecords(monthCalendar1.SelectionStart, comboBox1.Text, comboBox2.Text));
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var Form = new ViewPurchasedTicketsForm(IdAccount);
+            Form.Closing += (s, ev) =>
+            {
+                if (comboBox1.Text != string.Empty && comboBox2.Text != string.Empty)
+                {
+                    button5_Click(null, null);
+                }
+                else
+                {
+                    monthCalendar1_DateChanged(null, null);
+                }
+            };
+            Form.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            var Form = new SnakeGameForm(IdAccount);
+            Form.Closing += (s, ev) =>
+            {
+                label4.Text = Controller.GetMoneyForUser(IdAccount).ToString();
+            };
+            Form.ShowDialog();
         }
     }
 }

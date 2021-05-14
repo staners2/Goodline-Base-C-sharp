@@ -47,9 +47,9 @@ namespace TableBusWinForms.AdminView.Moderation.Route
         {
             try
             {
-                if (textBox1.Text != string.Empty && comboBox1.Text != string.Empty && comboBox2.Text != string.Empty)
+                if (textBox1.Text == string.Empty || comboBox1.Text == string.Empty || comboBox2.Text == string.Empty)
                     throw new Exception("Заполните все поля");
-                if (comboBox1.Text != comboBox2.Text)
+                if (comboBox1.Text == comboBox2.Text)
                     throw new Exception("Город отбытия и город прибытия должны быть различными");
                 if (ModerationController.IsHaveRoute(textBox1.Text, IdRoute))
                     throw new Exception("Маршрут с таким названием уже существует");

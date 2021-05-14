@@ -38,18 +38,19 @@ namespace TableBusWinForms
                 }
 
                 this.Hide();
+                AdminView.ViewTableForm Form = new AdminView.ViewTableForm(IdAccount, textBox1.Text);
                 switch (IsAdmin)
                 {
                     case true:
                     {
-                        AdminView.ViewTableForm Form = new AdminView.ViewTableForm(IdAccount, textBox1.Text);
                         Form.ShowDialog();
                         break;
                     }
 
                     case false:
                     {
-                        UserView.ViewTableForm Form = new UserView.ViewTableForm(IdAccount);
+                        var PanelAdmin = (Panel)Form.Controls.Find("panel1", false).First();
+                        PanelAdmin.Visible = false;
                         Form.ShowDialog();
                         break;
                     }

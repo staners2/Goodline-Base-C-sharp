@@ -11,7 +11,6 @@ D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\bin\Debug\En
 D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\bin\Debug\EntityFramework.xml
 D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\bin\Debug\EntityFramework.SqlServer.xml
 D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.AdminView.ViewTableForm.resources
-D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.UserView.ViewTableForm.resources
 D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.csproj.CopyComplete
 D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.AuthorizeForm.resources
 D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.AdminView.Moderation.City.AddCityForm.resources
@@ -28,3 +27,6 @@ D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\bin\Debug\Li
 D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\bin\Debug\LibraryController.pdb
 D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\bin\Debug\LibraryController.dll.config
 D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.GeneralForm.BuyerTicketsForm.resources
+D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.GeneralForm.ViewPurchasedTicketsForm.resources
+D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\TableBusWinForms.GeneralForm.PurchasedTicket.resources
+D:\Visual Studio Project\Goodline\TableBusWinForms\TableBusWinForms\obj\Debug\snake.SnakeGameForm.resources
