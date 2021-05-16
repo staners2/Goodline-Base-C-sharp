@@ -11,46 +11,31 @@ namespace TableBusWinForms.AdminView.Moderation.TableRecords
             InitializeComponent();
         }
 
-        private string sCurrentNameRoute { get; set; }
-
-        private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            var route = ModerationController.GetRoute(comboBox1.Text);
-            if (sCurrentNameRoute != comboBox1.Text)
-            {
-                sCurrentNameRoute = comboBox1.Text;
-                textBox1.Text = route.City.CityName;
-                textBox2.Text = route.City1.CityName;
-                textBox3.Text = route.Distance.ToString();
-                dateTimePicker1.Value = new DateTime(2000, 1, 1, route.TravelTime.Hours, route.TravelTime.Minutes, route.TravelTime.Seconds);
-
-                dateTimePicker2_ValueChanged(null, null);
-            }
-        }
+        private string CurrentNameRoute { get; set; }
 
         private void AddTableRecordsForm_Load(object sender, EventArgs e)
         {
             var Routes = ModerationController.GetRoutes();
             foreach (var elem in Routes)
             {
-                comboBox1.Items.Add(elem.NameRoute);
+                NameRouteComboBox.Items.Add(elem.NameRoute);
             }
 
-            sCurrentNameRoute = comboBox1.Text;
+            CurrentNameRoute = NameRouteComboBox.Text;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void AddTableRecordButtonClick(object sender, EventArgs e)
         {
             try
             {
-                if (dateTimePicker2.Value < DateTime.Now)
+                if (DateStartPicker.Value < DateTime.Now)
                     throw new Exception("Планировать на прошедшие дни невозможно.");
-                if (comboBox1.Text == string.Empty)
+                if (NameRouteComboBox.Text == string.Empty)
                     throw new Exception("Выберете маршрут");
 
-                int RouteId = ModerationController.GetRoutes().Find(x => x.NameRoute == sCurrentNameRoute).Id;
-                bool result = ModerationController.AddTableRecord(RouteId, dateTimePicker2.Value, dateTimePicker3.Value,
-                    Convert.ToInt32(numericUpDown1.Value), Convert.ToInt32(numericUpDown2.Value));
+                int RouteId = ModerationController.GetRoutes().Find(x => x.NameRoute == CurrentNameRoute).Id;
+                bool result = ModerationController.AddTableRecord(RouteId, DateStartPicker.Value, DataEndPicker.Value,
+                    Convert.ToInt32(PriceNumericUpDown.Value), Convert.ToInt32(CountFreePlacesNumericUpDown.Value));
                 switch (result)
                 {
                     case false:
@@ -66,12 +51,27 @@ namespace TableBusWinForms.AdminView.Moderation.TableRecords
             }
         }
 
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        private void RouteComboBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (comboBox1.Text != string.Empty)
+            var route = ModerationController.GetRoute(NameRouteComboBox.Text);
+            if (CurrentNameRoute != NameRouteComboBox.Text)
             {
-                var route = ModerationController.GetRoute(sCurrentNameRoute);
-                dateTimePicker3.Value = dateTimePicker2.Value.Add(route.TravelTime);
+                CurrentNameRoute = NameRouteComboBox.Text;
+                CityStartTextBox.Text = route.City.CityName;
+                CityEndTextBox.Text = route.City1.CityName;
+                DistanceTextBox.Text = route.Distance.ToString();
+                TravelDateTimePicker.Value = new DateTime(2000, 1, 1, route.TravelTime.Hours, route.TravelTime.Minutes, route.TravelTime.Seconds);
+
+                DateStartPicker_ValueChanged(null, null);
+            }
+        }
+
+        private void DateStartPicker_ValueChanged(object sender, EventArgs e)
+        {
+            if (NameRouteComboBox.Text != string.Empty)
+            {
+                var route = ModerationController.GetRoute(CurrentNameRoute);
+                DataEndPicker.Value = DateStartPicker.Value.Add(route.TravelTime);
             }
         }
     }

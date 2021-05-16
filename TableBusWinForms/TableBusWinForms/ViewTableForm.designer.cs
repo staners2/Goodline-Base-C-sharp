@@ -32,13 +32,13 @@ namespace TableBusWinForms.AdminView
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.MoneyLabel = new System.Windows.Forms.Label();
+            this.MoneyTitleLabel = new System.Windows.Forms.Label();
+            this.LoginLabel = new System.Windows.Forms.Label();
+            this.MonthCalendar = new System.Windows.Forms.MonthCalendar();
+            this.ViewBuyerTicketsButton = new System.Windows.Forms.Button();
+            this.LoginTitleLabel = new System.Windows.Forms.Label();
+            this.DataGridView = new System.Windows.Forms.DataGridView();
             this.IdRecordTable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameRoute = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CityStart = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,88 +47,88 @@ namespace TableBusWinForms.AdminView
             this.CurrentCountPassenger = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.ModerationTableButton = new System.Windows.Forms.Button();
+            this.ModerationRouteButton = new System.Windows.Forms.Button();
+            this.ModerationCitiesButton = new System.Windows.Forms.Button();
+            this.CityStartComboBox = new System.Windows.Forms.ComboBox();
+            this.CityEndComboBox = new System.Windows.Forms.ComboBox();
+            this.CityStartLabel = new System.Windows.Forms.Label();
+            this.CityEndLabel = new System.Windows.Forms.Label();
+            this.SearchButton = new System.Windows.Forms.Button();
+            this.GetMoneyButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label4
+            // MoneyLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(65, 31);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 22);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "money";
+            this.MoneyLabel.AutoSize = true;
+            this.MoneyLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MoneyLabel.Location = new System.Drawing.Point(65, 31);
+            this.MoneyLabel.Name = "MoneyLabel";
+            this.MoneyLabel.Size = new System.Drawing.Size(57, 22);
+            this.MoneyLabel.TabIndex = 13;
+            this.MoneyLabel.Text = "money";
             // 
-            // label3
+            // MoneyTitleLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(11, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 22);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Money: ";
+            this.MoneyTitleLabel.AutoSize = true;
+            this.MoneyTitleLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MoneyTitleLabel.Location = new System.Drawing.Point(11, 31);
+            this.MoneyTitleLabel.Name = "MoneyTitleLabel";
+            this.MoneyTitleLabel.Size = new System.Drawing.Size(66, 22);
+            this.MoneyTitleLabel.TabIndex = 12;
+            this.MoneyTitleLabel.Text = "Money: ";
             // 
-            // label2
+            // LoginLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(56, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 22);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "login";
+            this.LoginLabel.AutoSize = true;
+            this.LoginLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LoginLabel.Location = new System.Drawing.Point(56, 9);
+            this.LoginLabel.Name = "LoginLabel";
+            this.LoginLabel.Size = new System.Drawing.Size(44, 22);
+            this.LoginLabel.TabIndex = 11;
+            this.LoginLabel.Text = "login";
             // 
-            // monthCalendar1
+            // MonthCalendar
             // 
-            this.monthCalendar1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.monthCalendar1.Location = new System.Drawing.Point(13, 276);
-            this.monthCalendar1.MaxSelectionCount = 1;
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 10;
-            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
+            this.MonthCalendar.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MonthCalendar.Location = new System.Drawing.Point(13, 276);
+            this.MonthCalendar.MaxSelectionCount = 1;
+            this.MonthCalendar.Name = "MonthCalendar";
+            this.MonthCalendar.TabIndex = 10;
+            this.MonthCalendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.MonthCalendar_DateChanged);
             // 
-            // button1
+            // ViewBuyerTicketsButton
             // 
-            this.button1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(13, 221);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(164, 57);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Просмотр заказанных билетов";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.ViewBuyerTicketsButton.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ViewBuyerTicketsButton.Location = new System.Drawing.Point(13, 221);
+            this.ViewBuyerTicketsButton.Name = "ViewBuyerTicketsButton";
+            this.ViewBuyerTicketsButton.Size = new System.Drawing.Size(164, 57);
+            this.ViewBuyerTicketsButton.TabIndex = 9;
+            this.ViewBuyerTicketsButton.Text = "Просмотр заказанных билетов";
+            this.ViewBuyerTicketsButton.UseVisualStyleBackColor = true;
+            this.ViewBuyerTicketsButton.Click += new System.EventHandler(this.ViewBuyerTicketsButtonClick);
             // 
-            // label1
+            // LoginTitleLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(11, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 22);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Login: ";
+            this.LoginTitleLabel.AutoSize = true;
+            this.LoginTitleLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LoginTitleLabel.Location = new System.Drawing.Point(11, 9);
+            this.LoginTitleLabel.Name = "LoginTitleLabel";
+            this.LoginTitleLabel.Size = new System.Drawing.Size(59, 22);
+            this.LoginTitleLabel.TabIndex = 8;
+            this.LoginTitleLabel.Text = "Login: ";
             // 
-            // dataGridView1
+            // DataGridView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.DataGridView.AllowUserToAddRows = false;
+            this.DataGridView.AllowUserToDeleteRows = false;
+            this.DataGridView.AllowUserToResizeColumns = false;
+            this.DataGridView.AllowUserToResizeRows = false;
+            this.DataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -136,9 +136,9 @@ namespace TableBusWinForms.AdminView
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdRecordTable,
             this.NameRoute,
             this.CityStart,
@@ -146,7 +146,7 @@ namespace TableBusWinForms.AdminView
             this.DateTimeStart,
             this.CurrentCountPassenger,
             this.Price});
-            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DataGridView.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -154,19 +154,19 @@ namespace TableBusWinForms.AdminView
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(187, 12);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView1.RowHeadersVisible = false;
+            this.DataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DataGridView.EnableHeadersVisualStyles = false;
+            this.DataGridView.Location = new System.Drawing.Point(187, 12);
+            this.DataGridView.MultiSelect = false;
+            this.DataGridView.Name = "DataGridView";
+            this.DataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.DataGridView.RowHeadersVisible = false;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1177, 543);
-            this.dataGridView1.TabIndex = 7;
-            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            this.DataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.DataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DataGridView.Size = new System.Drawing.Size(1177, 543);
+            this.DataGridView.TabIndex = 7;
+            this.DataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGrid_CellDoubleClick);
             // 
             // IdRecordTable
             // 
@@ -224,134 +224,134 @@ namespace TableBusWinForms.AdminView
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.ModerationTableButton);
+            this.panel1.Controls.Add(this.ModerationRouteButton);
+            this.panel1.Controls.Add(this.ModerationCitiesButton);
             this.panel1.Location = new System.Drawing.Point(13, 70);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(163, 137);
             this.panel1.TabIndex = 14;
             // 
-            // button4
+            // ModerationTableButton
             // 
-            this.button4.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.Location = new System.Drawing.Point(-1, 79);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(165, 58);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Модерация расписания";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.ModerationTableButton.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ModerationTableButton.Location = new System.Drawing.Point(-1, 79);
+            this.ModerationTableButton.Name = "ModerationTableButton";
+            this.ModerationTableButton.Size = new System.Drawing.Size(165, 58);
+            this.ModerationTableButton.TabIndex = 2;
+            this.ModerationTableButton.Text = "Модерация расписания";
+            this.ModerationTableButton.UseVisualStyleBackColor = true;
+            this.ModerationTableButton.Click += new System.EventHandler(this.ModerationTableButtonClick);
             // 
-            // button3
+            // ModerationRouteButton
             // 
-            this.button3.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(-1, 36);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(165, 44);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Модерация путей";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.ModerationRouteButton.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ModerationRouteButton.Location = new System.Drawing.Point(-1, 36);
+            this.ModerationRouteButton.Name = "ModerationRouteButton";
+            this.ModerationRouteButton.Size = new System.Drawing.Size(165, 44);
+            this.ModerationRouteButton.TabIndex = 1;
+            this.ModerationRouteButton.Text = "Модерация путей";
+            this.ModerationRouteButton.UseVisualStyleBackColor = true;
+            this.ModerationRouteButton.Click += new System.EventHandler(this.ModerationRoutesButtonClick);
             // 
-            // button2
+            // ModerationCitiesButton
             // 
-            this.button2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(-1, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(165, 37);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Модерация городов";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.ModerationCitiesButton.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ModerationCitiesButton.Location = new System.Drawing.Point(-1, 0);
+            this.ModerationCitiesButton.Name = "ModerationCitiesButton";
+            this.ModerationCitiesButton.Size = new System.Drawing.Size(165, 37);
+            this.ModerationCitiesButton.TabIndex = 0;
+            this.ModerationCitiesButton.Text = "Модерация городов";
+            this.ModerationCitiesButton.UseVisualStyleBackColor = true;
+            this.ModerationCitiesButton.Click += new System.EventHandler(this.ModerationCitiesButtonClick);
             // 
-            // comboBox1
+            // CityStartComboBox
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 465);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(163, 30);
-            this.comboBox1.TabIndex = 15;
+            this.CityStartComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CityStartComboBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CityStartComboBox.FormattingEnabled = true;
+            this.CityStartComboBox.Location = new System.Drawing.Point(12, 465);
+            this.CityStartComboBox.Name = "CityStartComboBox";
+            this.CityStartComboBox.Size = new System.Drawing.Size(163, 30);
+            this.CityStartComboBox.TabIndex = 15;
             // 
-            // comboBox2
+            // CityEndComboBox
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(11, 524);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(164, 30);
-            this.comboBox2.TabIndex = 16;
+            this.CityEndComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CityEndComboBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CityEndComboBox.FormattingEnabled = true;
+            this.CityEndComboBox.Location = new System.Drawing.Point(11, 524);
+            this.CityEndComboBox.Name = "CityEndComboBox";
+            this.CityEndComboBox.Size = new System.Drawing.Size(164, 30);
+            this.CityEndComboBox.TabIndex = 16;
             // 
-            // label5
+            // CityStartLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(8, 440);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 22);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Откуда";
+            this.CityStartLabel.AutoSize = true;
+            this.CityStartLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CityStartLabel.Location = new System.Drawing.Point(8, 440);
+            this.CityStartLabel.Name = "CityStartLabel";
+            this.CityStartLabel.Size = new System.Drawing.Size(61, 22);
+            this.CityStartLabel.TabIndex = 17;
+            this.CityStartLabel.Text = "Откуда";
             // 
-            // label6
+            // CityEndLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(11, 498);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(45, 22);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "Куда";
+            this.CityEndLabel.AutoSize = true;
+            this.CityEndLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CityEndLabel.Location = new System.Drawing.Point(11, 498);
+            this.CityEndLabel.Name = "CityEndLabel";
+            this.CityEndLabel.Size = new System.Drawing.Size(45, 22);
+            this.CityEndLabel.TabIndex = 18;
+            this.CityEndLabel.Text = "Куда";
             // 
-            // button5
+            // SearchButton
             // 
-            this.button5.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(12, 559);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(164, 53);
-            this.button5.TabIndex = 19;
-            this.button5.Text = "Поиск";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.SearchButton.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SearchButton.Location = new System.Drawing.Point(12, 559);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(164, 53);
+            this.SearchButton.TabIndex = 19;
+            this.SearchButton.Text = "Поиск";
+            this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButtonClick);
             // 
-            // button6
+            // GetMoneyButton
             // 
-            this.button6.Image = global::TableBusWinForms.Properties.Resources.star_active;
-            this.button6.Location = new System.Drawing.Point(187, 559);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(1177, 53);
-            this.button6.TabIndex = 20;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.GetMoneyButton.Image = global::TableBusWinForms.Properties.Resources.star_active;
+            this.GetMoneyButton.Location = new System.Drawing.Point(187, 559);
+            this.GetMoneyButton.Name = "GetMoneyButton";
+            this.GetMoneyButton.Size = new System.Drawing.Size(1177, 53);
+            this.GetMoneyButton.TabIndex = 20;
+            this.GetMoneyButton.UseVisualStyleBackColor = true;
+            this.GetMoneyButton.Click += new System.EventHandler(this.GetMoneyButtonClick);
             // 
             // ViewTableForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1376, 609);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(1376, 617);
+            this.Controls.Add(this.GetMoneyButton);
+            this.Controls.Add(this.SearchButton);
+            this.Controls.Add(this.CityEndLabel);
+            this.Controls.Add(this.CityStartLabel);
+            this.Controls.Add(this.CityEndComboBox);
+            this.Controls.Add(this.CityStartComboBox);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.monthCalendar1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.MoneyLabel);
+            this.Controls.Add(this.MoneyTitleLabel);
+            this.Controls.Add(this.LoginLabel);
+            this.Controls.Add(this.MonthCalendar);
+            this.Controls.Add(this.ViewBuyerTicketsButton);
+            this.Controls.Add(this.LoginTitleLabel);
+            this.Controls.Add(this.DataGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "ViewTableForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Просмотр расписания (Администратор)";
+            this.Text = "Просмотр расписания";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ViewTableForm_FormClosing);
             this.Load += new System.EventHandler(this.ViewTableForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -360,13 +360,13 @@ namespace TableBusWinForms.AdminView
 
         #endregion
 
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label MoneyLabel;
+        private System.Windows.Forms.Label MoneyTitleLabel;
+        private System.Windows.Forms.Label LoginLabel;
+        private System.Windows.Forms.MonthCalendar MonthCalendar;
+        private System.Windows.Forms.Button ViewBuyerTicketsButton;
+        private System.Windows.Forms.Label LoginTitleLabel;
+        private System.Windows.Forms.DataGridView DataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdRecordTable;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameRoute;
         private System.Windows.Forms.DataGridViewTextBoxColumn CityStart;
@@ -375,14 +375,14 @@ namespace TableBusWinForms.AdminView
         private System.Windows.Forms.DataGridViewTextBoxColumn CurrentCountPassenger;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button ModerationTableButton;
+        private System.Windows.Forms.Button ModerationRouteButton;
+        private System.Windows.Forms.Button ModerationCitiesButton;
+        private System.Windows.Forms.ComboBox CityStartComboBox;
+        private System.Windows.Forms.ComboBox CityEndComboBox;
+        private System.Windows.Forms.Label CityStartLabel;
+        private System.Windows.Forms.Label CityEndLabel;
+        private System.Windows.Forms.Button SearchButton;
+        private System.Windows.Forms.Button GetMoneyButton;
     }
 }

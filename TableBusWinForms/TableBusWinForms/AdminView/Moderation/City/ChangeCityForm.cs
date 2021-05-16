@@ -23,19 +23,18 @@ namespace TableBusWinForms.AdminView.Moderation.City
 
         private void ChangeCityForm_Load(object sender, EventArgs e)
         {
-            textBox1.Text = ModerationController.GetCity(IdCity).CityName;
+            NameCityTextBox.Text = ModerationController.GetCity(IdCity).CityName;
         }
 
-        // change
-        private void button1_Click(object sender, EventArgs e)
+        private void ChangeCityButtonClick(object sender, EventArgs e)
         {
             try
             {
-                if (textBox1.Text == string.Empty)
+                if (NameCityTextBox.Text == string.Empty)
                     throw new Exception("Заполните все поля");
-                if (ModerationController.IsHaveCity(textBox1.Text, IdCity))
+                if (ModerationController.IsHaveCity(NameCityTextBox.Text, IdCity))
                     throw new Exception("Город с таким названием уже существует");
-                switch (ModerationController.ChangeCity(IdCity, textBox1.Text))
+                switch (ModerationController.ChangeCity(IdCity, NameCityTextBox.Text))
                 {
                     case true:
                         this.Close();
@@ -44,14 +43,13 @@ namespace TableBusWinForms.AdminView.Moderation.City
                         throw new Exception($"Произошла какая-то ошибка при изменении");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show($"{ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        // delete
-        private void button2_Click(object sender, EventArgs e)
+        private void DeleteCityButtonClick(object sender, EventArgs e)
         {
             switch (ModerationController.RemoveCity(IdCity))
             {

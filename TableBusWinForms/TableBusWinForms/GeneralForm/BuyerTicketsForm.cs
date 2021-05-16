@@ -26,21 +26,21 @@ namespace TableBusWinForms.GeneralForm
         private void Form1_Load(object sender, EventArgs e)
         {
             var table = Controller.GetTable(IdTable);
-            textBox1.Text = table.Route.NameRoute;
-            textBox2.Text = table.Route.City.CityName;
-            textBox3.Text = table.Route.City1.CityName;
-            textBox4.Text = table.DateTimeStart.ToString("g");
-            textBox5.Text = table.DateTimeEnd.ToString("g");
-            textBox6.Text = table.Route.Distance.ToString();
-            textBox7.Text = ModerationController.ConvertDistanceTimeTravel(table.Route.Distance).ToString("T");
-            textBox8.Text = Controller.GetAmountFreePlaces(IdTable).ToString();
-            textBox9.Text = table.Price.ToString();
+            NameRouteTextBox.Text = table.Route.NameRoute;
+            CityStartTextBox.Text = table.Route.City.CityName;
+            CityEndTextBox.Text = table.Route.City1.CityName;
+            TimeStartTextBox.Text = table.DateTimeStart.ToString("g");
+            TimeEndTextBox.Text = table.DateTimeEnd.ToString("g");
+            DistanceTextBox.Text = table.Route.Distance.ToString();
+            TimeTravelTextBox.Text = ModerationController.ConvertDistanceTimeTravel(table.Route.Distance).ToString("T");
+            PlacesTextBox.Text = Controller.GetAmountFreePlaces(IdTable).ToString();
+            PriceTextBox.Text = table.Price.ToString();
 
-            label9.Text = table.DateTimeStart.ToString("d");
-            label11.Text = Controller.GetMoneyForUser(IdAccount).ToString();
+            DateLabel.Text = table.DateTimeStart.ToString("d");
+            BalanceLabel.Text = Controller.GetMoneyForUser(IdAccount).ToString();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        
+        private void BuyButtonClick(object sender, EventArgs e)
         {
             var table = Controller.GetTable(IdTable);
             try

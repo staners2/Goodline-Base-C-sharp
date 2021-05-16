@@ -20,9 +20,9 @@ namespace snake
         private static bool isMoveed = false;
         private static int sizeCell = 20;
         private static int sizeBord = 400;
-        private GameBord gameBord = new GameBord();
-        private Snake snake = new Snake();
-        private PictureBox fruit = new PictureBox { Size = new Size(sizeCell, sizeCell), BackColor = Color.Red };
+        private readonly GameBord gameBord = new GameBord();
+        private readonly Snake snake = new Snake();
+        private readonly PictureBox fruit = new PictureBox { Size = new Size(sizeCell, sizeCell), BackColor = Color.Red };
         public SnakeGameForm(int IdAccount)
         {
             InitializeComponent();
@@ -32,9 +32,9 @@ namespace snake
         private void ShowMenu()
         {
             this.Controls.Clear();
-            this.Controls.Add(button1);
-            button1.Enabled = true;
-            button1.Visible = true;
+            this.Controls.Add(StartButton);
+            StartButton.Enabled = true;
+            StartButton.Visible = true;
             timer.Tick -= Update;
             timer.Tick += new EventHandler(UpdateMenu);
             timer.Start();
@@ -43,7 +43,7 @@ namespace snake
         {
             int dir = isAnimationUp ? 1 : -1;
             timesScaleButton += dir;
-            button1.Size = new Size(button1.Size.Width + dir, button1.Size.Height + dir);
+            StartButton.Size = new Size(StartButton.Size.Width + dir, StartButton.Size.Height + dir);
             isAnimationUp = (timesScaleButton == maxTimesScaleButton || timesScaleButton == 0) ? !isAnimationUp : isAnimationUp;
         }
         private void StartGame()
@@ -254,15 +254,6 @@ namespace snake
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            button1.Enabled = false;
-            button1.Visible = false;
-            label2.Visible = false;
-            timer.Stop();
-            StartGame();
-        }
-
         private void SnakeGameForm_Load(object sender, EventArgs e)
         {
             label2.Text = "Для пополнния баланса необходимо пройти мини игру. \r\n" +
@@ -270,6 +261,15 @@ namespace snake
                           $">> 1 балл = {Controller.PriceOneScore} монет.\r\n" +
                           "Для старта:\r\n" +
                           ">>Нужно нажать одну из стрелок. Управление все происходит на стрелках.\r\n ";
+        }
+
+        private void StartButtonClick(object sender, EventArgs e)
+        {
+            StartButton.Enabled = false;
+            StartButton.Visible = false;
+            label2.Visible = false;
+            timer.Stop();
+            StartGame();
         }
 
         private bool IsWin()

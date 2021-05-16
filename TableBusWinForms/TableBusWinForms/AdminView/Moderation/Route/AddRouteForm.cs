@@ -18,23 +18,33 @@ namespace TableBusWinForms.AdminView.Moderation.Route
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void AddRouteForm_Load(object sender, EventArgs e)
+        {
+            var Cities = ModerationController.GetCities();
+            foreach (var elem in Cities)
+            {
+                CityStartComboBox.Items.Add(elem.CityName);
+                CityEndComboBox.Items.Add(elem.CityName);
+            }
+        }
+
+        private void AddRouteButtonClick(object sender, EventArgs e)
         {
             try
             {
-                if (textBox1.Text != string.Empty && comboBox1.Text != string.Empty && comboBox2.Text != string.Empty)
+                if (NameRouteTextBox.Text != string.Empty && CityStartComboBox.Text != string.Empty && CityEndComboBox.Text != string.Empty)
                 {
-                    if (comboBox1.Text != comboBox2.Text)
+                    if (CityStartComboBox.Text != CityEndComboBox.Text)
                     {
-                        if (ModerationController.IsHaveRoute(textBox1.Text))
+                        if (ModerationController.IsHaveRoute(NameRouteTextBox.Text))
                         {
                             throw new Exception("Маршрут с таким названием уже существует");
                         }
 
-                        int CityStartId = ModerationController.GetCityId(comboBox1.Text);
-                        int CityEndId = ModerationController.GetCityId(comboBox2.Text);
-                        bool Result = ModerationController.AddRoute(textBox1.Text, CityStartId, CityEndId,
-                            Convert.ToDouble(textBox4.Text), dateTimePicker1.Value.TimeOfDay);
+                        int CityStartId = ModerationController.GetCityId(CityStartComboBox.Text);
+                        int CityEndId = ModerationController.GetCityId(CityEndComboBox.Text);
+                        bool Result = ModerationController.AddRoute(NameRouteTextBox.Text, CityStartId, CityEndId,
+                            Convert.ToDouble(DistanceTextBox.Text), TravelDateTimePicker.Value.TimeOfDay);
                         switch (Result)
                         {
                             case false:
@@ -54,32 +64,21 @@ namespace TableBusWinForms.AdminView.Moderation.Route
                     throw new Exception("Заполните все поля");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show($"{ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
         }
 
-        private void AddRouteForm_Load(object sender, EventArgs e)
+        private void CityComboBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            var Cities = ModerationController.GetCities();
-            foreach (var elem in Cities)
+            if (CityStartComboBox.Text != string.Empty && CityEndComboBox.Text != string.Empty && CityStartComboBox.Text != CityEndComboBox.Text)
             {
-                comboBox1.Items.Add(elem.CityName);
-                comboBox2.Items.Add(elem.CityName);
-            }
-        }
-
-        private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            if (comboBox1.Text != string.Empty && comboBox2.Text != string.Empty && comboBox1.Text != comboBox2.Text)
-            {
-                double Distance = new Random().NextDouble() * (5000-50) + 50;
-                textBox4.Text = Math.Round(Distance, 2).ToString();
+                double Distance = new Random().NextDouble() * (5000 - 50) + 50;
+                DistanceTextBox.Text = Math.Round(Distance, 2).ToString();
 
                 var TimeTravel = ModerationController.ConvertDistanceTimeTravel(Distance);
-                dateTimePicker1.Value = TimeTravel;
+                TravelDateTimePicker.Value = TimeTravel;
             }
         }
     }

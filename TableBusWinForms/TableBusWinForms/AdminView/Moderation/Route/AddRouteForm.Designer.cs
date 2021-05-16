@@ -29,148 +29,148 @@ namespace TableBusWinForms.AdminView.Moderation.Route
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.NameRouteLabel = new System.Windows.Forms.Label();
+            this.NameRouteTextBox = new System.Windows.Forms.TextBox();
+            this.CityStartLabel = new System.Windows.Forms.Label();
+            this.CityEndLabel = new System.Windows.Forms.Label();
+            this.DistanceLabel = new System.Windows.Forms.Label();
+            this.DistanceTextBox = new System.Windows.Forms.TextBox();
+            this.TimeTravelLabel = new System.Windows.Forms.Label();
+            this.TravelDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.AddButton = new System.Windows.Forms.Button();
+            this.CityStartComboBox = new System.Windows.Forms.ComboBox();
+            this.CityEndComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // label1
+            // NameRouteLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(9, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 22);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Название маршрута";
+            this.NameRouteLabel.AutoSize = true;
+            this.NameRouteLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NameRouteLabel.Location = new System.Drawing.Point(9, 16);
+            this.NameRouteLabel.Name = "NameRouteLabel";
+            this.NameRouteLabel.Size = new System.Drawing.Size(154, 22);
+            this.NameRouteLabel.TabIndex = 3;
+            this.NameRouteLabel.Text = "Название маршрута";
             // 
-            // textBox1
+            // NameRouteTextBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(169, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(135, 26);
-            this.textBox1.TabIndex = 2;
+            this.NameRouteTextBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NameRouteTextBox.Location = new System.Drawing.Point(169, 12);
+            this.NameRouteTextBox.Name = "NameRouteTextBox";
+            this.NameRouteTextBox.Size = new System.Drawing.Size(135, 26);
+            this.NameRouteTextBox.TabIndex = 2;
             // 
-            // label2
+            // CityStartLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(42, 48);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 22);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Откуда (город)";
+            this.CityStartLabel.AutoSize = true;
+            this.CityStartLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CityStartLabel.Location = new System.Drawing.Point(42, 48);
+            this.CityStartLabel.Name = "CityStartLabel";
+            this.CityStartLabel.Size = new System.Drawing.Size(121, 22);
+            this.CityStartLabel.TabIndex = 5;
+            this.CityStartLabel.Text = "Откуда (город)";
             // 
-            // label3
+            // CityEndLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(58, 80);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 22);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Куда (город)";
+            this.CityEndLabel.AutoSize = true;
+            this.CityEndLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CityEndLabel.Location = new System.Drawing.Point(58, 80);
+            this.CityEndLabel.Name = "CityEndLabel";
+            this.CityEndLabel.Size = new System.Drawing.Size(105, 22);
+            this.CityEndLabel.TabIndex = 7;
+            this.CityEndLabel.Text = "Куда (город)";
             // 
-            // label4
+            // DistanceLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(70, 118);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 22);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Расстояние";
+            this.DistanceLabel.AutoSize = true;
+            this.DistanceLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DistanceLabel.Location = new System.Drawing.Point(70, 118);
+            this.DistanceLabel.Name = "DistanceLabel";
+            this.DistanceLabel.Size = new System.Drawing.Size(93, 22);
+            this.DistanceLabel.TabIndex = 8;
+            this.DistanceLabel.Text = "Расстояние";
             // 
-            // textBox4
+            // DistanceTextBox
             // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox4.Location = new System.Drawing.Point(169, 114);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(135, 26);
-            this.textBox4.TabIndex = 9;
+            this.DistanceTextBox.Enabled = false;
+            this.DistanceTextBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DistanceTextBox.Location = new System.Drawing.Point(169, 114);
+            this.DistanceTextBox.Name = "DistanceTextBox";
+            this.DistanceTextBox.Size = new System.Drawing.Size(135, 26);
+            this.DistanceTextBox.TabIndex = 9;
             // 
-            // label5
+            // TimeTravelLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(57, 150);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 22);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Время в пути";
+            this.TimeTravelLabel.AutoSize = true;
+            this.TimeTravelLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TimeTravelLabel.Location = new System.Drawing.Point(57, 150);
+            this.TimeTravelLabel.Name = "TimeTravelLabel";
+            this.TimeTravelLabel.Size = new System.Drawing.Size(106, 22);
+            this.TimeTravelLabel.TabIndex = 10;
+            this.TimeTravelLabel.Text = "Время в пути";
             // 
-            // dateTimePicker1
+            // TravelDateTimePicker
             // 
-            this.dateTimePicker1.CustomFormat = "HH:mm:ss";
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(169, 152);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.ShowUpDown = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(135, 20);
-            this.dateTimePicker1.TabIndex = 12;
+            this.TravelDateTimePicker.CustomFormat = "HH:mm:ss";
+            this.TravelDateTimePicker.Enabled = false;
+            this.TravelDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.TravelDateTimePicker.Location = new System.Drawing.Point(169, 152);
+            this.TravelDateTimePicker.Name = "TravelDateTimePicker";
+            this.TravelDateTimePicker.ShowUpDown = true;
+            this.TravelDateTimePicker.Size = new System.Drawing.Size(135, 20);
+            this.TravelDateTimePicker.TabIndex = 12;
             // 
-            // button1
+            // AddButton
             // 
-            this.button1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(13, 189);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(291, 32);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Добавить";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.AddButton.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddButton.Location = new System.Drawing.Point(13, 189);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(291, 32);
+            this.AddButton.TabIndex = 13;
+            this.AddButton.Text = "Добавить";
+            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddRouteButtonClick);
             // 
-            // comboBox1
+            // CityStartComboBox
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(169, 51);
-            this.comboBox1.MaxDropDownItems = 5;
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(135, 26);
-            this.comboBox1.TabIndex = 14;
-            this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
+            this.CityStartComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CityStartComboBox.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CityStartComboBox.FormattingEnabled = true;
+            this.CityStartComboBox.Location = new System.Drawing.Point(169, 51);
+            this.CityStartComboBox.MaxDropDownItems = 5;
+            this.CityStartComboBox.Name = "CityStartComboBox";
+            this.CityStartComboBox.Size = new System.Drawing.Size(135, 26);
+            this.CityStartComboBox.TabIndex = 14;
+            this.CityStartComboBox.SelectionChangeCommitted += new System.EventHandler(this.CityComboBox_SelectionChangeCommitted);
             // 
-            // comboBox2
+            // CityEndComboBox
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(169, 83);
-            this.comboBox2.MaxDropDownItems = 5;
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(135, 26);
-            this.comboBox2.TabIndex = 15;
-            this.comboBox2.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
+            this.CityEndComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CityEndComboBox.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CityEndComboBox.FormattingEnabled = true;
+            this.CityEndComboBox.Location = new System.Drawing.Point(169, 83);
+            this.CityEndComboBox.MaxDropDownItems = 5;
+            this.CityEndComboBox.Name = "CityEndComboBox";
+            this.CityEndComboBox.Size = new System.Drawing.Size(135, 26);
+            this.CityEndComboBox.TabIndex = 15;
+            this.CityEndComboBox.SelectionChangeCommitted += new System.EventHandler(this.CityComboBox_SelectionChangeCommitted);
             // 
             // AddRouteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(316, 234);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.CityEndComboBox);
+            this.Controls.Add(this.CityStartComboBox);
+            this.Controls.Add(this.AddButton);
+            this.Controls.Add(this.TravelDateTimePicker);
+            this.Controls.Add(this.TimeTravelLabel);
+            this.Controls.Add(this.DistanceTextBox);
+            this.Controls.Add(this.DistanceLabel);
+            this.Controls.Add(this.CityEndLabel);
+            this.Controls.Add(this.CityStartLabel);
+            this.Controls.Add(this.NameRouteLabel);
+            this.Controls.Add(this.NameRouteTextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AddRouteForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -183,16 +183,16 @@ namespace TableBusWinForms.AdminView.Moderation.Route
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label NameRouteLabel;
+        private System.Windows.Forms.TextBox NameRouteTextBox;
+        private System.Windows.Forms.Label CityStartLabel;
+        private System.Windows.Forms.Label CityEndLabel;
+        private System.Windows.Forms.Label DistanceLabel;
+        private System.Windows.Forms.TextBox DistanceTextBox;
+        private System.Windows.Forms.Label TimeTravelLabel;
+        private System.Windows.Forms.DateTimePicker TravelDateTimePicker;
+        private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.ComboBox CityStartComboBox;
+        private System.Windows.Forms.ComboBox CityEndComboBox;
     }
 }

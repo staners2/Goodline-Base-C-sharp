@@ -18,11 +18,11 @@ namespace TableBusWinForms.AdminView.Moderation.City
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void AddCityButtonClick(object sender, EventArgs e)
         {
-            if (textBox1.Text != string.Empty)
+            if (NameCityTextBox.Text != string.Empty)
             {
-                string NameCity = textBox1.Text;
+                string NameCity = NameCityTextBox.Text;
                 if (!ModerationController.IsHaveCity(NameCity))
                 {
                     switch (ModerationController.AddCity(NameCity))
@@ -37,7 +37,7 @@ namespace TableBusWinForms.AdminView.Moderation.City
                 }
                 else
                 {
-                    MessageBox.Show($"Город с названием: {NameCity} уже существует","Ошибка",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Город с названием: {NameCity} уже существует", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

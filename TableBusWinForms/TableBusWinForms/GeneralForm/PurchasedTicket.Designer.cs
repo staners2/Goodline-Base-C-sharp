@@ -29,281 +29,281 @@ namespace TableBusWinForms.GeneralForm
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.FreePlacesTextBox = new System.Windows.Forms.TextBox();
+            this.TimeTravelLabel = new System.Windows.Forms.Label();
+            this.PriceTextBox = new System.Windows.Forms.TextBox();
+            this.DistanceLabel = new System.Windows.Forms.Label();
+            this.CancelButton = new System.Windows.Forms.Button();
+            this.BalanceLabel = new System.Windows.Forms.Label();
+            this.BalanceTitleLabel = new System.Windows.Forms.Label();
+            this.DateLabel = new System.Windows.Forms.Label();
+            this.DateTitleLabel = new System.Windows.Forms.Label();
+            this.TimeTravelTextBox = new System.Windows.Forms.TextBox();
+            this.PriceLabel = new System.Windows.Forms.Label();
+            this.DistanceTextBox = new System.Windows.Forms.TextBox();
+            this.FreePlacesLabel = new System.Windows.Forms.Label();
+            this.TimeEndTextBox = new System.Windows.Forms.TextBox();
+            this.TimeEndLabel = new System.Windows.Forms.Label();
+            this.TimeStartTextBox = new System.Windows.Forms.TextBox();
+            this.TimeStartLabel = new System.Windows.Forms.Label();
+            this.CityEndTextBox = new System.Windows.Forms.TextBox();
+            this.CityEndLabel = new System.Windows.Forms.Label();
+            this.CityStartTextBox = new System.Windows.Forms.TextBox();
+            this.CityStartLabel = new System.Windows.Forms.Label();
+            this.NameRouteTextBox = new System.Windows.Forms.TextBox();
+            this.NameRouteLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox8
+            // FreePlacesTextBox
             // 
-            this.textBox8.Enabled = false;
-            this.textBox8.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(163, 235);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(138, 26);
-            this.textBox8.TabIndex = 70;
+            this.FreePlacesTextBox.Enabled = false;
+            this.FreePlacesTextBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FreePlacesTextBox.Location = new System.Drawing.Point(163, 235);
+            this.FreePlacesTextBox.Name = "FreePlacesTextBox";
+            this.FreePlacesTextBox.Size = new System.Drawing.Size(138, 26);
+            this.FreePlacesTextBox.TabIndex = 70;
             // 
-            // label12
+            // TimeTravelLabel
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(51, 202);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(106, 22);
-            this.label12.TabIndex = 69;
-            this.label12.Text = "Время в пути";
+            this.TimeTravelLabel.AutoSize = true;
+            this.TimeTravelLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimeTravelLabel.Location = new System.Drawing.Point(51, 202);
+            this.TimeTravelLabel.Name = "TimeTravelLabel";
+            this.TimeTravelLabel.Size = new System.Drawing.Size(106, 22);
+            this.TimeTravelLabel.TabIndex = 69;
+            this.TimeTravelLabel.Text = "Время в пути";
             // 
-            // textBox9
+            // PriceTextBox
             // 
-            this.textBox9.Enabled = false;
-            this.textBox9.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(163, 258);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(138, 26);
-            this.textBox9.TabIndex = 68;
+            this.PriceTextBox.Enabled = false;
+            this.PriceTextBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PriceTextBox.Location = new System.Drawing.Point(163, 258);
+            this.PriceTextBox.Name = "PriceTextBox";
+            this.PriceTextBox.Size = new System.Drawing.Size(138, 26);
+            this.PriceTextBox.TabIndex = 68;
             // 
-            // label13
+            // DistanceLabel
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(67, 175);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(87, 22);
-            this.label13.TabIndex = 67;
-            this.label13.Text = "Дистанция";
+            this.DistanceLabel.AutoSize = true;
+            this.DistanceLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DistanceLabel.Location = new System.Drawing.Point(67, 175);
+            this.DistanceLabel.Name = "DistanceLabel";
+            this.DistanceLabel.Size = new System.Drawing.Size(87, 22);
+            this.DistanceLabel.TabIndex = 67;
+            this.DistanceLabel.Text = "Дистанция";
             // 
-            // button1
+            // CancelButton
             // 
-            this.button1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(12, 299);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(456, 65);
-            this.button1.TabIndex = 66;
-            this.button1.Text = "Отменить";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.CancelButton.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CancelButton.Location = new System.Drawing.Point(12, 299);
+            this.CancelButton.Name = "CancelButton";
+            this.CancelButton.Size = new System.Drawing.Size(456, 65);
+            this.CancelButton.TabIndex = 66;
+            this.CancelButton.Text = "Отменить";
+            this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.Click += new System.EventHandler(this.CancelButtonClick);
             // 
-            // label11
+            // BalanceLabel
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(375, 35);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(60, 22);
-            this.label11.TabIndex = 65;
-            this.label11.Text = "Баланс";
+            this.BalanceLabel.AutoSize = true;
+            this.BalanceLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BalanceLabel.Location = new System.Drawing.Point(375, 35);
+            this.BalanceLabel.Name = "BalanceLabel";
+            this.BalanceLabel.Size = new System.Drawing.Size(60, 22);
+            this.BalanceLabel.TabIndex = 65;
+            this.BalanceLabel.Text = "Баланс";
             // 
-            // label10
+            // BalanceTitleLabel
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(307, 35);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(66, 22);
-            this.label10.TabIndex = 64;
-            this.label10.Text = "Баланс:";
+            this.BalanceTitleLabel.AutoSize = true;
+            this.BalanceTitleLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BalanceTitleLabel.Location = new System.Drawing.Point(307, 35);
+            this.BalanceTitleLabel.Name = "BalanceTitleLabel";
+            this.BalanceTitleLabel.Size = new System.Drawing.Size(66, 22);
+            this.BalanceTitleLabel.TabIndex = 64;
+            this.BalanceTitleLabel.Text = "Баланс:";
             // 
-            // label9
+            // DateLabel
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(370, 4);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(44, 22);
-            this.label9.TabIndex = 63;
-            this.label9.Text = "Дата";
+            this.DateLabel.AutoSize = true;
+            this.DateLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateLabel.Location = new System.Drawing.Point(370, 4);
+            this.DateLabel.Name = "DateLabel";
+            this.DateLabel.Size = new System.Drawing.Size(44, 22);
+            this.DateLabel.TabIndex = 63;
+            this.DateLabel.Text = "Дата";
             // 
-            // label8
+            // DateTitleLabel
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(320, 4);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(50, 22);
-            this.label8.TabIndex = 62;
-            this.label8.Text = "Дата:";
+            this.DateTitleLabel.AutoSize = true;
+            this.DateTitleLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateTitleLabel.Location = new System.Drawing.Point(320, 4);
+            this.DateTitleLabel.Name = "DateTitleLabel";
+            this.DateTitleLabel.Size = new System.Drawing.Size(50, 22);
+            this.DateTitleLabel.TabIndex = 62;
+            this.DateTitleLabel.Text = "Дата:";
             // 
-            // textBox7
+            // TimeTravelTextBox
             // 
-            this.textBox7.Enabled = false;
-            this.textBox7.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(163, 198);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(138, 26);
-            this.textBox7.TabIndex = 61;
+            this.TimeTravelTextBox.Enabled = false;
+            this.TimeTravelTextBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimeTravelTextBox.Location = new System.Drawing.Point(163, 198);
+            this.TimeTravelTextBox.Name = "TimeTravelTextBox";
+            this.TimeTravelTextBox.Size = new System.Drawing.Size(138, 26);
+            this.TimeTravelTextBox.TabIndex = 61;
             // 
-            // label7
+            // PriceLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(56, 271);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(87, 22);
-            this.label7.TabIndex = 60;
-            this.label7.Text = "Стоимость";
+            this.PriceLabel.AutoSize = true;
+            this.PriceLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PriceLabel.Location = new System.Drawing.Point(67, 262);
+            this.PriceLabel.Name = "PriceLabel";
+            this.PriceLabel.Size = new System.Drawing.Size(87, 22);
+            this.PriceLabel.TabIndex = 60;
+            this.PriceLabel.Text = "Стоимость";
             // 
-            // textBox6
+            // DistanceTextBox
             // 
-            this.textBox6.Enabled = false;
-            this.textBox6.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(163, 172);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(138, 26);
-            this.textBox6.TabIndex = 59;
+            this.DistanceTextBox.Enabled = false;
+            this.DistanceTextBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DistanceTextBox.Location = new System.Drawing.Point(163, 172);
+            this.DistanceTextBox.Name = "DistanceTextBox";
+            this.DistanceTextBox.Size = new System.Drawing.Size(138, 26);
+            this.DistanceTextBox.TabIndex = 59;
             // 
-            // label6
+            // FreePlacesLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(27, 245);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(130, 22);
-            this.label6.TabIndex = 58;
-            this.label6.Text = "Свободных мест";
+            this.FreePlacesLabel.AutoSize = true;
+            this.FreePlacesLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FreePlacesLabel.Location = new System.Drawing.Point(27, 239);
+            this.FreePlacesLabel.Name = "FreePlacesLabel";
+            this.FreePlacesLabel.Size = new System.Drawing.Size(130, 22);
+            this.FreePlacesLabel.TabIndex = 58;
+            this.FreePlacesLabel.Text = "Свободных мест";
             // 
-            // textBox5
+            // TimeEndTextBox
             // 
-            this.textBox5.Enabled = false;
-            this.textBox5.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(163, 133);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(138, 26);
-            this.textBox5.TabIndex = 57;
+            this.TimeEndTextBox.Enabled = false;
+            this.TimeEndTextBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimeEndTextBox.Location = new System.Drawing.Point(163, 133);
+            this.TimeEndTextBox.Name = "TimeEndTextBox";
+            this.TimeEndTextBox.Size = new System.Drawing.Size(138, 26);
+            this.TimeEndTextBox.TabIndex = 57;
             // 
-            // label5
+            // TimeEndLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(23, 136);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(131, 22);
-            this.label5.TabIndex = 56;
-            this.label5.Text = "Время прибытия";
+            this.TimeEndLabel.AutoSize = true;
+            this.TimeEndLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimeEndLabel.Location = new System.Drawing.Point(23, 136);
+            this.TimeEndLabel.Name = "TimeEndLabel";
+            this.TimeEndLabel.Size = new System.Drawing.Size(131, 22);
+            this.TimeEndLabel.TabIndex = 56;
+            this.TimeEndLabel.Text = "Время прибытия";
             // 
-            // textBox4
+            // TimeStartTextBox
             // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(163, 107);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(138, 26);
-            this.textBox4.TabIndex = 55;
+            this.TimeStartTextBox.Enabled = false;
+            this.TimeStartTextBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimeStartTextBox.Location = new System.Drawing.Point(163, 107);
+            this.TimeStartTextBox.Name = "TimeStartTextBox";
+            this.TimeStartTextBox.Size = new System.Drawing.Size(138, 26);
+            this.TimeStartTextBox.TabIndex = 55;
             // 
-            // label4
+            // TimeStartLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(33, 111);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(121, 22);
-            this.label4.TabIndex = 54;
-            this.label4.Text = "Время отбытия";
+            this.TimeStartLabel.AutoSize = true;
+            this.TimeStartLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimeStartLabel.Location = new System.Drawing.Point(33, 111);
+            this.TimeStartLabel.Name = "TimeStartLabel";
+            this.TimeStartLabel.Size = new System.Drawing.Size(121, 22);
+            this.TimeStartLabel.TabIndex = 54;
+            this.TimeStartLabel.Text = "Время отбытия";
             // 
-            // textBox3
+            // CityEndTextBox
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(163, 71);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(138, 26);
-            this.textBox3.TabIndex = 53;
+            this.CityEndTextBox.Enabled = false;
+            this.CityEndTextBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CityEndTextBox.Location = new System.Drawing.Point(163, 71);
+            this.CityEndTextBox.Name = "CityEndTextBox";
+            this.CityEndTextBox.Size = new System.Drawing.Size(138, 26);
+            this.CityEndTextBox.TabIndex = 53;
             // 
-            // label3
+            // CityEndLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(49, 75);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 22);
-            this.label3.TabIndex = 52;
-            this.label3.Text = "Куда (город)";
+            this.CityEndLabel.AutoSize = true;
+            this.CityEndLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CityEndLabel.Location = new System.Drawing.Point(49, 75);
+            this.CityEndLabel.Name = "CityEndLabel";
+            this.CityEndLabel.Size = new System.Drawing.Size(105, 22);
+            this.CityEndLabel.TabIndex = 52;
+            this.CityEndLabel.Text = "Куда (город)";
             // 
-            // textBox2
+            // CityStartTextBox
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(163, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(138, 26);
-            this.textBox2.TabIndex = 51;
+            this.CityStartTextBox.Enabled = false;
+            this.CityStartTextBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CityStartTextBox.Location = new System.Drawing.Point(163, 45);
+            this.CityStartTextBox.Name = "CityStartTextBox";
+            this.CityStartTextBox.Size = new System.Drawing.Size(138, 26);
+            this.CityStartTextBox.TabIndex = 51;
             // 
-            // label2
+            // CityStartLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(33, 48);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 22);
-            this.label2.TabIndex = 50;
-            this.label2.Text = "Откуда (город)";
+            this.CityStartLabel.AutoSize = true;
+            this.CityStartLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CityStartLabel.Location = new System.Drawing.Point(33, 48);
+            this.CityStartLabel.Name = "CityStartLabel";
+            this.CityStartLabel.Size = new System.Drawing.Size(121, 22);
+            this.CityStartLabel.TabIndex = 50;
+            this.CityStartLabel.Text = "Откуда (город)";
             // 
-            // textBox1
+            // NameRouteTextBox
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(163, 7);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(138, 26);
-            this.textBox1.TabIndex = 49;
+            this.NameRouteTextBox.Enabled = false;
+            this.NameRouteTextBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameRouteTextBox.Location = new System.Drawing.Point(163, 7);
+            this.NameRouteTextBox.Name = "NameRouteTextBox";
+            this.NameRouteTextBox.Size = new System.Drawing.Size(138, 26);
+            this.NameRouteTextBox.TabIndex = 49;
             // 
-            // label1
+            // NameRouteLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 22);
-            this.label1.TabIndex = 48;
-            this.label1.Text = "Название маршрута";
+            this.NameRouteLabel.AutoSize = true;
+            this.NameRouteLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameRouteLabel.Location = new System.Drawing.Point(3, 11);
+            this.NameRouteLabel.Name = "NameRouteLabel";
+            this.NameRouteLabel.Size = new System.Drawing.Size(154, 22);
+            this.NameRouteLabel.TabIndex = 48;
+            this.NameRouteLabel.Text = "Название маршрута";
             // 
             // PurchasedTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(474, 369);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.FreePlacesTextBox);
+            this.Controls.Add(this.TimeTravelLabel);
+            this.Controls.Add(this.PriceTextBox);
+            this.Controls.Add(this.DistanceLabel);
+            this.Controls.Add(this.CancelButton);
+            this.Controls.Add(this.BalanceLabel);
+            this.Controls.Add(this.BalanceTitleLabel);
+            this.Controls.Add(this.DateLabel);
+            this.Controls.Add(this.DateTitleLabel);
+            this.Controls.Add(this.TimeTravelTextBox);
+            this.Controls.Add(this.PriceLabel);
+            this.Controls.Add(this.DistanceTextBox);
+            this.Controls.Add(this.FreePlacesLabel);
+            this.Controls.Add(this.TimeEndTextBox);
+            this.Controls.Add(this.TimeEndLabel);
+            this.Controls.Add(this.TimeStartTextBox);
+            this.Controls.Add(this.TimeStartLabel);
+            this.Controls.Add(this.CityEndTextBox);
+            this.Controls.Add(this.CityEndLabel);
+            this.Controls.Add(this.CityStartTextBox);
+            this.Controls.Add(this.CityStartLabel);
+            this.Controls.Add(this.NameRouteTextBox);
+            this.Controls.Add(this.NameRouteLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "PurchasedTicket";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -316,28 +316,28 @@ namespace TableBusWinForms.GeneralForm
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox FreePlacesTextBox;
+        private System.Windows.Forms.Label TimeTravelLabel;
+        private System.Windows.Forms.TextBox PriceTextBox;
+        private System.Windows.Forms.Label DistanceLabel;
+        private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.Label BalanceLabel;
+        private System.Windows.Forms.Label BalanceTitleLabel;
+        private System.Windows.Forms.Label DateLabel;
+        private System.Windows.Forms.Label DateTitleLabel;
+        private System.Windows.Forms.TextBox TimeTravelTextBox;
+        private System.Windows.Forms.Label PriceLabel;
+        private System.Windows.Forms.TextBox DistanceTextBox;
+        private System.Windows.Forms.Label FreePlacesLabel;
+        private System.Windows.Forms.TextBox TimeEndTextBox;
+        private System.Windows.Forms.Label TimeEndLabel;
+        private System.Windows.Forms.TextBox TimeStartTextBox;
+        private System.Windows.Forms.Label TimeStartLabel;
+        private System.Windows.Forms.TextBox CityEndTextBox;
+        private System.Windows.Forms.Label CityEndLabel;
+        private System.Windows.Forms.TextBox CityStartTextBox;
+        private System.Windows.Forms.Label CityStartLabel;
+        private System.Windows.Forms.TextBox NameRouteTextBox;
+        private System.Windows.Forms.Label NameRouteLabel;
     }
 }

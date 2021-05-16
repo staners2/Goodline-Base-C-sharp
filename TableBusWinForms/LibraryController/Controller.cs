@@ -36,7 +36,7 @@ namespace LibraryController
         }
 
         // Регистрация аккаунта
-        public async static Task<int> RegistrationUser(string Login)
+        public static int RegistrationUser(string Login)
         {
             int Id;
             using (DataContext db = new DataContext())
@@ -138,7 +138,7 @@ namespace LibraryController
                     var table = db.Tables.Find(IdTable);
                     table.CurrentCountPassenger++;
                     var user = db.Users.Find(IdAccount);
-                    user.Money = user.Money - table.Price;
+                    user.Money -= table.Price;
                     db.SaveChanges();
                     return true;
                 }

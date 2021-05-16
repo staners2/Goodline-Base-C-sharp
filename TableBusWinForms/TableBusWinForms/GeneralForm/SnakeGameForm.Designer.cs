@@ -32,7 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.scoreLabel = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
+            this.StartButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -62,20 +62,20 @@
             this.scoreLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.scoreLabel.Visible = false;
             // 
-            // button1
+            // StartButton
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.FlatAppearance.BorderSize = 3;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.Color.Lime;
-            this.button1.Location = new System.Drawing.Point(184, 282);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(202, 57);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "START";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.StartButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.StartButton.FlatAppearance.BorderSize = 3;
+            this.StartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.StartButton.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.StartButton.ForeColor = System.Drawing.Color.Lime;
+            this.StartButton.Location = new System.Drawing.Point(184, 282);
+            this.StartButton.Name = "StartButton";
+            this.StartButton.Size = new System.Drawing.Size(202, 57);
+            this.StartButton.TabIndex = 2;
+            this.StartButton.Text = "START";
+            this.StartButton.UseVisualStyleBackColor = false;
+            this.StartButton.Click += new System.EventHandler(this.StartButtonClick);
             // 
             // label2
             // 
@@ -94,7 +94,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(625, 402);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.StartButton);
             this.Controls.Add(this.scoreLabel);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -111,7 +111,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label scoreLabel;
         private System.Windows.Forms.Timer timer;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button StartButton;
         private System.Windows.Forms.Label label2;
     }
 }

@@ -19,30 +19,31 @@ namespace TableBusWinForms
             InitializeComponent();
         }
 
-        private async void button1_Click(object sender, EventArgs e)
+        private void EnterButtonClick(object sender, EventArgs e)
         {
-            if (textBox1.Text != string.Empty)
+            if (LoginTextBox.Text != string.Empty)
             {
                 int IdAccount;
                 bool IsAdmin = false;
-                if (!Controller.CheckUserExists(textBox1.Text))
+                if (!Controller.CheckUserExists(LoginTextBox.Text))
                 {
-                    IdAccount = await Task.Factory.StartNew(() => Controller.RegistrationUser(textBox1.Text)).Result;
+                    IdAccount = Controller.RegistrationUser(LoginTextBox.Text);
                     this.Hide();
                 }
                 else
                 {
-                    User User = Controller.GetUser(textBox1.Text);
+                    User User = Controller.GetUser(LoginTextBox.Text);
                     IdAccount = User.Id;
                     IsAdmin = User.IsAdmin;
                 }
 
                 this.Hide();
-                AdminView.ViewTableForm Form = new AdminView.ViewTableForm(IdAccount, textBox1.Text);
+                AdminView.ViewTableForm Form = new AdminView.ViewTableForm(IdAccount, LoginTextBox.Text);
                 switch (IsAdmin)
                 {
                     case true:
                     {
+                        Form.Text += " (Администратор)";
                         Form.ShowDialog();
                         break;
                     }
@@ -51,6 +52,7 @@ namespace TableBusWinForms
                     {
                         var PanelAdmin = (Panel)Form.Controls.Find("panel1", false).First();
                         PanelAdmin.Visible = false;
+                        Form.Text += " (Пользователь)";
                         Form.ShowDialog();
                         break;
                     }

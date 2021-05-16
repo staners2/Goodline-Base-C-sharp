@@ -20,15 +20,20 @@ namespace TableBusWinForms.AdminView.Moderation.City
 
         public void UpdateGrid()
         {
-            dataGridView1.Rows.Clear();
+            DataGridView.Rows.Clear();
             var cities = ModerationController.GetCities();
             foreach (var elem in cities)
             {
-                dataGridView1.Rows.Add($"{elem.Id}", $"{elem.CityName}");
+                DataGridView.Rows.Add($"{elem.Id}", $"{elem.CityName}");
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ViewModerationCityForm_Load(object sender, EventArgs e)
+        {
+            UpdateGrid();
+        }
+
+        private void AddCityButtonClick(object sender, EventArgs e)
         {
             AddCityForm Form = new AddCityForm();
             Form.Closed += (s, ev) =>
@@ -38,11 +43,11 @@ namespace TableBusWinForms.AdminView.Moderation.City
             Form.ShowDialog();
         }
 
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                int IdCity = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["IdCity"].Value);
+                int IdCity = Convert.ToInt32(DataGridView.Rows[e.RowIndex].Cells["IdCity"].Value);
                 ChangeCityForm Form = new ChangeCityForm(IdCity);
                 Form.Closed += (s, ev) =>
                 {
@@ -50,12 +55,6 @@ namespace TableBusWinForms.AdminView.Moderation.City
                 };
                 Form.ShowDialog();
             }
-            
-        }
-
-        private void ViewModerationCityForm_Load(object sender, EventArgs e)
-        {
-            UpdateGrid();
         }
     }
 }
