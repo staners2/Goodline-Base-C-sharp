@@ -9,37 +9,34 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LibraryController;
 using LibraryController.Models;
+using TableBusWinForms.Presenter;
 
 namespace TableBusWinForms
 {
     public partial class AuthorizeForm : Form
     {
+        public AuthorizePresenter AuthorizePresenter;
         public AuthorizeForm()
         {
             InitializeComponent();
+            AuthorizePresenter = new AuthorizePresenter(this);
         }
 
         private void EnterButtonClick(object sender, EventArgs e)
         {
+
             if (LoginTextBox.Text != string.Empty)
             {
-                int IdAccount;
-                bool IsAdmin = false;
+                AuthorizePresenter.EnterAccount();
+                /*User pUser;
                 if (!Controller.CheckUserExists(LoginTextBox.Text))
-                {
-                    IdAccount = Controller.RegistrationUser(LoginTextBox.Text);
-                    this.Hide();
-                }
-                else
-                {
-                    User User = Controller.GetUser(LoginTextBox.Text);
-                    IdAccount = User.Id;
-                    IsAdmin = User.IsAdmin;
-                }
+                    pUser = Controller.RegistrationUser(LoginTextBox.Text);
+                pUser = Controller.GetUser(LoginTextBox.Text);
+                this.Hide();*/
 
-                this.Hide();
-                AdminView.ViewTableForm Form = new AdminView.ViewTableForm(IdAccount, LoginTextBox.Text);
-                switch (IsAdmin)
+                /*User pUser = AuthorizePresenter.EnterAccount(LoginTextBox.Text);
+                AdminView.ViewTableForm Form = new AdminView.ViewTableForm(pUser.Id, LoginTextBox.Text);
+                switch (pUser.IsAdmin)
                 {
                     case true:
                     {
@@ -56,7 +53,7 @@ namespace TableBusWinForms
                         Form.ShowDialog();
                         break;
                     }
-                }
+                }*/
             }
         }
     }

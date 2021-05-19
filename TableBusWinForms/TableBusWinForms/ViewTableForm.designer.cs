@@ -359,14 +359,8 @@ namespace TableBusWinForms.AdminView
         }
 
         #endregion
-
-        private System.Windows.Forms.Label MoneyLabel;
         private System.Windows.Forms.Label MoneyTitleLabel;
-        private System.Windows.Forms.Label LoginLabel;
-        private System.Windows.Forms.MonthCalendar MonthCalendar;
-        private System.Windows.Forms.Button ViewBuyerTicketsButton;
         private System.Windows.Forms.Label LoginTitleLabel;
-        private System.Windows.Forms.DataGridView DataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdRecordTable;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameRoute;
         private System.Windows.Forms.DataGridViewTextBoxColumn CityStart;
@@ -375,14 +369,19 @@ namespace TableBusWinForms.AdminView
         private System.Windows.Forms.DataGridViewTextBoxColumn CurrentCountPassenger;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button ModerationTableButton;
-        private System.Windows.Forms.Button ModerationRouteButton;
-        private System.Windows.Forms.Button ModerationCitiesButton;
-        private System.Windows.Forms.ComboBox CityStartComboBox;
-        private System.Windows.Forms.ComboBox CityEndComboBox;
         private System.Windows.Forms.Label CityStartLabel;
         private System.Windows.Forms.Label CityEndLabel;
-        private System.Windows.Forms.Button SearchButton;
-        private System.Windows.Forms.Button GetMoneyButton;
+        public System.Windows.Forms.Label MoneyLabel;
+        public System.Windows.Forms.Label LoginLabel;
+        public System.Windows.Forms.MonthCalendar MonthCalendar;
+        public System.Windows.Forms.Button ViewBuyerTicketsButton;
+        public System.Windows.Forms.DataGridView DataGridView;
+        public System.Windows.Forms.Button ModerationTableButton;
+        public System.Windows.Forms.Button ModerationRouteButton;
+        public System.Windows.Forms.Button ModerationCitiesButton;
+        public System.Windows.Forms.ComboBox CityStartComboBox;
+        public System.Windows.Forms.ComboBox CityEndComboBox;
+        public System.Windows.Forms.Button SearchButton;
+        public System.Windows.Forms.Button GetMoneyButton;
     }
 }

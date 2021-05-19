@@ -36,17 +36,15 @@ namespace LibraryController
         }
 
         // Регистрация аккаунта
-        public static int RegistrationUser(string Login)
+        public static User RegistrationUser(string Login)
         {
-            int Id;
             using (DataContext db = new DataContext())
             {
                 User User = new User() { Login = Login };
                 db.Users.Add(User);
                 db.SaveChanges();
-                Id = User.Id;
+                return User;
             }
-            return Id;
         }
         #endregion
 

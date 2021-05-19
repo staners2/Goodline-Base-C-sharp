@@ -315,29 +315,28 @@ namespace TableBusWinForms.GeneralForm
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox FreePlacesTextBox;
         private System.Windows.Forms.Label TimeTravelLabel;
-        private System.Windows.Forms.TextBox PriceTextBox;
         private System.Windows.Forms.Label DistanceLabel;
-        private System.Windows.Forms.Button CancelButton;
-        private System.Windows.Forms.Label BalanceLabel;
         private System.Windows.Forms.Label BalanceTitleLabel;
-        private System.Windows.Forms.Label DateLabel;
         private System.Windows.Forms.Label DateTitleLabel;
-        private System.Windows.Forms.TextBox TimeTravelTextBox;
         private System.Windows.Forms.Label PriceLabel;
-        private System.Windows.Forms.TextBox DistanceTextBox;
         private System.Windows.Forms.Label FreePlacesLabel;
-        private System.Windows.Forms.TextBox TimeEndTextBox;
         private System.Windows.Forms.Label TimeEndLabel;
-        private System.Windows.Forms.TextBox TimeStartTextBox;
         private System.Windows.Forms.Label TimeStartLabel;
-        private System.Windows.Forms.TextBox CityEndTextBox;
         private System.Windows.Forms.Label CityEndLabel;
-        private System.Windows.Forms.TextBox CityStartTextBox;
         private System.Windows.Forms.Label CityStartLabel;
-        private System.Windows.Forms.TextBox NameRouteTextBox;
         private System.Windows.Forms.Label NameRouteLabel;
+        public System.Windows.Forms.TextBox FreePlacesTextBox;
+        public System.Windows.Forms.TextBox PriceTextBox;
+        public System.Windows.Forms.Button CancelButton;
+        public System.Windows.Forms.Label BalanceLabel;
+        public System.Windows.Forms.Label DateLabel;
+        public System.Windows.Forms.TextBox TimeTravelTextBox;
+        public System.Windows.Forms.TextBox DistanceTextBox;
+        public System.Windows.Forms.TextBox TimeEndTextBox;
+        public System.Windows.Forms.TextBox TimeStartTextBox;
+        public System.Windows.Forms.TextBox CityEndTextBox;
+        public System.Windows.Forms.TextBox CityStartTextBox;
+        public System.Windows.Forms.TextBox NameRouteTextBox;
     }
 }

@@ -82,10 +82,9 @@ namespace TableBusWinForms
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox LoginTextBox;
-        private System.Windows.Forms.Button EnterButton;
         private System.Windows.Forms.Label LoginLabel;
+        public System.Windows.Forms.TextBox LoginTextBox;
+        public System.Windows.Forms.Button EnterButton;
     }
 }
 

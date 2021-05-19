@@ -81,9 +81,8 @@ namespace TableBusWinForms.AdminView.Moderation.City
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox NameCityTextBox;
         private System.Windows.Forms.Label NameCityLabel;
-        private System.Windows.Forms.Button AddButton;
+        public System.Windows.Forms.TextBox NameCityTextBox;
+        public System.Windows.Forms.Button AddButton;
     }
 }

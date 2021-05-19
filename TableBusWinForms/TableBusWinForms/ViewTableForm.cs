@@ -8,20 +8,23 @@ using TableBusWinForms.AdminView.Moderation.City;
 using TableBusWinForms.AdminView.Moderation.Route;
 using TableBusWinForms.AdminView.Moderation.TableRecords;
 using TableBusWinForms.GeneralForm;
+using TableBusWinForms.Presenter;
 
 namespace TableBusWinForms.AdminView
 {
     public partial class ViewTableForm : Form
     {
+        public ViewTableFormPresenter ViewTableFormPresenter;
         public ViewTableForm(int IdAccount, string Login)
         {
             InitializeComponent();
+            ViewTableFormPresenter = new ViewTableFormPresenter(this);
             this.IdAccount = IdAccount;
             LoginLabel.Text = Login;
             MoneyLabel.Text = Controller.GetMoneyForUser(IdAccount).ToString();
         }
 
-        private int IdAccount { get; set; }
+        public int IdAccount { get; set; }
 
         private void ViewTableForm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -31,18 +34,13 @@ namespace TableBusWinForms.AdminView
 
         private void ViewTableForm_Load(object sender, EventArgs e)
         {
-            var Cities = Controller.GetCities();
-            foreach (var elem in Cities)
-            {
-                CityStartComboBox.Items.Add(elem.CityName);
-                CityEndComboBox.Items.Add(elem.CityName);
-            }
+            ViewTableFormPresenter.LoadCities();
         }
 
         private void UpdateGrid(List<Table> pListTables)
         {
             DataGridView.Rows.Clear();
-            MoneyLabel.Text = Controller.GetMoneyForUser(IdAccount).ToString();
+            MoneyLabel.Text = ViewTableFormPresenter.GetMoneyForUser().ToString();
             foreach (var elem in pListTables)
             {
                 DataGridView.Rows.Add($"{elem.Id}", $"{elem.Route.NameRoute}", $"{elem.Route.City.CityName}",
@@ -53,12 +51,7 @@ namespace TableBusWinForms.AdminView
 
         private void GetMoneyButtonClick(object sender, EventArgs e)
         {
-            var Form = new SnakeGameForm(IdAccount);
-            Form.Closing += (s, ev) =>
-            {
-                MoneyLabel.Text = Controller.GetMoneyForUser(IdAccount).ToString();
-            };
-            Form.ShowDialog();
+            ViewTableFormPresenter.OpenGetMoneyForm();
         }
 
         private void SearchButtonClick(object sender, EventArgs e)
@@ -71,20 +64,17 @@ namespace TableBusWinForms.AdminView
 
         private void ModerationCitiesButtonClick(object sender, EventArgs e)
         {
-            ViewModerationCityForm Form = new ViewModerationCityForm();
-            Form.ShowDialog();
+            ViewTableFormPresenter.OpenModerationCities();
         }
 
         private void ModerationRoutesButtonClick(object sender, EventArgs e)
         {
-            ViewModerationRouteForm Form = new ViewModerationRouteForm();
-            Form.ShowDialog();
+            ViewTableFormPresenter.OpenModerationRoutes();
         }
 
         private void ModerationTableButtonClick(object sender, EventArgs e)
         {
-            ViewModerationTableRecordsForm Form = new ViewModerationTableRecordsForm();
-            Form.ShowDialog();
+            ViewTableFormPresenter.OpenModerationTableRecords();
         }
 
         private void MonthCalendar_DateChanged(object sender, DateRangeEventArgs e)
