@@ -29,7 +29,7 @@ namespace TableBusWinForms.GeneralForm
         /// </summary>
         private void InitializeComponent()
         {
-            this.PlacesTextBox = new System.Windows.Forms.TextBox();
+            /*this.PlacesTextBox = new System.Windows.Forms.TextBox();
             this.TravelTimeLabel = new System.Windows.Forms.Label();
             this.PriceTextBox = new System.Windows.Forms.TextBox();
             this.DistanceLabel = new System.Windows.Forms.Label();
@@ -310,7 +310,7 @@ namespace TableBusWinForms.GeneralForm
             this.Text = "Приобрести билет на рейс";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
+            this.PerformLayout();*/
 
         }
 

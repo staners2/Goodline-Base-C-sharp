@@ -29,7 +29,7 @@ namespace TableBusWinForms.GeneralForm
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            /*System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DataGridView = new System.Windows.Forms.DataGridView();
@@ -165,7 +165,7 @@ namespace TableBusWinForms.GeneralForm
             this.Text = "Купленные билеты";
             this.Load += new System.EventHandler(this.ViePurchasedTicketsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
-            this.ResumeLayout(false);
+            this.ResumeLayout(false);*/
 
         }
 

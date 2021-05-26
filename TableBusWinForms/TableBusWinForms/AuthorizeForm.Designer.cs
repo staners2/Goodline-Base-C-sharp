@@ -29,7 +29,7 @@ namespace TableBusWinForms
         /// </summary>
         private void InitializeComponent()
         {
-            this.LoginTextBox = new System.Windows.Forms.TextBox();
+            /*this.LoginTextBox = new System.Windows.Forms.TextBox();
             this.EnterButton = new System.Windows.Forms.Button();
             this.LoginLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -77,7 +77,7 @@ namespace TableBusWinForms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Авторизация";
             this.ResumeLayout(false);
-            this.PerformLayout();
+            this.PerformLayout();*/
 
         }
 
