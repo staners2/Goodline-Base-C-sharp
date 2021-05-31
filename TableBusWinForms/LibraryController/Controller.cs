@@ -49,13 +49,12 @@ namespace LibraryController
         #endregion
 
         #region Взаимодействие с расписанием
-        public static List<Table> GetTableRecords(DateTime dateTime, string CityStart, string CityEnd)
+        public static List<Table> GetTableRecords(string CityStart, string CityEnd)
         {
             using (DataContext db = new DataContext())
             {
-                var selectDate = dateTime.Date;
                 List<Table> TableRecords = db.Tables.Include(x => x.Route.City).Include(x => x.Route.City1)
-                    .Where(x => DbFunctions.TruncateTime(x.DateTimeStart) == selectDate && x.IsDelete == false &&
+                    .Where(x => x.IsDelete == false &&
                                 x.Route.City.CityName == CityStart && x.Route.City1.CityName == CityEnd)
                     .ToList();
                 return TableRecords;

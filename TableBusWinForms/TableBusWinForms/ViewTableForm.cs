@@ -390,7 +390,7 @@ namespace TableBusWinForms.AdminView
         {
             if (CityStartComboBox.Text != string.Empty && CityEndComboBox.Text != string.Empty)
             {
-                UpdateGrid(Controller.GetTableRecords(MonthCalendar.SelectionStart, CityStartComboBox.Text, CityEndComboBox.Text));
+                UpdateGrid(Controller.GetTableRecords(CityStartComboBox.Text, CityEndComboBox.Text));
             }
         }
 

@@ -86,7 +86,7 @@ namespace LibraryController
                 try
                 {
                     var city = db.Cities.Where(x => x.Id == IdCity).FirstOrDefault();
-                    db.Cities.Remove(city);
+                    city.IsDelete = true;
                     db.SaveChanges();
                     return true;
                 }
@@ -251,7 +251,7 @@ namespace LibraryController
                 try
                 {
                     var Route = db.Routes.Find(IdRoute);
-                    db.Routes.Remove(Route);
+                    Route.IsDelete = true;
                     db.SaveChanges();
                     return true;
                 }
@@ -341,7 +341,7 @@ namespace LibraryController
                 try
                 {
                     Table table = db.Tables.Where(x => x.Id == IdTableRecord).FirstOrDefault();
-                    db.Tables.Remove(table);
+                    table.IsDelete = true;
                     db.SaveChanges();
                     return true;
                 }
