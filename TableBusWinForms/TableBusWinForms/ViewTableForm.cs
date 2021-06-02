@@ -1,12 +1,8 @@
-﻿using System;
+﻿using LibraryController;
+using LibraryController.Models;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using LibraryController;
-using LibraryController.Models;
-using snake;
-using TableBusWinForms.AdminView.Moderation.City;
-using TableBusWinForms.AdminView.Moderation.Route;
-using TableBusWinForms.AdminView.Moderation.TableRecords;
 using TableBusWinForms.GeneralForm;
 using TableBusWinForms.Presenter;
 

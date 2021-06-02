@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using LibraryController;
 using TableBusWinForms.Presenter;
 
 namespace TableBusWinForms.AdminView.Moderation.City
@@ -27,7 +19,6 @@ namespace TableBusWinForms.AdminView.Moderation.City
         private void ChangeCityForm_Load(object sender, EventArgs e)
         {
             ChangeCityPresenter.FormLoad();
-            /*NameCityTextBox.Text = ModerationController.GetCity(IdCity).CityName;*/
         }
 
         private void ChangeCityButtonClick(object sender, EventArgs e)

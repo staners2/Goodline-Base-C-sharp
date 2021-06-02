@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity.Migrations.History;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LibraryController;
+﻿using LibraryController;
 using LibraryController.Models;
 using snake;
+using System.Collections.Generic;
 using TableBusWinForms.AdminView;
 using TableBusWinForms.AdminView.Moderation.City;
 using TableBusWinForms.AdminView.Moderation.Route;
 using TableBusWinForms.AdminView.Moderation.TableRecords;
-using TableBusWinForms.GeneralForm;
 
 namespace TableBusWinForms.Presenter
 {

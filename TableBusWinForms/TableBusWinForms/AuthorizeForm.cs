@@ -83,32 +83,6 @@ namespace TableBusWinForms
             if (LoginTextBox.Text != string.Empty)
             {
                 AuthorizePresenter.EnterAccount();
-                /*User pUser;
-                if (!Controller.CheckUserExists(LoginTextBox.Text))
-                    pUser = Controller.RegistrationUser(LoginTextBox.Text);
-                pUser = Controller.GetUser(LoginTextBox.Text);
-                this.Hide();*/
-
-                /*User pUser = AuthorizePresenter.EnterAccount(LoginTextBox.Text);
-                AdminView.ViewTableForm Form = new AdminView.ViewTableForm(pUser.Id, LoginTextBox.Text);
-                switch (pUser.IsAdmin)
-                {
-                    case true:
-                    {
-                        Form.Text += " (Администратор)";
-                        Form.ShowDialog();
-                        break;
-                    }
-
-                    case false:
-                    {
-                        var PanelAdmin = (Panel)Form.Controls.Find("panel1", false).First();
-                        PanelAdmin.Visible = false;
-                        Form.Text += " (Пользователь)";
-                        Form.ShowDialog();
-                        break;
-                    }
-                }*/
             }
         }
     }

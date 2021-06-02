@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LibraryController;
+using System;
 using System.Windows.Forms;
-using LibraryController;
 using TableBusWinForms.AdminView.Moderation.City;
 
 namespace TableBusWinForms.Presenter
