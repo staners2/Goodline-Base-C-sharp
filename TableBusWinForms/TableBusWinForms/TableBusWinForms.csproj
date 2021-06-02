@@ -237,7 +237,12 @@
   <ItemGroup>
     <None Include="Resources\star_active.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\user_icon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gratis-png-iconos-de-computadora-usuario-perfil-inicio-de-sesion-usuario.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

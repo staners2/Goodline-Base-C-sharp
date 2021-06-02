@@ -2,6 +2,7 @@
 using LibraryController.Models;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 using TableBusWinForms.GeneralForm;
 using TableBusWinForms.Presenter;
@@ -350,6 +351,9 @@ namespace TableBusWinForms.AdminView
             this.IdAccount = IdAccount;
             LoginLabel.Text = Login;
             MoneyLabel.Text = Controller.GetMoneyForUser(IdAccount).ToString();
+
+            PictureBox Image = new PictureBox(){Image = Properties.Resources.user_icon, Size = new Size(90, 45), Location = new Point(30,60), SizeMode = PictureBoxSizeMode.StretchImage};
+            Controls.Add(Image);
         }
 
         public int IdAccount { get; set; }
